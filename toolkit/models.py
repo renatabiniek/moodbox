@@ -32,7 +32,7 @@ class Tool(models.Model):
     class Meta: 
         ordering = ['-date_added']
 
-    def _str_(self):
+    def __str__(self):
         return self.tool_name
     
     # Helper method to return number of likes on a tool item
@@ -50,6 +50,5 @@ class Comment(models.Model):
     class Meta:
         ordering = ['date_added']
     
-    def _str_(self):
+    def __str__(self):
         return f"Comment {self.content} by {self.name}"
-
