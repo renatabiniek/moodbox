@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from django.views import generic
+from .models import Tool
 
-# Create your views here.
+class ToolList(generic.ListView):
+    model = Tool
+    queryset = Tool.objects.filter(published_status=1).order_by('-date_added')
+    template_name = 'index.html'
+    paginate_by = 8
