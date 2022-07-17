@@ -1,5 +1,26 @@
+/*------------------------------------ General*/
+
 html, body { height: 100%;}
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bolder;
+
+}
+
+.logo-light {
+    color: #5f6670;
+}
+
+.logo-darker {
+    color: #17a2b8;
+}
 
 /*------------------------------------ Footer*/
 
@@ -8,7 +29,7 @@ this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
 */
 
 .page-footer  {
-    background-color: cyan;
+    background-color: #17a2b8;
     position: sticky;
     top: 100vh;
 }
