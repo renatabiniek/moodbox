@@ -12,9 +12,14 @@ class ToolAdmin(SummernoteModelAdmin):
     list_filter = ('date_added', 'published_status', 'author_name')
     summernote_fields = ('method_details')
 
+
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     
     list_display = ('tool', 'name', 'content', 'date_added', 'approved')
     list_filter = ('name', 'date_added', 'approved')
     search_fields = ['name', 'content']
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        queryset.update(approved=True)
