@@ -1,3 +1,18 @@
-body {
-    background-color: teal;
+html, body { height: 100%;}
+
+
+/*------------------------------------ Footer*/
+
+/* sticky footer, as per 
+this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
+*/
+
+.page-footer  {
+    background-color: cyan;
+    position: sticky;
+    top: 100vh;
+}
+
+.footer-link {
+    color: black;
 }

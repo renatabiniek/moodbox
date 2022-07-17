@@ -6,14 +6,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>MoodBox</title>
 </head>
 <body>
-  
-    <!--Navigation-->
+
+    <!--Navigation with brand and collapsible navbar-->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -49,6 +53,28 @@
     {% endblock content %}
 
     <!--Footer-->
+
+    <footer class="page-footer border-top mt-3 py-3">
+      <!--Social links-->
+      <div class="container">
+        <ul class="m-0 text-center list-inline">
+          <li class="list-inline-item"><a href="https://facebook.com" target="_blank" rel="noopener"
+              aria-label="Visit our Facebook page. Link opens in new tab" class="footer-link"><i class="bi bi-facebook"
+                aria-hidden="true"></i></a></li>
+          <li class="list-inline-item"><a href="https://twitter.com" target="_blank" rel="noopener"
+              aria-label="Visit our Twitter page. Link opens in new tab" class="footer-link"><i class="bi bi-twitter"
+                aria-hidden="true"></i></a></li>
+          <li class="list-inline-item"><a href="https://instagram.com" target="_blank" rel="noopener"
+              aria-label="Visit our Instagram page. Link opens in new tab" class="footer-link"><i
+                class="bi bi-instagram" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center py-3">&copy; <a href="{% url 'home' %}"> MoodBox</a> 2022.
+        <span>Site created for educational purposes.</span>
+      </div>
+    </footer>
 
 </body>
 </html>
