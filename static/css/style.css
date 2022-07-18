@@ -2,6 +2,12 @@
 
 html, body { height: 100%;}
 
+body {
+    font-family: 'Montserat', sans-serif;
+    background-color: white;
+    color: #5f6670;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -11,7 +17,6 @@ a {
 .logo {
     font-size: 1.5rem;
     font-weight: bolder;
-
 }
 
 .logo-light {
@@ -36,4 +41,14 @@ this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
 
 .footer-link {
     color: black;
+}
+
+.footer-link:hover, .footer-link:active {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+footer i {
+    font-size: 1.2rem;
 }
