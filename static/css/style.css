@@ -39,7 +39,7 @@ this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
     top: 100vh;
 }
 
-.footer-link {
+.footer-link, .footer-text {
     color: black;
 }
 
