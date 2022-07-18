@@ -24,7 +24,7 @@ a {
 }
 
 .logo-darker {
-    color: #17a2b8;
+    color: #A2AEA0;
 }
 
 .img-fluid {
@@ -38,13 +38,13 @@ h1 {
 }
 
 .btn-primary {
-    background-color: #D0B156;
+    background-color: #D69722;
     border: none;
     float: right;
 }
 
 .btn:hover, .btn:focus, .btn:active {
-    background-color: #D0B156;
+    background-color: #D69722;
     font-size: 1.5rem;
 }
 /*------------------------------------ Footer*/
@@ -54,7 +54,7 @@ this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
 */
 
 .page-footer  {
-    background-color: #17a2b8;
+    background-color: #A2AEA0;
     position: sticky;
     top: 100vh;
 }
