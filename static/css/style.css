@@ -27,6 +27,21 @@ a {
     color: #17a2b8;
 }
 
+h1 {
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.btn-primary {
+    background-color: #D0B156;
+    border: none;
+    float: right;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    background-color: #D0B156;
+    font-size: 1.5rem;
+}
 /*------------------------------------ Footer*/
 
 /* sticky footer, as per 
