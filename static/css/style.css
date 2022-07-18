@@ -38,18 +38,22 @@ a {
 
 h1 {
     font-weight: 600;
+    font-size: 3rem;
 }
 
-.btn-primary {
+.btn-callout {
     background-color: #D69722;
-    border: none;
+    border-radius: 0.5rem;
     float: right;
+    color: white;
 }
 
 .btn:hover, .btn:focus, .btn:active {
     background-color: #D69722;
     font-size: 1.5rem;
+    color: white;
 }
+
 /*------------------------------------ Footer*/
 
 /* sticky footer, as per 
