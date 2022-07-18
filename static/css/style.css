@@ -15,7 +15,7 @@ a {
 
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     font-weight: bolder;
 }
 
@@ -27,6 +27,10 @@ a {
     color: #A2AEA0;
 }
 
+.nav-link {
+    font-size: 1.2rem;
+}
+
 .img-fluid {
     max-width: 100%;
     height: auto;
@@ -34,7 +38,6 @@ a {
 
 h1 {
     font-weight: 600;
-    font-size: 2.2rem;
 }
 
 .btn-primary {
