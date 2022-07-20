@@ -4,30 +4,29 @@
 
 {% load static %}
 
-
+<!--Intro and image section-->
 <section>
   <div class="container mt-5">
     <div class="row">
       <div class="col-md py-3">
         <h1>Welcome to your MoodBox.</h1>
-        <p class="lead pt-3">There is always something that you can do to make yourself feel better. You just need the right
-          tool
-          for you in the right moment.</p>
-        <p class="pt-3">MoodBox is a digital self-care toolbox for when you're feeling anxious, low or overwhelmed. It's full of
-          bite-sized information on psychological principles that are known to reduce negative feelings and enhance
+        <p class="lead pt-3">There is always something that you can do to make yourself feel better. You just need the
+          right tool for you in the right moment.</p>
+        <p class="pt-3">MoodBox is a digital self-care toolbox for when you're feeling anxious, low or overwhelmed. It's
+          full of bite-sized information on psychological principles that are known to reduce negative feelings and enhance
           well-being.</p>
         <p>Pop it open whenever you need a quick remedy, a healthy activity to distract your anxious mind or simply a
           reminder that you're not alone.</p>
-        <a href="" class="btn btn-lg btn-callout font-weight-bolder mt-5" role="button">Feel better</a>
+        <a href="{% url 'tools' %}" class="btn btn-lg btn-callout font-weight-bolder mt-5" role="button">Feel better</a>
       </div>
       <div class="col-md py-3">
         <img class="img-fluid" src="{% static 'images/mental-health.svg' %}" alt="">
       </div>
     </div>
   </div>
-
 </section>
 
+<!--Quick info section-->
 <section>
   <div class="container py-3 my-5">
     <div class="row text-center">
