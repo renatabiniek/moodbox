@@ -31,10 +31,10 @@ a {
     font-size: 1.2rem;
 }
 
-.img-fluid {
-    max-width: 100%;
+/* .img-fluid {
+    width: auto;
     height: auto;
-}
+} */
 
 h1 {
     font-weight: 600;
