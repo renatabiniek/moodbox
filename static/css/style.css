@@ -31,10 +31,10 @@ a {
     font-size: 1.2rem;
 }
 
-/* .img-fluid {
-    width: auto;
-    height: auto;
-} */
+.icn-home {
+   color: #A2AEA0;
+   font-size: 2rem;
+}
 
 h1 {
     font-weight: 600;
@@ -54,6 +54,9 @@ h1 {
     color: white;
 }
 
+.info-text {
+    font-size: .8rem;
+}
 /*------------------------------------ Footer*/
 
 /* sticky footer, as per 
