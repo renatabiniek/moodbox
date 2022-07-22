@@ -6,11 +6,24 @@
 
 <div class="container">
     <div class="row">
-        <!--Tools lists displayed as cards-->
-        <div class="col-12">
-            <p>TOOL 1</p>
+        <!-- Tools lists displayed as cards-->
+        <div class="col-12 mt-5">
+            <div class="row">
+                {% for tool in tool_list %}
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ tool.tool_name }}</h5>
+                            <p class="card-text">{{ tool.keywords }}</p>
+                            <a href="" class="btn">Try it</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
+     
 
 {%endblock%}
