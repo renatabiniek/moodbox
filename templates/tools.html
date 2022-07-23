@@ -5,13 +5,13 @@
 {% load static %}
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <!-- Tools lists displayed as cards-->
         <div class="col-12 mt-5">
             <div class="row">
                 {% for tool in tool_list %}
                 <div class="col-md-4">
-                    <div class="card text-center">
+                    <div class="card mb-4 text-center">
                         <div class="card-body">
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
                             <p class="card-text">{{ tool.keywords }}</p>
@@ -27,10 +27,10 @@
             </div>
         </div>
     </div>
-    
-    <!--Pagination added by Django if 6 items displayed on page-->
+
+    <!--Pagination added by Django once 6 items displayed on page-->
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
+    <nav class="mt-5" aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>

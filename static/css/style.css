@@ -82,3 +82,18 @@ this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
 footer i {
     font-size: 1.2rem;
 }
+
+/*------------------------------------ Toolkit cards*/
+
+.page-link {
+    background-color: #A2AEA0;
+    border-radius: 0.5rem;
+    color: whitesmoke;
+    font-weight: bold; 
+}
+
+.page-link:hover, .page-link:focus, .page-link:active {
+    background-color: whitesmoke;
+    color: #A2AEA0;
+}
+
