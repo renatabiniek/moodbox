@@ -5,17 +5,23 @@
 {% load static %}
 
 <div class="container">
-    <div class="row mt-5">
+    <div class="row mt-3">
         <!-- Tools lists displayed as cards-->
-        <div class="col-12 mt-5">
+        <div class="col-12 mt-3">
             <div class="row">
                 {% for tool in tool_list %}
                 <div class="col-md-4">
                     <div class="card mb-4 text-center">
                         <div class="card-body">
-                            <h5 class="card-title">{{ tool.tool_name }}</h5>
+                            <h3 class="card-title">{{ tool.tool_name }}</h3>
                             <p class="card-text">{{ tool.keywords }}</p>
-                            <a href="" class="btn">Try it</a>
+                            <p class="card-text">You'll need: {{ tool.time_required }} hrs</p>
+                            <a href="" class="btn btn-card mt-3">Try it out</a>
+                        </div>
+                        <div class="card-admin py-2 mt-2">
+                            <p class="card-text mb-0">Posted by: <span class="author">{{ tool.author_name }}</span></p>
+                            <p class="card-text">{{ tool.date_added }} <span id="likes"><i class="bi bi-suit-heart"></i>
+                            {{ tool.number_of_likes }}</span></p>
                         </div>
                     </div>
                 </div>
@@ -30,7 +36,7 @@
 
     <!--Pagination added by Django once 6 items displayed on page-->
     {% if is_paginated %}
-    <nav class="mt-5" aria-label="Page navigation">
+    <nav class="mt-3" aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>

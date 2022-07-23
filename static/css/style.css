@@ -86,14 +86,45 @@ footer i {
 /*------------------------------------ Toolkit cards*/
 
 .page-link {
-    background-color: #A2AEA0;
+    border: none;
+    color: #A2AEA0;
+    font-weight: bold; 
+}
+
+.page-link:hover, .page-link:focus, .page-link:active {
+    color: #A2AEA0;
+    font-size: 1.4rem;
+    background-color: white;
+}
+
+.btn-card {
+    background-color: #D69722;
     border-radius: 0.5rem;
     color: whitesmoke;
     font-weight: bold; 
 }
 
-.page-link:hover, .page-link:focus, .page-link:active {
-    background-color: whitesmoke;
-    color: #A2AEA0;
+.btn-card:hover, .btn-card:focus, .btn-card:active {
+    font-size: 1.1rem;
 }
 
+.card {
+    border-radius: 0.5rem;
+}
+
+.card-admin {
+    font-size: 0.9rem;
+    text-align: left;
+    padding-left: 1rem;
+    background-color: rgba(162,174,160,0.2);
+}
+
+#likes {
+    float: right;
+    padding-right: 1rem;
+}
+
+.author {
+    text-transform: capitalize;
+    font-style: italic;
+}
