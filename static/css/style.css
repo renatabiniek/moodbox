@@ -28,7 +28,7 @@ a {
 }
 
 .nav-link {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .icn-home {
@@ -71,6 +71,7 @@ this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
 
 .footer-link, .footer-text {
     color: black;
+    font-size: 0.8rem;
 }
 
 .footer-link:hover, .footer-link:active {
@@ -80,7 +81,7 @@ this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
 }
 
 footer i {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 /*------------------------------------ Toolkit cards*/
