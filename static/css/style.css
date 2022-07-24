@@ -109,6 +109,11 @@ footer i {
     font-size: 1.1rem;
 }
 
+.keywords {
+    color: #A2AEA0;
+    text-transform: uppercase;
+}
+
 .card {
     border-radius: 0.5rem;
 }
@@ -128,4 +133,8 @@ footer i {
 .author {
     text-transform: capitalize;
     font-style: italic;
+}
+
+.bi-suit-heart {
+    color: #9F4144;
 }
