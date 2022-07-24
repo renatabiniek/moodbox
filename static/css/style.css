@@ -138,3 +138,18 @@ footer i {
 .bi-suit-heart {
     color: #9F4144;
 }
+
+/*------------------------------------ Card detailed view*/
+
+.jumbotron {
+    background-color: rgba(162,174,160,0.2);
+}
+
+.card-detail {
+    border: none;
+}
+
+.img-resources {
+    float: left;
+    background-color: #A2AEA0;
+}
