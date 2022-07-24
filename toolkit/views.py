@@ -11,11 +11,12 @@ class ToolList(generic.ListView):
 
 '''Displays detailed view of individual tool card'''
 class ToolDetail(View):
-
+    
+    
     def get(self, request, slug, *args, **kwargs):
         queryset = Tool.objects.filter(published_status=1)
         tool = get_object_or_404(queryset, slug=slug)
-        comments = tool.comments.filter(approved=True),order_by('date_added')
+        comments = tool.comments.filter(approved=True).order_by('date_added')
         liked = False
         if tool.likes.filter(id=self.request.user.id).exists():
             liked = True
