@@ -31,7 +31,11 @@
                     </div>
                     <div class="row no-gutters">
                         <div class="col-md-4 mb-4 pr-5">
+                            {% if 'placeholder' in tool.related_image.url %}
                             <img class="img-thumbnail" src="{% static 'images/placeholder.jpg' %}" alt="">
+                            {% else %}
+                            <img class="img-thumbnail" src="{{ tool.related_image.url }}" alt="">
+                            {% endif %}
                         </div>
                         <div class="col-md-8">
                             <p><strong>Website:</strong> {{ tool.related_website }}</p>
