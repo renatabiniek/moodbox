@@ -24,12 +24,18 @@
                         <h3>Method details:</h3>
                         <p class="card-text">{{ tool.method_details | safe }}</p>
                     </div>
+        
+                    <!--Resources section: image and website -->
                     <div class="card-text resources pt-3 pb-3">
                         <h3 class=>Resources:</h3>
-                        <div class="col-4 mr-5 pt-3 img-resources">
-                            <img src="#" alt="">
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-4 mb-4 pr-5">
+                            <img class="img-thumbnail" src="{% static 'images/5-second-rule.jpg' %}" alt="">
                         </div>
-                        <div class="col ml-5 pt-3"><strong>Website:</strong> {{ tool.related_website }}</div>
+                        <div class="col-md-8">
+                            <p><strong>Website:</strong> {{ tool.related_website }}</p>
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-1">
