@@ -9,10 +9,11 @@ class ToolList(generic.ListView):
     template_name = 'tools.html'
     paginate_by = 6
 
+
 '''Displays detailed view of individual tool card'''
 class ToolDetail(View):
-    
-    
+   
+   
     def get(self, request, slug, *args, **kwargs):
         queryset = Tool.objects.filter(published_status=1)
         tool = get_object_or_404(queryset, slug=slug)
@@ -32,10 +33,8 @@ class ToolDetail(View):
         )
 
 
-
-
-
 '''Renders a home page template'''
+
 
 class HomePageView(generic.TemplateView):
     template_name = 'index.html'

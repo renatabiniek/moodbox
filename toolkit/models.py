@@ -29,7 +29,7 @@ class Tool(models.Model):
     likes = models.ManyToManyField(User, related_name='tool_likes', blank=True)
     approved = models.BooleanField(default=False)
 
-    class Meta: 
+    class Meta:
         ordering = ['-date_added']
 
     def __str__(self):
