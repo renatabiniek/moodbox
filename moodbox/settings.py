@@ -67,7 +67,7 @@ LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 '''Specify Bootstrap for formatting the forms'''
-CRISPY_TEMPLATE_PACK = 'bootsrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

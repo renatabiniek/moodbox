@@ -3,7 +3,7 @@
 {% block content %}
 
 {% load static %}
-{% load cripsy_forms_tags %}
+{% load crispy_forms_tags %}
 
 <div class="container">
     <!--Header for the tool card-->
@@ -81,6 +81,19 @@
                 </div>
                 <div class="col-md-4 card">
                     <div class="card-body">
+                        <!--Comment box only appear if user is logged in-->
+                        {% if user.is_authenticated %}
+                        <h4>Say something...</h4>
+                        <p>Posting as: {{ user.username }}</p>
+
+                        <form action="POST">
+                            <!--Rendering the form using the crispy filter for formatting -->
+                            {{ comment_form | crispy }}
+                            <!--Token to protect the form from attackers-->
+                            {% csrf_token %}
+                            <button type="submit" class="btn-card">Add</button>
+                        </form>
+                        {% endif %}
             
                     </div>
                 </div>
