@@ -70,8 +70,8 @@ class ToolDetail(View):
             },
         )
 
-'''Renders a home page template'''
 
+'''Renders a home page template'''
 
 class HomePageView(generic.TemplateView):
     template_name = 'index.html'
