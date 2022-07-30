@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Tool
+from .forms import CommentForm
 
 
 class ToolList(generic.ListView):
@@ -28,7 +29,8 @@ class ToolDetail(View):
             {
                 'tool': tool,
                 'comments': comments,
-                'liked': liked
+                'liked': liked,
+                'comment_form': CommentForm()
             },
         )
 
