@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Tool
 from .forms import CommentForm
 
@@ -69,6 +70,21 @@ class ToolDetail(View):
                 'comment_form': CommentForm()
             },
         )
+
+'''Tool likes'''
+
+class ToolLike(View):
+
+    def post(self, request, slug):
+        tool = get_object_or_404(Tool, slug=slug)
+
+        if tool.liked.filter(id=request.user.id).exists():
+            tool.likes.remove(request.user)
+        else:
+            tool.likes.add(request.user)
+        
+        '''Reload tool detail template to see the likes status'''
+        return HttpResponseRedirect(reverse('tool_detail', args=[slug]))
 
 
 '''Renders a home page template'''
