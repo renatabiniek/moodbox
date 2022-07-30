@@ -79,26 +79,27 @@
                     {% endfor %}
                     {% endif %}
                 </div>
-                <div class="col-md-4 card">
-                    <div class="card-body">
-                        <!--Comment box only appear if user is logged in-->
-                        {% if user.is_authenticated %}
-                        <h4>Say something...</h4>
-                        <p>Posting as: {{ user.username }}</p>
+            </div>
+            <div class="col-md-4 card card-detail mt-4 mb-4">
+                <div class="card-body">
+                    <!--Comment box only appear if user is logged in-->
+                    {% if user.is_authenticated %}
+                    <h4>Say something...</h4>
+                    <p>Posting as: {{ user.username }}</p>
 
-                        <form action="POST">
-                            <!--Rendering the form using the crispy filter for formatting -->
-                            {{ comment_form | crispy }}
-                            <!--Token to protect the form from attackers-->
-                            {% csrf_token %}
-                            <button type="submit" class="btn-card">Add</button>
-                        </form>
-                        {% endif %}
-            
-                    </div>
+                    <form action="POST">
+                        <!--Rendering the form using the crispy filter for formatting -->
+                        {{ comment_form | crispy }}
+                        <!--Token to protect the form from attackers-->
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-card">Add</button>
+                    </form>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     {%endblock%}

@@ -30,7 +30,7 @@ class ToolDetail(View):
                 'tool': tool,
                 'comments': comments,
                 'liked': liked,
-                'comment_form': CommentForm(),
+                'comment_form': CommentForm()
             },
         )
 

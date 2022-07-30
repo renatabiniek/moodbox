@@ -103,6 +103,7 @@ footer i {
     border-radius: 0.5rem;
     color: whitesmoke;
     font-weight: bold; 
+    border-color: #D69722;
 }
 
 .btn-card:hover, .btn-card:focus, .btn-card:active {
