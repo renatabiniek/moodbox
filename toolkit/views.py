@@ -14,7 +14,6 @@ class ToolList(generic.ListView):
 '''Displays detailed view of individual tool card'''
 class ToolDetail(View):
    
-   
     def get(self, request, slug, *args, **kwargs):
         queryset = Tool.objects.filter(published_status=1)
         tool = get_object_or_404(queryset, slug=slug)

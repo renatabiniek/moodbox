@@ -82,18 +82,26 @@
             </div>
             <div class="col-md-4 card card-detail mt-4 mb-4">
                 <div class="card-body">
+                    <!--Message appear once comment is submitted-->
+                    {% if commented %}
+                    <div class="alert alert-success" role="alert">
+                        Thank you! Your comment is awaiting approval
+                    </div>
+                    {% else %}
+
                     <!--Comment box only appear if user is logged in-->
                     {% if user.is_authenticated %}
                     <h4>Say something...</h4>
                     <p>Posting as: {{ user.username }}</p>
 
-                    <form action="POST">
+                    <form method="POST">
                         <!--Rendering the form using the crispy filter for formatting -->
                         {{ comment_form | crispy }}
                         <!--Token to protect the form from attackers-->
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-card">Add</button>
+                        <button type="submit" value="Submit" class="btn btn-card">Add</button>
                     </form>
+                    {% endif %}
                     {% endif %}
 
                 </div>
