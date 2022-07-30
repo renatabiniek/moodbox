@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
     'toolkit',
 ]
 
@@ -64,6 +65,9 @@ LOGOUT_REDIRECT_URL = '/'
 '''Prevents 500 errors during login and registration'''
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+'''Specify Bootstrap for formatting the forms'''
+CRISPY_TEMPLATE_PACK = 'bootsrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
