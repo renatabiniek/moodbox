@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Tool
 from django.contrib.auth.models import User
-from .forms import CommentForm
+from .forms import CommentForm, ToolForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
