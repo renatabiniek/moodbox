@@ -108,6 +108,8 @@ footer i {
 
 .btn-card:hover, .btn-card:focus, .btn-card:active {
     font-size: 1.1rem;
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 .keywords {
@@ -163,4 +165,24 @@ footer i {
 .btn-like {
     border: none;
     background-color: initial;
+}
+
+/*------------------------------------ My tools view*/
+
+.btn-edit {
+    background-color: #A2AEA0;
+    border-color: #A2AEA0;
+}
+
+.btn-delete {
+    background-color: #9F4144;
+    border-color: #9F4144;
+}
+
+.btn-create {
+    font-size: 1.3rem;
+}
+
+.btn-create:hover, .btn-create:focus, .btn-create:active {
+    font-size: 1.4rem;
 }

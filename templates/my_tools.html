@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-12 mt-3">
-            <a href="">Add a new tool</a>
+            <a href="" class="btn-card btn-create px-2 py-1" role="button">+ Add a new tool</a>
         </div>
     </div>
 </div>
@@ -21,15 +21,15 @@
                     <div class="card mb-4 text-center">
                         <div class="card-body">
                             {% if tool.published_status == 1 %}
-                            <p>Published</p>
+                            <p class="text-success">Published</p>
                             <h3 class="card-title">{{ tool.tool_name }}</h3>
-                            <a href="{% url 'tool_detail' tool.slug %}">Edit</a>
-                            <a href="{% url 'tool_detail' tool.slug %}">Delete</a>
+                            <a href="{% url 'tool_detail' tool.slug %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a>
+                            <a href="{% url 'tool_detail' tool.slug %}" class="btn-card btn-delete px-2 py-1" role="button">Delete</a>
                             {% else %}
-                            <p>Awaiting approval</p>
+                            <p class="text-warning">Awaiting approval</p>
                             <h3 class="card-title">{{ tool.tool_name }}</h3>
-                            <a href="{% url 'tool_detail' tool.slug %}">Edit</a>
-                            <a href="{% url 'tool_detail' tool.slug %}">Delete</a>
+                            <a href="{% url 'tool_detail' tool.slug %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a>
+                            <a href="{% url 'tool_detail' tool.slug %}" class="btn-card btn-delete px-2 py-1" role="button">Delete</a>
                             {% endif %}
                         </div>
                         <div class="card-admin py-2 mt-2">
