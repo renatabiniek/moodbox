@@ -136,7 +136,7 @@ footer i {
     font-style: italic;
 }
 
-.bi-suit-heart {
+.bi-suit-heart, .bi-suit-heart-fill {
     color: #9F4144;
 }
 
@@ -158,4 +158,9 @@ footer i {
 .msg-special {
     font-weight: bolder;
     color:  #A2AEA0;
+}
+
+.btn-like {
+    border: none;
+    background-color: initial;
 }

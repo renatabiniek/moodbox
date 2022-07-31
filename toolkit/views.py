@@ -78,7 +78,7 @@ class ToolLike(View):
     def post(self, request, slug):
         tool = get_object_or_404(Tool, slug=slug)
 
-        if tool.liked.filter(id=request.user.id).exists():
+        if tool.likes.filter(id=request.user.id).exists():
             tool.likes.remove(request.user)
         else:
             tool.likes.add(request.user)

@@ -45,7 +45,24 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-1">
+                            <!--If user is authenticated, a button to like/unlike is shown-->
+                            {% if user.is_authenticated %}
+                            <form class="d-line" action="{% url 'tool_likes' tool.slug %}" method="POST">
+                                {% csrf_token %}
+                                <!--If post is liked, display solid heart icon linked to a submit button-->
+                                {% if liked %}
+                                <button type="submit" name="tool_id" value="{{ tool.slug }}" class="btn-like">
+                                    <strong><i class="bi bi-suit-heart-fill"></i> {{ tool.number_of_likes }}</strong></button>
+                                
+                                {% else %}
+                                <button type="submit" name="tool_id" value="{{ tool.slug }}" class="btn-like">
+                                    <strong><i class="bi bi-suit-heart"></i> {{ tool.number_of_likes }}</strong></button>
+                                {% endif %}
+                            </form>
+                            {% else %}
                             <strong><i class="bi bi-suit-heart"></i> {{ tool.number_of_likes }}</strong>
+                            {% endif %}
+                 
                         </div>
                         <div class="col-1">
                             {% with comments.count as total_comments %}
