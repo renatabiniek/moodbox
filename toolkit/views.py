@@ -95,7 +95,7 @@ class ToolLike(View):
 class HomePageView(generic.TemplateView):
     template_name = 'index.html'
 
-'''Renders a tools added by the logged in user'''
+'''Renders tools added by the logged in user'''
 class MyToolsView(LoginRequiredMixin, generic.ListView):
     template_name = 'my_tools.html'
     paginate_by = 6
