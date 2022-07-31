@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Tool
+from django.contrib.auth.models import User
 from .forms import CommentForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class ToolList(generic.ListView):
@@ -13,8 +15,9 @@ class ToolList(generic.ListView):
 
 
 '''Displays detailed view of individual tool card'''
+
+
 class ToolDetail(View):
-   
     def get(self, request, slug, *args, **kwargs):
         queryset = Tool.objects.filter(published_status=1)
         tool = get_object_or_404(queryset, slug=slug)
@@ -34,7 +37,6 @@ class ToolDetail(View):
                 'comment_form': CommentForm()
             },
         )
-
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Tool.objects.filter(published_status=1)
@@ -73,6 +75,7 @@ class ToolDetail(View):
 
 '''Tool likes'''
 
+
 class ToolLike(View):
 
     def post(self, request, slug):
@@ -92,5 +95,11 @@ class ToolLike(View):
 class HomePageView(generic.TemplateView):
     template_name = 'index.html'
 
-class MyToolsView(generic.TemplateView):
-    template_name = 'add_tools.html'
+'''Renders a tools added by the logged in user'''
+class MyToolsView(LoginRequiredMixin, generic.ListView):
+    template_name = 'my_tools.html'
+    paginate_by = 6
+    
+    def get_queryset(self):
+        return Tool.objects.filter(author_name=self.request.user)
+

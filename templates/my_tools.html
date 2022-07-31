@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12 mt-3">
+            <h3>My tools:</h3>
+            <p>You haven't created any tools yet...</p>
+        </div>
+
+        <div class="col-12 mt-3">
+            <a href="">Add a new tool</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row mt-3">
+        <!-- Tools lists displayed as cards-->
+        <div class="col-12 mt-3">
+            <div class="row">
+                {% for tool in tool_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4 text-center">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ tool.tool_name }}</h3>
+                            <a href="{% url 'tool_detail' tool.slug %}">Edit</a>
+                            <a href="{% url 'tool_detail' tool.slug %}">Delete</a>
+                        </div>
+                        <div class="card-admin py-2 mt-2">
+                            <p class="card-text mb-0">Posted by: <span class="author">{{ tool.author_name }}</span></p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!--Pagination added by Django once 6 items displayed on page-->
+    {% if is_paginated %}
+    <nav class="mt-3" aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{%endblock%}
