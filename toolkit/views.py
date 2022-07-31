@@ -49,7 +49,10 @@ class ToolDetail(View):
         '''Get the data posted from the form and assign to variable'''
         comment_form = CommentForm(data=request.POST)
 
-        '''If all fields completed, forms is valid and a comment had been left to be processed'''
+        '''
+        If all fields completed, forms is valid and 
+        a comment had been left to be processed
+        '''
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
@@ -73,6 +76,7 @@ class ToolDetail(View):
             },
         )
 
+
 '''Tool likes'''
 
 
@@ -84,22 +88,25 @@ class ToolLike(View):
         if tool.likes.filter(id=request.user.id).exists():
             tool.likes.remove(request.user)
         else:
-            tool.likes.add(request.user)
-        
+            tool.likes.add(request.user)      
         '''Reload tool detail template to see the likes status'''
         return HttpResponseRedirect(reverse('tool_detail', args=[slug]))
 
 
 '''Renders a home page template'''
 
+
 class HomePageView(generic.TemplateView):
     template_name = 'index.html'
 
+
 '''Renders tools added by the logged in user'''
+
+
 class MyToolsView(LoginRequiredMixin, generic.ListView):
     template_name = 'my_tools.html'
     paginate_by = 6
-    
+   
     def get_queryset(self):
         return Tool.objects.filter(author_name=self.request.user)
 

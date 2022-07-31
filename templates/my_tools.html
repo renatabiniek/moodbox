@@ -20,9 +20,17 @@
                 <div class="col-md-4">
                     <div class="card mb-4 text-center">
                         <div class="card-body">
+                            {% if tool.published_status == 1 %}
+                            <p>Published</p>
                             <h3 class="card-title">{{ tool.tool_name }}</h3>
                             <a href="{% url 'tool_detail' tool.slug %}">Edit</a>
                             <a href="{% url 'tool_detail' tool.slug %}">Delete</a>
+                            {% else %}
+                            <p>Awaiting approval</p>
+                            <h3 class="card-title">{{ tool.tool_name }}</h3>
+                            <a href="{% url 'tool_detail' tool.slug %}">Edit</a>
+                            <a href="{% url 'tool_detail' tool.slug %}">Delete</a>
+                            {% endif %}
                         </div>
                         <div class="card-admin py-2 mt-2">
                             <p class="card-text mb-0">Posted by: <span class="author">{{ tool.author_name }}</span></p>
