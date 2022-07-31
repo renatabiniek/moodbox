@@ -91,3 +91,6 @@ class ToolLike(View):
 
 class HomePageView(generic.TemplateView):
     template_name = 'index.html'
+
+class MyToolsView(generic.TemplateView):
+    template_name = 'add_tools.html'
