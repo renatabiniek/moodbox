@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Tool
-from django.contrib.auth.models import User
-from .forms import CommentForm, ToolForm
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Tool
+from .forms import CommentForm, ToolForm
+
 
 
 class ToolList(generic.ListView):
@@ -122,3 +123,21 @@ class AddTool(LoginRequiredMixin, View):
             'add_tool.html', context
         )
     
+    def post(self, request):
+        '''Get the data posted from the form and assign to variable'''
+        tool_form = ToolForm(request.POST, request.FILES)
+
+        if tool_form.is_valid():
+            tool = tool_form.save(commit=False)
+            tool_form.instance.author_name = request.user
+            tool.save()
+            messages.success(request, 'Your post has been submitted!')
+            return redirect('mytools')
+        
+        else:
+            messages.error(request, 'Check the form details and try again.')
+            tool_form = ToolForm()
+        
+        return render(
+            request, 'add_tool.html', {'tool_form': tool_form}
+            )

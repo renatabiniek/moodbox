@@ -8,12 +8,14 @@
 
 <div class="container mt-3 mb-3">
     <h2>Add a new tool</h2>
+    {% if user.is_authenticated %}
     <p><strong>Publishing as:</strong> {{ user.username }} </p>
     <br/>
     <form action="{% url 'addtool' %}" method="POST">
-        {{ tool_form | crispy }}
         {% csrf_token %}
+        {{ tool_form | crispy }}
+        <button type="submit" value="Submit" class="btn-lg btn-card btn-create my-3">Submit</button>
     </form>
-    <button type="submit" class="btn-lg btn-card btn-create my-3">Submit</button>
+    {% endif %}
 </div>
 {%endblock%}

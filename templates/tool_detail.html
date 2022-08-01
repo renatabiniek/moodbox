@@ -113,10 +113,10 @@
                     <p>Posting as: {{ user.username }}</p>
 
                     <form method="POST">
-                        <!--Rendering the form using the crispy filter for formatting -->
-                        {{ comment_form | crispy }}
                         <!--Token to protect the form from attackers-->
                         {% csrf_token %}
+                        <!--Rendering the form using the crispy filter for formatting -->
+                        {{ comment_form | crispy }}
                         <button type="submit" value="Submit" class="btn btn-card">Add</button>
                     </form>
                     {% endif %}

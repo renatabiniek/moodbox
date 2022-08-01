@@ -7,5 +7,5 @@ urlpatterns = [
     path('<slug:slug>/', views.ToolDetail.as_view(), name='tool_detail'),
     path('like/<slug:slug>/', views.ToolLike.as_view(), name='tool_likes'),
     path('toolkit/mytools/', views.MyToolsView.as_view(), name='mytools'),
-    path('addtool', views.AddTool.as_view(), name='addtool'),
+    path('mytools/addtool/', views.AddTool.as_view(), name='addtool'),
 ]
