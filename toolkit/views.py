@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils.text import slugify
 from .models import Tool
 from .forms import CommentForm, ToolForm
 
@@ -130,6 +131,7 @@ class AddTool(LoginRequiredMixin, View):
         if tool_form.is_valid():
             tool = tool_form.save(commit=False)
             tool_form.instance.author_name = request.user
+            tool.slug = slugify(tool.tool_name)
             tool.save()
             messages.success(request, 'Your post has been submitted!')
             return redirect('mytools')
@@ -141,3 +143,4 @@ class AddTool(LoginRequiredMixin, View):
         return render(
             request, 'add_tool.html', {'tool_form': tool_form}
             )
+
