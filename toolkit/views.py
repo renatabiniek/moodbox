@@ -110,3 +110,15 @@ class MyToolsView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         return Tool.objects.filter(author_name=self.request.user)
 
+
+class AddTool(LoginRequiredMixin, View):
+
+    def get(self, request):
+        tool_form = ToolForm()
+        context = {'tool_form': tool_form }
+
+        return render(
+            request,
+            'add_tool.html', context
+        )
+    
