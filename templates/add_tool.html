@@ -8,14 +8,28 @@
 
 <div class="container mt-3 mb-3">
     <h2>Add a new tool</h2>
+    
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+
     {% if user.is_authenticated %}
     <p><strong>Publishing as:</strong> {{ user.username }} </p>
     <br/>
     <form action="{% url 'addtool' %}" method="POST">
+
         {% csrf_token %}
         {{ tool_form | crispy }}
+
         <button type="submit" value="Submit" class="btn-lg btn-card btn-create my-3">Submit</button>
     </form>
+
     {% endif %}
+
 </div>
+
 {%endblock%}

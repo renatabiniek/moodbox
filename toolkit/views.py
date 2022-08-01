@@ -132,12 +132,11 @@ class AddTool(LoginRequiredMixin, View):
             tool = tool_form.save(commit=False)
             tool_form.instance.author_name = request.user
             tool.slug = slugify(tool.tool_name)
-            tool.save()
             messages.success(request, 'Your post has been submitted!')
+            tool.save()
             return redirect('mytools')
         
         else:
-            messages.error(request, 'Check the form details and try again.')
             tool_form = ToolForm()
         
         return render(
