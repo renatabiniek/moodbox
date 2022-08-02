@@ -276,8 +276,20 @@ I tested the program considering the user stories from the UX section as well.
   This was preventing correct migrations. 
   ![Numeric field overflow image](docs/bugs/numeric_field_overflow.png)
 
-  Didn't work: Tried increasing the max digits and decimal places but this resulted with the same erorr.
-  Worked: It seems that there was non-conforming data in existing posts and as all of them were dummy data, the easiest solution to apply the migrations was to delete the posts and try again. This allowed the migrations to run succssfuly.
+  **Didn't work:** Tried increasing the max digits and decimal places but this resulted with the same erorr.
+  **Worked:** It seems that there was non-conforming data in existing posts and as all of them were dummy data, the easiest solution to apply the migrations was to delete the posts and try again. This allowed the migrations to run succssfuly.
+
+* **Migrations to Heroku**
+  
+  After making a change to a field in Tool model, I was getting a warning that django_summernote have changes that are not yet reflected in a migrations.
+  After making and running migrations, 
+  ![Migration error image](docs/bugs/migrations.png)
+
+  **Didn't work:** Making and re-running migrations again.
+  **Didn't work:** Resetting the database on Heroku.
+  **Didn't work:** Deleting migration files.
+  **Worked**: Changing DATABASES settings to conditionals.
+
 
 ### Credits
 
