@@ -137,6 +137,7 @@ Due to time constraints, I was unable to implement all planned features. In the 
 * [Django web framework](https://www.djangoproject.com/) - used to build the project
 * [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - for responsiveness, layout, modals, and general frontend style
 * [Cloudinary](https://cloudinary.com/) - to host media files 
+* [Summernote](https://summernote.org/) - to add a styled editor to the forms
 * [django-allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - for user registration and authentication
 * [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) - to display and run the command line terminal in the browser
 * [dbdiagram](https://dbdiagram.io/home) - to create the database diagram model
