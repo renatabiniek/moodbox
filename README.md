@@ -219,7 +219,22 @@ I tested the program considering the user stories from the UX section as well.
 
 ### Issues and Bugs
 
-* 
+* **Navbar collapsable not expanding to show links of the menu**
+
+  The menu of the navbar was collapsing correctly when screen size got smaller but it wasn't expanding when clicked.  
+  This was a simple oversight of not adding the js plugin to my code to handle the interaction. Resolved with help of [this Stackoverflow post](https://stackoverflow.com/questions/65911507/bootstrap-navbar-collapse-not-expanding-to-show-links-of-the-menu).
+
+* **Getting 404 error after submitting a form**
+
+  I was getting a 404 error after clicking submit button on my Comments form. Thanks to [this post](https://stackoverflow.com/questions/55364668/getting-404-not-found-code-after-submitting-form), I realised I missed adding value="Submit" to the form button. This has fixed the issue.
+
+* **Getting NoReverseMatch error for newly created posts**
+  
+  This error came up When a new post is created in the front end by a logged in user. 
+  I noticed that in the admin view the slug field was blank for these posts. This meant that the tool created didn't have a forwarding url 
+  for the tool detail page to be populated. Using slugify, I coverted the tool name into a slug, and this has fixed the issue.
+
+  ![New tool slug image](docs/bugs/new_tool_slug.png)
 
 ### Credits
 
