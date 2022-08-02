@@ -123,13 +123,46 @@ Due to time constraints, I was unable to implement all planned features. In the 
 ## Technologies used
 ---
 
+### Languages 
+
+* HTML
+* CSS
+* JavaScript
+* Python (with Django framework)
+* Django templating language 
+
+
+### Frameworks, Libraries, Programmes and Tools 
+ 
+* [Django web framework](https://www.djangoproject.com/) - used to build the project
+* [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - for responsiveness, layout, modals, and general frontend style
+* [Cloudinary](https://cloudinary.com/) - to host media files 
+* [django-allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - for user registration and authentication
 * [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) - to display and run the command line terminal in the browser
-* [Lucidchart](https://www.lucidchart.com/) - to create the flowchart
-* [Heroku](https://heroku.com/) - for presenting the deployed project
-* [GitHub](https://github.com/) - for hosting the project code and version control 
-* [Gitpod](https://gitpod.io/) - to write the code and push it to GitHub
+* [dbdiagram](https://dbdiagram.io/home) - to create the database diagram model
+* [Balsamiq](https://balsamiq.com/) - to create wireframes for the site as part of the preparation work for the project
+* [Google Fonts](https://fonts.google.com/) - to import Courgette and Montserrat fonts into the HTML file which were then used throughout the site
+* [Coolors](https://coolors.co/ ) - to create cohesive colour scheme for the site
+* [Eye Dropper](https://eyedropper.org/) - to pick specific colours from images 
+* [Favicon.io](https://favicon.io/) - to create a favicon for the site
+* [Vecteezy](https://www.vecteezy.com/) - for images
+* [Pixlr](https://pixlr.com/) - to edit and resize images
+* [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - to inspect and debug the code through all stages of the development
+* [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - to inspect the site for overflow 
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse) - to audit the site for performance, accessibility, SEO and best practices
+* [Am I Responsive](http://ami.responsivedesign.is/) - to produce a preview of the site on different devices
+* [W3C HTML Validator](https://validator.w3.org/) - to validate HTML code
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - to validate CSS code
 * [PEP8 Online Validation Service](http://pep8online.com/) - to validate the code
+* [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/) - to test the contrast and readability of colours used 
+* [Heroku](https://heroku.com/) - for presenting the deployed project
+* [Heroku Postgres](https://www.heroku.com/postgres) - the database for the deployed project
+* [GitHub](https://github.com/) - for hosting the project code and version control 
+* [GitHub issues](https://github.com/) - used as Agile tools in the planning and implementation of the project
+* [Gitpod](https://gitpod.io/) - to write the code and push it to GitHub
 * [Online-Spellcheck](https://www.online-spellcheck.com/) - to spellcheck the README
+* [Word Counter](https://wordcounter.net/character-count) - to limit number of characters used for commit messages to 50, max 72 characters
+
 
 ## Deployment
 ---
