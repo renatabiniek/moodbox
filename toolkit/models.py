@@ -22,7 +22,7 @@ class Tool(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     keywords = models.CharField(max_length=100)
     method_details = models.TextField()
-    time_required = models.DecimalField(max_digits=2, decimal_places=1)
+    time_required = models.DecimalField(max_digits=5, decimal_places=2)
     related_website = models.URLField(max_length=200, blank=True)
     related_image = CloudinaryField('image', default='placeholder', blank=True)
     published_status = models.IntegerField(choices=STATUS, default=0)

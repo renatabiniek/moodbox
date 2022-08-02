@@ -270,6 +270,15 @@ I tested the program considering the user stories from the UX section as well.
 
   ![New tool slug image](docs/bugs/new_tool_slug.png)
 
+* **Numeric field overflow error**
+  
+  After trying to alter decimal field in my Tool model, I got an erorr saying that A field with precision 2, scale 2 must round to an absolute value less than 1.
+  This was preventing correct migrations. 
+  ![Numeric field overflow image](docs/bugs/numeric_field_overflow.png)
+
+  Didn't work: Tried increasing the max digits and decimal places but this resulted with the same erorr.
+  Worked: It seems that there was non-conforming data in existing posts and as all of them were dummy data, the easiest solution to apply the migrations was to delete the posts and try again. This allowed the migrations to run succssfuly.
+
 ### Credits
 
 * 
