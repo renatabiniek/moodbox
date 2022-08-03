@@ -23,13 +23,21 @@
                             {% if tool.published_status == 1 %}
                             <p class="text-success">Published</p>
                             <h3 class="card-title">{{ tool.tool_name }}</h3>
-                            <a href="{% url 'edit_tool' tool.id %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a>
-                            <a href="{% url 'delete_tool' tool.id %}" class="btn-card btn-delete px-2 py-1" role="button">Delete</a>
+                            <!-- <a href="{% url 'edit_tool' tool.id %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a> -->
+                            <button type="button" class="btn-card btn-edit"><a
+                                    href="{% url 'edit_tool' tool.id %}">Edit</a></button>
+                            <!-- <a href="{% url 'delete_tool' tool.id %}" class="btn-card btn-delete px-2 py-1" role="button">Delete</a> -->
+                            <button type="button" class="btn-card btn-delete" data-toggle="modal"
+                                data-target="#deleteModal{{ tool.id }}">Delete</button>
+
                             {% else %}
                             <p class="text-warning">Awaiting approval</p>
                             <h3 class="card-title">{{ tool.tool_name }}</h3>
-                            <a href="{% url 'edit_tool' tool.id %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a>
-                            <a href="{% url 'delete_tool' tool.id %}" class="btn-card btn-delete px-2 py-1" role="button">Delete</a>
+                            <!-- <a href="{% url 'edit_tool' tool.id %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a> -->
+                            <button type="button" class="btn-card btn-edit"><a
+                                    href="{% url 'edit_tool' tool.id %}">Edit</a></button>
+                            <button type="button" class="btn-card btn-delete" data-toggle="modal"
+                                data-target="#deleteModal{{ tool.id }}">Delete</button>
                             {% endif %}
                         </div>
                         <div class="card-admin py-2 mt-2">
@@ -41,6 +49,33 @@
             </div>
             <div class="row">
                 {% endif %}
+                <!--Delete modal-->
+                <div class="modal fade" id="deleteModal{{ tool.id }}" tabindex="-1"
+                    aria-labelledby="deleteModalLabel{ tool.id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel{{ tool.id }}">Delete tool</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete this tool?</p>
+                                <p><strong>This action cannot be undone.</strong></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <form action="{% url 'delete_tool' tool.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" value="{{ tool.id }}" name="tool_id"
+                                        class="btn btn-primary">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--If no posts published, display a message-->
                 {% empty %}
                 <div class="col-12 mt-3">
                     <h3>My tools:</h3>
@@ -50,6 +85,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!--Pagination added by Django once 6 items displayed on page-->
     {% if is_paginated %}

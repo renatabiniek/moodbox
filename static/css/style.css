@@ -174,6 +174,11 @@ footer i {
     border-color: #A2AEA0;
 }
 
+.btn-edit > a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
 .btn-delete {
     background-color: #9F4144;
     border-color: #9F4144;
@@ -186,3 +191,4 @@ footer i {
 .btn-create:hover, .btn-create:focus, .btn-create:active {
     font-size: 1.4rem;
 }
+

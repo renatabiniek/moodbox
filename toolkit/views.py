@@ -183,11 +183,25 @@ class EditTool(LoginRequiredMixin, View):
             )
 
 
-def delete_tool(request, tool_id):
-    tool = get_object_or_404(Tool, id=tool_id)
-    if request.user == tool.author_name:
-        tool.delete()
-        messages.success(request, 'Your tool has been deleted')
-        return redirect('mytools')
-    else:
-        return Http404("This page cannot be accessed")
+# def delete_tool(request, tool_id):
+#     tool = get_object_or_404(Tool, id=tool_id)
+#     if request.user == tool.author_name:
+#         tool.delete()
+#         messages.success(request, 'Your tool has been deleted')
+#         return redirect('mytools')
+#     else:
+#         return Http404("This page cannot be accessed")
+
+class DeleteTool(LoginRequiredMixin, View):
+
+    def get(self, request, tool_id):
+        raise Http404('This page doesnt exist')
+    
+    def post(self, request, tool_id):
+        tool = get_object_or_404(Tool, id=tool_id)
+        if request.user == tool.author_name:
+            tool.delete()
+            messages.success(request, 'Your tool has been deleted')
+            return redirect('mytools')
+        else:
+            raise Http404('You cannot delete this')
