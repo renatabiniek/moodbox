@@ -29,6 +29,19 @@
             </div>
             <div class="row">
                 {% endif %}
+                {% empty %}
+                <div class="col-12 mt-3">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="display-6">Oh, looks like there's nothing here yet...</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mt-3">
+                            <a href="{% url 'addtool' %}" class="btn-lg btn-card btn-create">+ Add the first tool</a>
+                        </div>
+                    </div> 
+                </div>
                 {% endfor %}
             </div>
         </div>
@@ -47,7 +60,9 @@
             {% endif %}
         </ul>
     </nav>
+
     {% endif %}
+
 </div>
      
 
