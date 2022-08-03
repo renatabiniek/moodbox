@@ -281,14 +281,18 @@ I tested the program considering the user stories from the UX section as well.
 
 * **Migrations to Heroku**
   
-  After making a change to a field in Tool model, I was getting a warning that django_summernote have changes that are not yet reflected in a migrations.
-  After making and running migrations, 
-  ![Migration error image](docs/bugs/migrations.png)
+  After making a change to a field in Tool model, I was getting a warning that django_summernote have changes that are not yet reflected in a migrations, even though summernote was not the modified model. After exploring several options, including resetting the data base on Heroku, removin and making the migrations again, the warning still appears in the terminal when attempting a migration to Heroku. This doesn't seem to affect the deployed app though so I left it unresolved upon a recommendation from the Tutor Support. 
+  
+  ![Migration error image](docs/bugs/migrations.png) 
 
-  **Didn't work:** Making and re-running migrations again.
-  **Didn't work:** Resetting the database on Heroku.
-  **Didn't work:** Deleting migration files.
-  **Worked**: Changing DATABASES settings to conditionals.
+  **Didn't work:** Making and re-running migrations again.  
+  **Didn't work:** Resetting the database on Heroku.  
+  **Didn't work:** Deleting migration files.  
+  **Didn't work**: Changing DATABASES settings to conditionals.
+  
+  **Not resolved**:
+
+  Your database settings will connect to the heroku postgres database if you have a DATABASE_URL in your env.py, so the last command verified that all local migrations have been applied to the heroku database. The summernote error might be caused by a different version of summernote being installed on heroku. Although you have the version number specified so I'm not sure why that would happen. I'd recommend testing out the deployed site by adding a few posts and seeing if you come into any more errors.
 
 
 ### Credits
