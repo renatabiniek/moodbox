@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
@@ -148,18 +148,29 @@ class EditTool(LoginRequiredMixin, View):
     '''View for editing and updating an existing tool'''
 
     def get(self, request, tool_id):
+        '''
+        Gets the tool id passed in via URL, 
+        checks if the user is the author of the tool,
+        returns tool form with prepopulated original data,
+        or raises HTTP404 error is the user is not the author'''
         tool = get_object_or_404(Tool, id=tool_id)
 
-        return render(
-            request,
-            'edit_tool.html', 
-            {
-                'tool_form': ToolForm(instance=tool)
-            }
-        )
+        if request.user == tool.author_name:
+            
+            return render(
+                request,
+                'edit_tool.html',
+                {
+                    'tool_form': ToolForm(instance=tool)
+                }
+            )
+        else:
+            raise Http404("Only author can edit this tool")
+
+
     
     def post(self, request, tool_id):
-        '''Get the tool_id passed in via URL, submit form data and redirect'''
+        '''Gets the tool id passed in via URL, submit form data and redirect'''
         tool = get_object_or_404(Tool, id=tool_id)
         tool_form = ToolForm(data=request.POST, instance=tool)
 
