@@ -16,7 +16,7 @@ class ToolList(generic.ListView):
 
 
 class ToolDetail(View):
-    
+  
     def get(self, request, slug, *args, **kwargs):
         '''Displays detailed view of individual tool card'''
         queryset = Tool.objects.filter(published_status=1)
@@ -77,11 +77,8 @@ class ToolDetail(View):
         )
 
 
-'''Tool likes'''
-
-
 class ToolLike(View):
-
+    '''Tool likes'''
     def post(self, request, slug):
         tool = get_object_or_404(Tool, slug=slug)
 
@@ -93,17 +90,13 @@ class ToolLike(View):
         return HttpResponseRedirect(reverse('tool_detail', args=[slug]))
 
 
-'''Renders a home page template'''
-
-
 class HomePageView(generic.TemplateView):
+    '''Renders a home page template'''
     template_name = 'index.html'
 
 
-'''Renders tools added by the logged in user'''
-
-
 class MyToolsView(LoginRequiredMixin, generic.ListView):
+    '''Renders tools added by the logged in user'''
     template_name = 'my_tools.html'
     paginate_by = 6
    

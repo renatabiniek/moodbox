@@ -93,11 +93,9 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 
 ### Structure:
 
-* Flowchart
+* Database Structure
 
 ![Flowchart image]()
-
-* Database Structure
 
 
 ### Design: 
@@ -297,7 +295,8 @@ I tested the program considering the user stories from the UX section as well.
 
 ### Credits
 
-* 
+* Code Institute's walkthrough tutorials *I Think Therefore I Blog* and *Hello Django* 
+  were used as an inspiration and support when creating this project. 
 
 * 
 
@@ -309,7 +308,7 @@ I tested the program considering the user stories from the UX section as well.
 
 Thank you to:
 
-* 
+* Tutor support at the Code Institute, especially Gemma Sayers for her patience and human approach.
 * 
 * 
 
