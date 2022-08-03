@@ -292,6 +292,11 @@ I tested the program considering the user stories from the UX section as well.
 
   Your database settings will connect to the heroku postgres database if you have a DATABASE_URL in your env.py, so the last command verified that all local migrations have been applied to the heroku database. The summernote error might be caused by a different version of summernote being installed on heroku. Although you have the version number specified so I'm not sure why that would happen. I'd recommend testing out the deployed site by adding a few posts and seeing if you come into any more errors.
 
+* **Getting NoReverseMatch error for delete modal**
+
+ ![Delete modal error image](docs/bugs/delete_modal.png)
+
+ I was getting a NoReverseMatch error after creating a modal warning about deleting a tool. I investigated urls, views and html for typos and incorrect arguments being passed in, but the issue turned out to be wrong positioning of the modal in the for loop. I moved the modal from outside of the loop, and it started to work as expected.
 
 ### Credits
 
