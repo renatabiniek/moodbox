@@ -181,3 +181,13 @@ class EditTool(LoginRequiredMixin, View):
             return render(
                 request, 'edit_tool.html', {'tool_form': tool_form}
             )
+
+
+def delete_tool(request, tool_id):
+    tool = get_object_or_404(Tool, id=tool_id)
+    if request.user == tool.author_name:
+        tool.delete()
+        messages.success(request, 'Your tool has been deleted')
+        return redirect('mytools')
+    else:
+        return Http404("This page cannot be accessed")

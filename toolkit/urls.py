@@ -9,4 +9,5 @@ urlpatterns = [
     path('toolkit/mytools/', views.MyToolsView.as_view(), name='mytools'),
     path('mytools/addtool/', views.AddTool.as_view(), name='addtool'),
     path('edit/<tool_id>/', views.EditTool.as_view(), name='edit_tool'),
+    path('delete/<tool_id>/', views.delete_tool, name='delete_tool'),
 ]
