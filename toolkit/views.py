@@ -143,3 +143,33 @@ class AddTool(LoginRequiredMixin, View):
             request, 'add_tool.html', {'tool_form': tool_form}
             )
 
+
+class EditTool(LoginRequiredMixin, View):
+    '''View for editing and updating an existing tool'''
+
+    def get(self, request, tool_id):
+        tool = get_object_or_404(Tool, id=tool_id)
+
+        return render(
+            request,
+            'edit_tool.html', 
+            {
+                'tool_form': ToolForm(instance=tool)
+            }
+        )
+    
+    def post(self, request, tool_id):
+        '''Get the tool_id passed in via URL, submit form data and redirect'''
+        tool = get_object_or_404(Tool, id=tool_id)
+        tool_form = ToolForm(data=request.POST, instance=tool)
+
+        if tool_form.is_valid():
+            tool.save()            
+            messages.success(request, 'Your edited post has been submitted!')
+            
+            return redirect('mytools')
+        
+        else:
+            return render(
+            request, 'edit_tool.html', {'tool_form': tool_form}
+            )
