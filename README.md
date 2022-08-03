@@ -35,7 +35,7 @@
 
 # MoodBox
 
-[Live program](https://mood-box.herokuapp.com/)
+[Live site](https://mood-box.herokuapp.com/)
 
 ![MoodBox image](#)
 

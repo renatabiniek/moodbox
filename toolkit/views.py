@@ -8,7 +8,6 @@ from .models import Tool
 from .forms import CommentForm, ToolForm
 
 
-
 class ToolList(generic.ListView):
     model = Tool
     queryset = Tool.objects.filter(published_status=1).order_by('-date_added')
@@ -16,11 +15,10 @@ class ToolList(generic.ListView):
     paginate_by = 6
 
 
-'''Displays detailed view of individual tool card'''
-
-
 class ToolDetail(View):
+    
     def get(self, request, slug, *args, **kwargs):
+        '''Displays detailed view of individual tool card'''
         queryset = Tool.objects.filter(published_status=1)
         tool = get_object_or_404(queryset, slug=slug)
         comments = tool.comments.filter(approved=True).order_by('date_added')
@@ -117,13 +115,13 @@ class AddTool(LoginRequiredMixin, View):
 
     def get(self, request):
         tool_form = ToolForm()
-        context = {'tool_form': tool_form }
+        context = {'tool_form': tool_form}
 
         return render(
             request,
             'add_tool.html', context
         )
-    
+   
     def post(self, request):
         '''Get the data posted from the form and assign to variable'''
         tool_form = ToolForm(request.POST, request.FILES)
@@ -166,8 +164,6 @@ class EditTool(LoginRequiredMixin, View):
             )
         else:
             raise Http404("Only author can edit this tool")
-
-
     
     def post(self, request, tool_id):
         '''Gets the tool id passed in via URL, submit form data and redirect'''
@@ -175,12 +171,20 @@ class EditTool(LoginRequiredMixin, View):
         tool_form = ToolForm(data=request.POST, instance=tool)
 
         if tool_form.is_valid():
-            tool.save()            
+            '''
+            After editing a tool, 
+            tool needs to be approved again 
+            before it gets published
+            '''
+            tool = tool_form.save(commit=False)
+            if tool.published_status == 1:
+                tool.published_status = 0
+            tool.save()    
             messages.success(request, 'Your edited post has been submitted!')
             
             return redirect('mytools')
         
         else:
             return render(
-            request, 'edit_tool.html', {'tool_form': tool_form}
+                request, 'edit_tool.html', {'tool_form': tool_form}
             )
