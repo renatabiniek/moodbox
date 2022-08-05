@@ -294,9 +294,9 @@ I tested the program considering the user stories from the UX section as well.
 
 * **Getting NoReverseMatch error for delete modal**
 
- ![Delete modal error image](docs/bugs/delete_modal.png)
-
  I was getting a NoReverseMatch error after creating a modal warning about deleting a tool. I investigated urls, views and html for typos and incorrect arguments being passed in, but the issue turned out to be wrong positioning of the modal in the for loop. I moved the modal from outside of the loop, and it started to work as expected.
+
+![Delete modal error image](docs/bugs/delete_modal.png)
 
 ### Credits
 

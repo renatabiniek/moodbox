@@ -6,6 +6,8 @@
 
 {% load crispy_forms_tags %}
 
+{% load cloudinary %}
+
 <div class="container mt-3 mb-3">
     <h2>Add a new tool</h2>
     
@@ -20,7 +22,8 @@
     {% if user.is_authenticated %}
     <p><strong>Publishing as:</strong> {{ user.username }} </p>
     <br/>
-    <form action="{% url 'addtool' %}" method="POST">
+    <p><em>Fields marked with * must be completed.</em></p>
+    <form action="{% url 'addtool' %}" method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
         {{ tool_form | crispy }}

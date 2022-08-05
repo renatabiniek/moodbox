@@ -3,6 +3,7 @@ from .models import Comment, Tool
 
 
 class CommentForm (forms.ModelForm):
+    """Form to add new comment to a tool"""
     class Meta:
         model = Comment
         fields = ('content',)
@@ -30,5 +31,5 @@ class ToolForm (forms.ModelForm):
             'to try this technique out? Add estimated time '
             'in fraction of an hour.',
             'related_website': 'Add URL address to additional related resources.',
-            'related_image': 'Add any relavant image.',
+            'related_image': 'Add any relevant image.',
         }
