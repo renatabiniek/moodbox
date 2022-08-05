@@ -48,7 +48,7 @@ h1 {
     color: white;
 }
 
-.btn:hover, .btn:focus, .btn:active {
+.btn-callout:hover, .btn-callout:focus, .btn-callout:active {
     background-color: #D69722;
     font-size: 1.5rem;
     color: white;

@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
 from .models import Comment, Tool
 
 
@@ -33,3 +34,16 @@ class ToolForm (forms.ModelForm):
             'related_website': 'Add URL address to additional related resources.',
             'related_image': 'Add any relevant image.',
         }
+
+
+# def clean_file(self):
+#     '''
+#     Validates the file type on the related_image
+#     field to match the only allowed file types
+#     '''
+
+#     data = self.cleaned_data['related_image']
+#     if 'jpg' not in data:
+#         raise ValidationError("File type must be .jpg or .png. Try with a different file.")
+        
+#     return data
