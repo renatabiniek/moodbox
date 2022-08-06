@@ -17,6 +17,7 @@ class ToolForm (forms.ModelForm):
         fields = (
             'tool_name',
             'keywords',
+            'category',
             'method_details',
             'time_required',
             'related_website',
