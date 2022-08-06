@@ -24,6 +24,7 @@
 
         {% csrf_token %}
         {{ tool_form | crispy }}
+        {{ tool_form.media }}
 
         <button type="submit" value="Submit" class="btn-lg btn-card btn-create my-3">Update tool</button>
     </form>

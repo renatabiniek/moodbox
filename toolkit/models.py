@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-
+from ckeditor.fields import RichTextField
 
 """
 The walktrough tutorial I Think Therefore I Blog
@@ -15,19 +15,18 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Tool(models.Model):
-    tool_name = models.CharField(max_length=200, unique=True)
+    tool_name = models.CharField(max_length=30, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author_name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tool_items')
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     keywords = models.CharField(max_length=100)
-    method_details = models.TextField()
+    method_details = RichTextField(blank=True, null=True)
     time_required = models.DecimalField(max_digits=5, decimal_places=2)
     related_website = models.URLField(max_length=200, blank=True)
     related_image = CloudinaryField('image', default='placeholder', blank=True)
     published_status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='tool_likes', blank=True)
-    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-date_added']
