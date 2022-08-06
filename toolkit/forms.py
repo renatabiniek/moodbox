@@ -43,7 +43,14 @@ class ToolForm (forms.ModelForm):
 #     '''
 
 #     data = self.cleaned_data['related_image']
-#     if 'jpg' not in data:
-#         raise ValidationError("File type must be .jpg or .png. Try with a different file.")
-        
+#     if data:
+#         try:
+#             filename = data.name
+#             if not filename.endswith(('.jpg', '.png')):
+#                 print("error")
+#                 raise forms.ValidationError("File type must be .jpg. Try uploading another file.")
+#         except AttributeError:
+#             pass
 #     return data
+
+

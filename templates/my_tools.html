@@ -22,7 +22,7 @@
                         <div class="card-body">
                             {% if tool.published_status == 1 %}
                             <p class="text-success">Published</p>
-                            <h3 class="card-title">{{ tool.tool_name }}</h3>
+                            <h5 class="card-title">{{ tool.tool_name }}</h5>
                             <!-- <a href="{% url 'edit_tool' tool.id %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a> -->
                             <button type="button" class="btn-card btn-edit"><a
                                     href="{% url 'edit_tool' tool.id %}">Edit</a></button>
@@ -32,7 +32,7 @@
 
                             {% else %}
                             <p class="text-warning">Awaiting approval</p>
-                            <h3 class="card-title">{{ tool.tool_name }}</h3>
+                            <h5 class="card-title">{{ tool.tool_name }}</h5>
                             <!-- <a href="{% url 'edit_tool' tool.id %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a> -->
                             <button type="button" class="btn-card btn-edit"><a
                                     href="{% url 'edit_tool' tool.id %}">Edit</a></button>

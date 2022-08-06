@@ -13,7 +13,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4 text-center">
                         <div class="card-body">
-                            <h3 class="card-title">{{ tool.tool_name }}</h3>
+                            <h5 class="card-title"><strong>{{ tool.tool_name }}</strong></h5>
                             <p class="card-text keywords">{{ tool.keywords }}</p>
                             <p class="card-text">You'll need: {{ tool.time_required }} hrs</p>
                             <a href="{% url 'tool_detail' tool.slug %}" class="btn btn-card mt-3">Try it out</a>
