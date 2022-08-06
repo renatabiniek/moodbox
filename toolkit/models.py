@@ -17,6 +17,10 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Category(models.Model):
     '''Category model'''
     category_name = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=False)
+
+    class Meta:
+        ordering = ['category_name']
 
     def __str__(self):
         return self.category_name

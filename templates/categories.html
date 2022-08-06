@@ -5,6 +5,9 @@
 {% load static %}
 
 {{ category }}
+{{ tools }}
+{{ cats }}
+
 
 <div class="container">
     <h2>Categories:</h2>
@@ -12,12 +15,12 @@
         <!-- List of available categories-->
         <div class="col-12 mt-3">
             <div class="row">
-                {% for category in category_tools %}
+                {% for item in category_tools %}
                 <div class="col-md-4">
                     <div class="card mb-4 text-center">
                         <div class="card-body">
-                            <h5 class="card-title"><strong>{{ tool.category }}</strong></h5>
-                            <a href="#" class="btn btn-card mt-3">TX</a>
+                            <h5 class="card-title"><strong>{{ item }}</strong></h5>
+                            <a href="#" class="btn btn-card mt-3">Try it out</a>
                         </div>
                     </div>
                 </div>

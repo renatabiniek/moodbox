@@ -209,5 +209,7 @@ class DeleteTool(LoginRequiredMixin, View):
 
 def CategoryView(request, category):
     '''Displays list of available categories'''
-    category_tools = Tool.objects.filter(category=category)
-    return render(request, 'categories.html', {'category':category, 'category_tools':category_tools})
+    cats = Category.objects.all()
+    tools = Tool.objects.filter(published_status=1)
+    
+    return render(request, 'categories.html', {'cats':cats, 'tools': tools})
