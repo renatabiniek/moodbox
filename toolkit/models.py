@@ -13,6 +13,7 @@ to help with the code in this project.
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Category(models.Model):
     '''Category model'''
     category_name = models.CharField(max_length=50, unique=True)

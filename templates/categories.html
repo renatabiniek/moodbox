@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+{{ category }}
+
+<div class="container">
+    <h2>Categories:</h2>
+    <div class="row mt-3">
+        <!-- List of available categories-->
+        <div class="col-12 mt-3">
+            <div class="row">
+                {% for category in category_tools %}
+                <div class="col-md-4">
+                    <div class="card mb-4 text-center">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>{{ tool.category }}</strong></h5>
+                            <a href="#" class="btn btn-card mt-3">TX</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% empty %}
+                <div class="col-12 mt-3">
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="display-6">Oh, looks like there's nothing here yet...</h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+     
+
+{%endblock%}

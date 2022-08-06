@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect, Http404
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
-from .models import Tool
+from .models import Tool, Category
 from .forms import CommentForm, ToolForm
 
 
@@ -205,3 +205,9 @@ class DeleteTool(LoginRequiredMixin, View):
             return redirect('mytools')
         else:
             raise Http404('You cannot delete this')
+
+
+def CategoryView(request, category):
+    '''Displays list of available categories'''
+    category_tools = Tool.objects.filter(category=category)
+    return render(request, 'categories.html', {'category':category, 'category_tools':category_tools})
