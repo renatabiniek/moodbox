@@ -13,11 +13,19 @@ to help with the code in this project.
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+class Category(models.Model):
+    '''Category model'''
+    category_name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.category_name
+
 
 class Tool(models.Model):
     tool_name = models.CharField(max_length=30, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author_name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tool_items')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='categories', null=True)
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     keywords = models.CharField(max_length=100)
@@ -51,3 +59,4 @@ class Comment(models.Model):
     
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
+
