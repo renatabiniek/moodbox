@@ -46,9 +46,9 @@ class Tool(models.Model):
 
     def __str__(self):
         return self.tool_name
-    
-    # Helper method to return number of likes on a tool item
+
     def number_of_likes(self):
+        '''Helper method to return number of likes on a tool item'''
         return self.likes.count()
 
 

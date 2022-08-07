@@ -16,7 +16,6 @@ class ToolList(generic.ListView):
 
 
 class ToolDetail(View):
-  
     def get(self, request, slug, *args, **kwargs):
         '''Displays detailed view of individual tool card'''
         queryset = Tool.objects.filter(published_status=1)
@@ -183,15 +182,6 @@ class EditTool(LoginRequiredMixin, View):
             )
 
 
-# def delete_tool(request, tool_id):
-#     tool = get_object_or_404(Tool, id=tool_id)
-#     if request.user == tool.author_name:
-#         tool.delete()
-#         messages.success(request, 'Your tool has been deleted')
-#         return redirect('mytools')
-#     else:
-#         return Http404("This page cannot be accessed")
-
 class DeleteTool(LoginRequiredMixin, View):
 
     def get(self, request, tool_id):
@@ -208,6 +198,10 @@ class DeleteTool(LoginRequiredMixin, View):
 
 
 def categoryView(request, slug):
+    '''
+    Displays tools related to the category 
+    passed through the category slug'''
+
     cats = Category.objects.get(slug=slug)
 
     context = {
@@ -216,26 +210,3 @@ def categoryView(request, slug):
 
     return render(request, 'categories.html', context)
 
-
-# class ToolDetail(View):
-  
-#     def get(self, request, slug, *args, **kwargs):
-#         '''Displays detailed view of individual tool card'''
-#         queryset = Tool.objects.filter(published_status=1)
-#         tool = get_object_or_404(queryset, slug=slug)
-#         comments = tool.comments.filter(approved=True).order_by('date_added')
-#         liked = False
-#         if tool.likes.filter(id=self.request.user.id).exists():
-#             liked = True
-        
-#         return render(
-#             request,
-#             'tool_detail.html',
-#             {
-#                 'tool': tool,
-#                 'comments': comments,
-#                 'commented': False,
-#                 'liked': liked,
-#                 'comment_form': CommentForm()
-#             },
-#         )
