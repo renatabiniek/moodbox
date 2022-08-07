@@ -207,9 +207,35 @@ class DeleteTool(LoginRequiredMixin, View):
             raise Http404('You cannot delete this')
 
 
-def CategoryView(request, category):
-    '''Displays list of available categories'''
-    cats = Category.objects.all()
-    tools = Tool.objects.filter(published_status=1)
-    
-    return render(request, 'categories.html', {'cats':cats, 'tools': tools})
+def categoryView(request, slug):
+    cats = Category.objects.get(slug=slug)
+
+    context = {
+        'cats': cats
+    }
+
+    return render(request, 'categories.html', context)
+
+
+# class ToolDetail(View):
+  
+#     def get(self, request, slug, *args, **kwargs):
+#         '''Displays detailed view of individual tool card'''
+#         queryset = Tool.objects.filter(published_status=1)
+#         tool = get_object_or_404(queryset, slug=slug)
+#         comments = tool.comments.filter(approved=True).order_by('date_added')
+#         liked = False
+#         if tool.likes.filter(id=self.request.user.id).exists():
+#             liked = True
+        
+#         return render(
+#             request,
+#             'tool_detail.html',
+#             {
+#                 'tool': tool,
+#                 'comments': comments,
+#                 'commented': False,
+#                 'liked': liked,
+#                 'comment_form': CommentForm()
+#             },
+#         )
