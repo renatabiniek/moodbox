@@ -12,12 +12,13 @@
         <div class="col-12 mt-3">
             <div class="row">
                 {% for tool in cats.categories.all %}
+                {% if tool.published_status == 1 %}
                 <div class="col-md-4">
                     <div class="card mb-4 text-center">
                         <div class="card-body">
                             <h5 class="card-title"><strong>{{ tool }}</strong></h5>
                             <p class="card-text keywords">{{ tool.keywords }}</p>
-                            <p class="card-text">{{ tool.category }}</p>
+                            <!-- <p class="card-text">{{ tool.category }}</p> -->
                             <p class="card-text">You'll need: {{ tool.time_required }} hrs</p>
                             <a href="{% url 'tool_detail' tool.slug %}" class="btn btn-card mt-3">Try it out</a>
                         </div>
@@ -33,7 +34,8 @@
             </div>
             <div class="row">
                 {% endif %}
-                {% empty %}
+                {% else %}
+                <!--If there are no published related tools, display a message -->
                 <div class="col-12 mt-3">
                     <div class="row">
                         <div class="col">
@@ -46,6 +48,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

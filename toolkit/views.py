@@ -203,10 +203,9 @@ def categoryView(request, slug):
     passed through the category slug'''
 
     cats = Category.objects.get(slug=slug)
-
+    
     context = {
         'cats': cats
-    }
-
+        }
     return render(request, 'categories.html', context)
 
