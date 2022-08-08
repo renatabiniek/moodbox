@@ -51,6 +51,20 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'tools' %}">Toolkit</a>
           </li>
+          <!--Dropdown with category pages-->
+          {% if cat_menu %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <div class="dropdown-menu">
+              {% for cat in cat_menu %}
+              <a class="dropdown-item" href="{% url 'categories' cat|slugify %}">{{ cat }}</a>
+              {% endfor %}
+            </div>
+          </li>
+          {% endif %}
+          <!--End of dropdown with category pages-->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'mytools' %}">My tools</a>
           </li>
@@ -114,14 +128,14 @@
     </div>
   </footer>
 
-<!--JavaScript to automatically dismiss alert messages after 4 secs-->
-<script>
-  setTimeout(function() {
-    let messages = document.getElementById("message");
-    let alert = new bootstrap.Alert(messages);
-    alert.close();
-  }, 4000)
-</script>
+  <!--JavaScript to automatically dismiss alert messages after 4 secs-->
+  <script>
+    setTimeout(function () {
+      let messages = document.getElementById("message");
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 4000)
+  </script>
 
 </body>
 

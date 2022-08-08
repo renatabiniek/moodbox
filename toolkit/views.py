@@ -14,6 +14,15 @@ class ToolList(generic.ListView):
     template_name = 'tools.html'
     paginate_by = 6
 
+    #Code from Codemy.com tutorial 'How to add blog category navbar links"
+
+    def get_context_data(self, *args, **kwargs):
+        '''Gets all category names'''
+        cat_menu = Category.objects.all()
+        context = super(ToolList, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
 
 class ToolDetail(View):
     def get(self, request, slug, *args, **kwargs):
@@ -24,7 +33,7 @@ class ToolDetail(View):
         liked = False
         if tool.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
+      
         return render(
             request,
             'tool_detail.html',
@@ -55,7 +64,7 @@ class ToolDetail(View):
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
-            '''Assign a tool to the form before commiting to database'''
+            '''Assign a tool to the form before committing to database'''
             comment = comment_form.save(commit=False)
             comment.tool = tool
             comment.save()
@@ -93,6 +102,16 @@ class HomePageView(generic.TemplateView):
     '''Renders a home page template'''
     template_name = 'index.html'
 
+    #Code from Codemy.com tutorial 'How to add blog category navbar links"
+
+    def get_context_data(self, *args, **kwargs):
+        '''Gets all category names'''
+        cat_menu = Category.objects.all()
+        context = super(HomePageView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
+
 
 class MyToolsView(LoginRequiredMixin, generic.ListView):
     '''Renders tools added by the logged in user'''
@@ -101,7 +120,7 @@ class MyToolsView(LoginRequiredMixin, generic.ListView):
    
     def get_queryset(self):
         return Tool.objects.filter(author_name=self.request.user)
-
+    
 
 class AddTool(LoginRequiredMixin, View):
 
@@ -208,3 +227,4 @@ def categoryView(request, slug):
         'cats': cats
         }
     return render(request, 'categories.html', context)
+    
