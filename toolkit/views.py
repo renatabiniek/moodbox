@@ -208,4 +208,3 @@ def categoryView(request, slug):
         'cats': cats
         }
     return render(request, 'categories.html', context)
-

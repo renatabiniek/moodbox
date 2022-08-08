@@ -18,7 +18,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><strong>{{ tool.tool_name }}</strong></h5>
                             <p class="card-text keywords">{{ tool.keywords }}</p>
-                            <p class="card-text text-capitalize"><a href="{% url 'categories' tool.category|slugify %}">{{ tool.category }}</a></p>
+                            <p class="card-text text-capitalize category-text"><a href="{% url 'categories' tool.category|slugify %}">{{ tool.category }}</a></p>
                             <p class="card-text">You'll need: {{ tool.time_required }} hrs</p>
                             <a href="{% url 'tool_detail' tool.slug %}" class="btn btn-card mt-3">Try it out</a>
                         </div>
@@ -53,8 +53,8 @@
 
     <div class="container">
         <div class="row mt-3">
-            <div class="col-12 mt-3">
-                <a href="{% url 'addtool' %}" class="btn-card btn-create px-2 py-1" role="button">+ Add a new tool</a>
+            <div class="col-12 mt-3 mb-5">
+                <a href="{% url 'addtool' %}" class="btn-card btn-create px-2 py-2 btn-red" role="button">+ Add a new tool</a>
             </div>
         </div>
     </div>

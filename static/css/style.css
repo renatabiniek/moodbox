@@ -114,7 +114,6 @@ footer i {
 
 .keywords {
     color: #A2AEA0;
-    text-transform: uppercase;
 }
 
 .card {
@@ -192,3 +191,11 @@ footer i {
     font-size: 1.4rem;
 }
 
+.category-text {
+    text-decoration: underline;
+}
+
+.btn-red {
+    background-color: #9F4144;
+    border-color: #9F4144;
+}
