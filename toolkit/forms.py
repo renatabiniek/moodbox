@@ -35,23 +35,21 @@ class ToolForm (forms.ModelForm):
             'related_website': 'Add URL address to additional related resources.',
             'related_image': 'Add any relevant image.',
         }
-
-
-# def clean_file(self):
-#     '''
-#     Validates the file type on the related_image
-#     field to match the only allowed file types
-#     '''
-
-#     data = self.cleaned_data['related_image']
-#     if data:
-#         try:
-#             filename = data.name
-#             if not filename.endswith(('.jpg', '.png')):
-#                 print("error")
-#                 raise forms.ValidationError("File type must be .jpg. Try uploading another file.")
-#         except AttributeError:
-#             pass
-#     return data
+        
+        # def clean_image(self):
+        #     '''
+        #     Validates the file type on the related_image
+        #     field to match the only allowed file types
+        #     '''
+        #     data = self.cleaned_data['related_image']
+        #     if data:
+        #         try:
+        #             filename = data.name
+        #             if not filename.endswith(('.jpg', '.png')):
+        #                 print("error")
+        #                 raise forms.ValidationError("File type must be .jpg. Try uploading another file.")
+        #         except AttributeError:
+        #             pass
+        #         return data
 
 

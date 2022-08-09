@@ -30,6 +30,7 @@
 
         {% csrf_token %}
         {{ tool_form | crispy }}
+        <!--Adds rich text editor to the form-->
         {{ tool_form.media }}
 
         <button type="submit" value="Submit" class="btn-lg btn-card btn-create my-3">Submit</button>

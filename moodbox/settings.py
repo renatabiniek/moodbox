@@ -114,6 +114,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'moodbox.wsgi.application'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ],
+        'width': 'auto',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
