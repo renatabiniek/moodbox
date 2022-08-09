@@ -1,5 +1,7 @@
 {% load static %}
 
+{% load account %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,6 +83,13 @@
           {% endif %}
         </ul>
       </div>
+       <!--If user is authenticated display username and icon, using django-allauth Account Tags-->
+      {% if user.is_authenticated %}
+      <div class="logged-in d-none d-md-block">
+        <i class="bi bi-person-circle" role="img" aria-label="Username logged in"></i>
+        <span class="pl-1">{% user_display user %}</span>
+      </div>
+      {% endif %}
     </div>
   </nav>
 

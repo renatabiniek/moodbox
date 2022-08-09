@@ -36,6 +36,11 @@ a {
    font-size: 2rem;
 }
 
+.logged-in {
+    font-size: larger;
+    font-weight: bolder;
+}
+
 h1 {
     font-weight: 600;
     font-size: 3rem;
