@@ -81,15 +81,12 @@
                 <!--If no posts published, display a message-->
                 {% empty %}
                 <div class="col-12 mt-3">
-                    <h3>My tools:</h3>
                     <p>You haven't created any tools yet...</p>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-
-
 
     <!--Pagination added by Django once 6 items displayed on page-->
     {% if is_paginated %}
