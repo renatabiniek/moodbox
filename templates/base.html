@@ -29,7 +29,8 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <!-- favicon -->
   <link rel="icon" href="{% static 'images/favicon.ico' %}">
-  <title>MoodBox</title>
+  <!--Page title changes dynamically-->
+  <title>{% block title %}MoodBox{% endblock %}</title>
 </head>
 
 <body class="d-flex flex-column">
@@ -48,12 +49,12 @@
         <ul class="navbar-nav mr-auto">
           <!-- Higlight active link in navbar, code from https://stackoverflow.com/questions/39639264/django-highlight-current-page-in-navbar -->
           {% with url_name=request.resolver_match.url_name %}
-          <li class="nav-item {% if url_name == 'home' %} active {% endif %}">
+          <li class="nav-item {% if url_name == 'home' %}active{% endif %}">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
           </li>
           <!--If user is logged in, the restricted menu items appear-->
           {% if user.is_authenticated %}
-          <li class="nav-item {% if url_name == 'tools' %} active {% endif %}">
+          <li class="nav-item {% if url_name == 'tools' %}active{% endif %}">
             <a class="nav-link" href="{% url 'tools' %}">Toolkit</a>
           </li>
           <!--Dropdown with category pages-->
@@ -70,7 +71,7 @@
           </li>
           {% endif %}
           <!--End of dropdown with category pages-->
-          <li class="nav-item {% if url_name == 'mytools' %} active {% endif %}">
+          <li class="nav-item {% if url_name == 'mytools' %}active{% endif %}">
             <a class="nav-link" href="{% url 'mytools' %}">My tools</a>
           </li>
           <li class="nav-item">
