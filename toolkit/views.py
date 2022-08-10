@@ -14,7 +14,7 @@ class ToolList(generic.ListView):
     template_name = 'tools.html'
     paginate_by = 6
 
-    #Code from Codemy.com tutorial 'How to add blog category navbar links"
+    # Code from Codemy.com tutorial 'How to add blog category navbar links"
 
     def get_context_data(self, *args, **kwargs):
         '''Gets all category names'''
@@ -102,7 +102,7 @@ class HomePageView(generic.TemplateView):
     '''Renders a home page template'''
     template_name = 'index.html'
 
-    #Code from Codemy.com tutorial 'How to add blog category navbar links"
+    # Code from Codemy.com tutorial 'How to add blog category navbar links"
 
     def get_context_data(self, *args, **kwargs):
         '''Gets all category names'''
@@ -110,7 +110,6 @@ class HomePageView(generic.TemplateView):
         context = super(HomePageView, self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
-
 
 
 class MyToolsView(LoginRequiredMixin, generic.ListView):

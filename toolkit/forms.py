@@ -35,7 +35,21 @@ class ToolForm (forms.ModelForm):
             'related_website': 'Add URL address to additional related resources.',
             'related_image': 'Add any relevant image.',
         }
-        
+    
+
+    def __init__(self, *args, **kwargs):
+        super(ToolForm, self).__init__(*args, **kwargs)
+        self.fields['time_required'].widget.attrs['min'] = 0.01
+
+    def clean_time(self):
+        time = self.cleaned_data['time_required']
+        # Check if value is < 0
+        if time < 0.01:
+            # print("Error")
+            raise forms.ValidationError("This can't be a negative number")
+        return time
+
+
         # def clean_image(self):
         #     '''
         #     Validates the file type on the related_image

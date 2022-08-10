@@ -10,6 +10,8 @@
 <!-- 
 {% load cloudinary %} -->
 
+
+
 <div class="container mt-3 mb-3">
     <h2>Add a new tool</h2>
     
@@ -29,6 +31,7 @@
     <form action="{% url 'addtool' %}" method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
+
         {{ tool_form | crispy }}
         <!--Adds rich text editor to the form-->
         {{ tool_form.media }}
