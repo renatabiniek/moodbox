@@ -95,7 +95,7 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 
 * Database Structure
 
-![Flowchart image]()
+![Database diagram image]()
 
 
 ### Design: 
@@ -294,9 +294,31 @@ I tested the program considering the user stories from the UX section as well.
 
 * **Getting NoReverseMatch error for delete modal**
 
- I was getting a NoReverseMatch error after creating a modal warning about deleting a tool. I investigated urls, views and html for typos and incorrect arguments being passed in, but the issue turned out to be wrong positioning of the modal in the for loop. I moved the modal from outside of the loop, and it started to work as expected.
+  I was getting a NoReverseMatch error after creating a modal warning about deleting a tool. I investigated urls, views and html for typos and incorrect arguments being passed in, but the issue turned out to be wrong positioning of the modal in the for loop. I moved the modal from outside of the loop, and it started to work as expected.
 
-![Delete modal error image](docs/bugs/delete_modal.png)
+  ![Delete modal error image](docs/bugs/delete_modal.png)
+
+* **Users can submit add tool form with negative number in time required field**
+
+  When testing the add tool form, I found that it was possible to enter or select a value less than 0 in the time required field,
+  which was both not a good user experience and bad data.
+
+  **Didn't work**: I tried validation of the field with overriding clean method and ValidationError in ToolForm using [this post](https://stackoverflow.com/questions/12806771/django-modelform-validation) as a guide. The form was getting cleared and new tool wasn't getting created in the admin panel, but the error was not getting displayed.
+
+  **Worked**: I decided to add the MinValueValidator to the ToolModel itself, and then setting a min value validation on the form input. 
+  Thanks to the tutor support and [this post](https://stackoverflow.com/questions/41701222/django-modelform-setting-minimum-value-on-floatfield/41701562#41701562) this worked. The error message is displayed on the form field if a user enters a negative number. Selecting a value lower than 0.01 from the drop down is no longer possible.
+
+  ![Negative value validation image](docs/bugs/negative_value.png)
+
+* **Rich text editor not responsive**
+  
+  While testing, I noticed that the rich text field in the add tool form wasn't responsive, causing layout issues on smaller screens.
+  I resolved this by adding CKEDITOR_CONFIGS to settings.py and customizing the widget's toolbar and width. I used [this document](https://django-ckeditor.readthedocs.io/en/latest/) as a guide. 
+
+  ![Ck editor image](docs/bugs/ckeditor.png)
+
+
+
 
 ### Credits
 

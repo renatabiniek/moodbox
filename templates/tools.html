@@ -20,14 +20,16 @@
                         <div class="card-body">
                             <h5 class="card-title"><strong>{{ tool.tool_name }}</strong></h5>
                             <p class="card-text keywords">{{ tool.keywords }}</p>
-                            <p class="card-text text-capitalize category-text"><a href="{% url 'categories' tool.category|slugify %}">{{ tool.category }}</a></p>
+                            <p class="card-text text-capitalize category-text"><a
+                                    href="{% url 'categories' tool.category|slugify %}">{{ tool.category }}</a></p>
                             <p class="card-text">You'll need: {{ tool.time_required }} hrs</p>
                             <a href="{% url 'tool_detail' tool.slug %}" class="btn btn-card mt-3">Try it out</a>
                         </div>
                         <div class="card-admin py-2 mt-2">
                             <p class="card-text mb-0">Posted by: <span class="author">{{ tool.author_name }}</span></p>
-                            <p class="card-text">{{ tool.date_added }} <span id="likes"><i class="bi bi-suit-heart-fill"></i>
-                            {{ tool.number_of_likes }}</span></p>
+                            <p class="card-text">{{ tool.date_added }} <span id="likes"><i
+                                        class="bi bi-suit-heart-fill"></i>
+                                    {{ tool.number_of_likes }}</span></p>
                         </div>
                     </div>
                 </div>
@@ -35,6 +37,15 @@
             </div>
             <div class="row">
                 {% endif %}
+                <div class="container">
+                    <div class="row mt-3">
+                        <div class="col-12 mt-3 mb-5">
+                            <a href="{% url 'addtool' %}" class="btn-card btn-create px-2 py-2 btn-red" role="button">+
+                                Add a new tool</a>
+                        </div>
+                    </div>
+                </div>
+                <!--If there are no tools published, message and button is displayed-->
                 {% empty %}
                 <div class="col-12 mt-3">
                     <div class="row">
@@ -46,20 +57,13 @@
                         <div class="col mt-3">
                             <a href="{% url 'addtool' %}" class="btn-lg btn-card btn-create">+ Add the first tool</a>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="row mt-3">
-            <div class="col-12 mt-3 mb-5">
-                <a href="{% url 'addtool' %}" class="btn-card btn-create px-2 py-2 btn-red" role="button">+ Add a new tool</a>
-            </div>
-        </div>
-    </div>
 
     <!--Pagination added by Django once 6 items displayed on page-->
     {% if is_paginated %}

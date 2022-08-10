@@ -1,5 +1,5 @@
 from django import forms
-from django.core.exceptions import ValidationError
+# from django.core.exceptions import ValidationError
 from .models import Comment, Tool
 
 
@@ -36,7 +36,7 @@ class ToolForm (forms.ModelForm):
             'related_image': 'Add any relevant image.',
         }
     
-
+    # Validation of the time reqired field in the add tool form
     def __init__(self, *args, **kwargs):
         super(ToolForm, self).__init__(*args, **kwargs)
         self.fields['time_required'].widget.attrs['min'] = 0.01
@@ -45,7 +45,6 @@ class ToolForm (forms.ModelForm):
         time = self.cleaned_data['time_required']
         # Check if value is < 0
         if time < 0.01:
-            # print("Error")
             raise forms.ValidationError("This can't be a negative number")
         return time
 
