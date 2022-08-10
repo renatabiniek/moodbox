@@ -93,9 +93,13 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 
 ### Structure:
 
-* Database Structure
+* Database Schema
 
-![Database diagram image]()
+  Database consists of the following models: Tool, Category, Comment and a Django built-in User model. 
+  Django AllAuth was used for user authentication.
+  The database schema has been prepared using drawSQL. Limitations of the tool prevented accurate choice of field types (e.g. SlugField, CLoudinaryField).
+
+  ![Database diagram image](docs/database/database-schema.png)
 
 
 ### Design: 
@@ -138,7 +142,7 @@ Due to time constraints, I was unable to implement all planned features. In the 
 * [Summernote](https://summernote.org/) - to add a styled editor to the forms
 * [django-allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - for user registration and authentication
 * [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) - to display and run the command line terminal in the browser
-* [dbdiagram](https://dbdiagram.io/home) - to create the database diagram model
+* [drawSQL](https://drawsql.app/) - to create the database diagram model
 * [Balsamiq](https://balsamiq.com/) - to create wireframes for the site as part of the preparation work for the project
 * [Google Fonts](https://fonts.google.com/) - to import Courgette and Montserrat fonts into the HTML file which were then used throughout the site
 * [Coolors](https://coolors.co/ ) - to create cohesive colour scheme for the site
@@ -266,13 +270,13 @@ I tested the program considering the user stories from the UX section as well.
   I noticed that in the admin view the slug field was blank for these posts. This meant that the tool created didn't have a forwarding url 
   for the tool detail page to be populated. Using slugify, I coverted the tool name into a slug, and this has fixed the issue.
 
-  ![New tool slug image](docs/bugs/new_tool_slug.png)
+  ![New tool slug image](docs/bugs/new-tool-slug.png)
 
 * **Numeric field overflow error**
   
   After trying to alter decimal field in my Tool model, I got an erorr saying that A field with precision 2, scale 2 must round to an absolute value less than 1.
   This was preventing correct migrations. 
-  ![Numeric field overflow image](docs/bugs/numeric_field_overflow.png)
+  ![Numeric field overflow image](docs/bugs/numeric-field-overflow.png)
 
   **Didn't work:** Tried increasing the max digits and decimal places but this resulted with the same erorr.
   **Worked:** It seems that there was non-conforming data in existing posts and as all of them were dummy data, the easiest solution to apply the migrations was to delete the posts and try again. This allowed the migrations to run succssfuly.
@@ -296,7 +300,7 @@ I tested the program considering the user stories from the UX section as well.
 
   I was getting a NoReverseMatch error after creating a modal warning about deleting a tool. I investigated urls, views and html for typos and incorrect arguments being passed in, but the issue turned out to be wrong positioning of the modal in the for loop. I moved the modal from outside of the loop, and it started to work as expected.
 
-  ![Delete modal error image](docs/bugs/delete_modal.png)
+  ![Delete modal error image](docs/bugs/delete-modal.png)
 
 * **Users can submit add tool form with negative number in time required field**
 
@@ -308,7 +312,7 @@ I tested the program considering the user stories from the UX section as well.
   **Worked**: I decided to add the MinValueValidator to the ToolModel itself, and then setting a min value validation on the form input. 
   Thanks to the tutor support and [this post](https://stackoverflow.com/questions/41701222/django-modelform-setting-minimum-value-on-floatfield/41701562#41701562) this worked. The error message is displayed on the form field if a user enters a negative number. Selecting a value lower than 0.01 from the drop down is no longer possible.
 
-  ![Negative value validation image](docs/bugs/negative_value.png)
+  ![Negative value validation image](docs/bugs/negative-value.png)
 
 * **Rich text editor not responsive**
   
