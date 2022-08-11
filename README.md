@@ -327,6 +327,10 @@ I tested the program considering the user stories from the UX section as well.
 
   ![Ck editor image](docs/bugs/ckeditor.png)
 
+* **Edited image not uploading**
+
+  When an existing tool was being edited, all fields would be sucessfully updated except for the image. The new image wasn't getting saved to replace the previous image.
+  This was solved by adding the ecoding method of enctype="multipart/form-data to the edit_tool.html and passing FILES in the form.
 
 
 

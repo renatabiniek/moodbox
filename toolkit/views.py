@@ -181,6 +181,7 @@ class EditTool(LoginRequiredMixin, View):
         tool_form = ToolForm(request.POST, request.FILES, instance=tool)
 
         if tool_form.is_valid():
+            '''After editing a tool, tool needs to be approved again before it gets published'''
             tool = tool_form.save(commit=False)
             if tool.published_status == 1:
                 tool.published_status = 0
