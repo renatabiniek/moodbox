@@ -22,7 +22,7 @@
     {% if user.is_authenticated %}
     <p><strong>Publishing as:</strong> {{ user.username }} </p>
     <br/>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
         {{ tool_form | crispy }}

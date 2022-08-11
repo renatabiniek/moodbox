@@ -8,7 +8,7 @@ from .models import Tool, Category
 from .forms import CommentForm, ToolForm
 
 
-class ToolList(generic.ListView):
+class ToolList(LoginRequiredMixin, generic.ListView):
     model = Tool
     queryset = Tool.objects.filter(published_status=1).order_by('-date_added')
     template_name = 'tools.html'
@@ -24,7 +24,7 @@ class ToolList(generic.ListView):
         return context
 
 
-class ToolDetail(View):
+class ToolDetail(LoginRequiredMixin, View):
     def get(self, request, slug, *args, **kwargs):
         '''Displays detailed view of individual tool card'''
         queryset = Tool.objects.filter(published_status=1)
@@ -33,7 +33,6 @@ class ToolDetail(View):
         liked = False
         if tool.likes.filter(id=self.request.user.id).exists():
             liked = True
-      
         return render(
             request,
             'tool_detail.html',
@@ -53,7 +52,7 @@ class ToolDetail(View):
         liked = False
         if tool.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
+
         '''Get the data posted from the form and assign to variable'''
         comment_form = CommentForm(data=request.POST)
 
@@ -87,13 +86,14 @@ class ToolDetail(View):
 
 class ToolLike(View):
     '''Tool likes'''
+
     def post(self, request, slug):
         tool = get_object_or_404(Tool, slug=slug)
 
         if tool.likes.filter(id=request.user.id).exists():
             tool.likes.remove(request.user)
         else:
-            tool.likes.add(request.user)      
+            tool.likes.add(request.user)
         '''Reload tool detail template to see the likes status'''
         return HttpResponseRedirect(reverse('tool_detail', args=[slug]))
 
@@ -116,10 +116,10 @@ class MyToolsView(LoginRequiredMixin, generic.ListView):
     '''Renders tools added by the logged in user'''
     template_name = 'my_tools.html'
     paginate_by = 6
-   
+
     def get_queryset(self):
         return Tool.objects.filter(author_name=self.request.user)
-    
+
 
 class AddTool(LoginRequiredMixin, View):
 
@@ -131,7 +131,7 @@ class AddTool(LoginRequiredMixin, View):
             request,
             'add_tool.html', context
         )
-   
+
     def post(self, request):
         '''Get the data posted from the form and assign to variable'''
         tool_form = ToolForm(request.POST, request.FILES)
@@ -143,13 +143,13 @@ class AddTool(LoginRequiredMixin, View):
             messages.success(request, 'Your post has been submitted!')
             tool.save()
             return redirect('mytools')
-        
+
         else:
             tool_form = ToolForm()
-        
+
         return render(
             request, 'add_tool.html', {'tool_form': tool_form}
-            )
+        )
 
 
 class EditTool(LoginRequiredMixin, View):
@@ -164,7 +164,7 @@ class EditTool(LoginRequiredMixin, View):
         tool = get_object_or_404(Tool, id=tool_id)
 
         if request.user == tool.author_name:
-            
+
             return render(
                 request,
                 'edit_tool.html',
@@ -174,26 +174,21 @@ class EditTool(LoginRequiredMixin, View):
             )
         else:
             raise Http404("Only author can edit this tool")
-    
+
     def post(self, request, tool_id):
         '''Gets the tool id passed in via URL, submit form data and redirect'''
         tool = get_object_or_404(Tool, id=tool_id)
-        tool_form = ToolForm(data=request.POST, instance=tool)
+        tool_form = ToolForm(request.POST, request.FILES, instance=tool)
 
         if tool_form.is_valid():
-            '''
-            After editing a tool, 
-            tool needs to be approved again 
-            before it gets published
-            '''
             tool = tool_form.save(commit=False)
             if tool.published_status == 1:
                 tool.published_status = 0
-            tool.save()    
+            tool.save()
             messages.success(request, 'Your edited post has been submitted!')
-            
+
             return redirect('mytools')
-        
+
         else:
             return render(
                 request, 'edit_tool.html', {'tool_form': tool_form}
@@ -204,7 +199,7 @@ class DeleteTool(LoginRequiredMixin, View):
 
     def get(self, request, tool_id):
         raise Http404('This page doesnt exist')
-    
+
     def post(self, request, tool_id):
         tool = get_object_or_404(Tool, id=tool_id)
         if request.user == tool.author_name:
@@ -221,9 +216,8 @@ def categoryView(request, slug):
     passed through the category slug'''
 
     cats = Category.objects.get(slug=slug)
-    
+
     context = {
         'cats': cats
-        }
+    }
     return render(request, 'categories.html', context)
-    
