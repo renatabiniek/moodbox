@@ -93,6 +93,12 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 
 ### Structure:
 
+* Wireframes
+
+  [Wireframes - desktop](docs/wireframes/moodbox-desktop.pdf) 
+  
+  [Wireframes - mobile](docs/wireframes/moodbox-mobile.pdf)
+
 * Database Schema
 
   Database consists of the following models: Tool, Category, Comment and a Django built-in User model. 
