@@ -31,13 +31,16 @@ class Category(models.Model):
 class Tool(models.Model):
     tool_name = models.CharField(max_length=30, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author_name = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tool_items')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='categories', null=True)
+    author_name = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='tool_items')
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name='categories', null=True)
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     keywords = models.CharField(max_length=100)
     method_details = RichTextField(blank=True, null=True)
-    time_required = models.DecimalField(max_digits=5, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+    time_required = models.DecimalField(
+        max_digits=5, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
     related_website = models.URLField(max_length=200, blank=True)
     related_image = CloudinaryField('image', default='placeholder', blank=True)
     published_status = models.IntegerField(choices=STATUS, default=0)
@@ -55,7 +58,8 @@ class Tool(models.Model):
 
 
 class Comment(models.Model):
-    tool = models.ForeignKey(Tool, on_delete=models.CASCADE, related_name='comments')
+    tool = models.ForeignKey(
+        Tool, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=50)
     content = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)

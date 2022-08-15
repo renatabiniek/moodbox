@@ -6,7 +6,8 @@ from .models import Tool, Comment, Category
 @admin.register(Tool)
 class ToolAdmin(SummernoteModelAdmin):
 
-    list_display = ('tool_name', 'author_name', 'category', 'published_status', 'date_added')
+    list_display = (
+        'tool_name', 'author_name', 'category', 'published_status', 'date_added')
     search_fields = ['tool_name', 'method_details', 'keywords']
     prepopulated_fields = {'slug': ('tool_name',)}
     list_filter = ('date_added', 'published_status', 'author_name')
