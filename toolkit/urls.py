@@ -1,6 +1,7 @@
+"""URL paths"""
 from django.urls import path
 from . import views
-from .views import categoryView
+from .views import category_view
 
 urlpatterns = [
     path('', views.HomePageView.as_view(), name='home'),
@@ -11,5 +12,5 @@ urlpatterns = [
     path('mytools/addtool/', views.AddTool.as_view(), name='addtool'),
     path('edit/<tool_id>/', views.EditTool.as_view(), name='edit_tool'),
     path('delete/<tool_id>/', views.DeleteTool.as_view(), name='delete_tool'),
-    path('category/<slug:slug>/', categoryView, name='categories'),
+    path('category/<slug:slug>/', category_view, name='categories'),
 ]
