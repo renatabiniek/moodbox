@@ -162,7 +162,8 @@ class AddTool(LoginRequiredMixin, View):
             return redirect('mytools')
 
         else:
-            tool_form = ToolForm()
+            print('form invalid')
+            # tool_form = ToolForm()
 
         return render(
             request, 'add_tool.html', {'tool_form': tool_form}
