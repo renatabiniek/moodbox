@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 from .models import Tool, Category
 from .forms import CommentForm, ToolForm
+# from django import forms
 
 
 class ToolList(LoginRequiredMixin, generic.ListView):

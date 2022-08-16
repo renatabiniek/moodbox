@@ -11,12 +11,9 @@
     <!--Header for the tool card-->
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4 tool-name">{{ tool.tool_name }}</h1>
-            {% if tool.date_updated == tool.date_added %}
-            <p><span class="author">{{ tool.author_name }}</span> | {{ tool.date_added}} </p>
-            {% else %}
-            <p><span class="author">{{ tool.author_name }}</span> | Updated: {{ tool.date_updated}} </p>
-            {% endif %}
+            <h1 class="display-4 tool-name pb-2">{{ tool.tool_name }}</h1>
+            <p><span class="author">{{ tool.author_name }}</span> | Updated: {{ tool.date_updated }} </p>
+            <p><span class="author">{{ tool.author_name }}</span> | Created: {{ tool.date_added }} </p>
         </div>
     </div>
 
