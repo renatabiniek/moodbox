@@ -247,4 +247,5 @@ def category_view(request, slug):
     context = {
         'cats': cats
     }
+
     return render(request, 'categories.html', context)

@@ -1,7 +1,6 @@
 """Forms"""
 from django import forms
 from .models import Comment, Tool
-# from django.core.exceptions import ValidationError
 
 
 class CommentForm (forms.ModelForm):
@@ -54,10 +53,3 @@ class ToolForm (forms.ModelForm):
         if time < 0.01:
             raise forms.ValidationError("This can't be a negative number")
         return time
-
-    # def clean_tool_name(self):
-    #     title = self.cleaned_data['tool_name']
-    #     if Tool.objects.filter(tool_name=title).count() > 0:
-    #         raise forms.ValidationError("This title is already in use.")
-    #     return title
-
