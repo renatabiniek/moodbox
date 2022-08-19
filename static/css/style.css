@@ -204,3 +204,20 @@ footer i {
     background-color: #9F4144;
     border-color: #9F4144;
 }
+
+/*------------------------------------ 404 Page*/
+
+.not-found {
+    font-size: larger;
+}
+
+.home-link {
+    color: #A2AEA0;
+    font-weight: bold; 
+}
+
+.home-link:hover, .home-link:focus, .home-link:active {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #A2AEA0;
+}
