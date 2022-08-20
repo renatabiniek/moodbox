@@ -8,16 +8,16 @@
 {% load crispy_forms_tags %}
 
 <div class="container">
-    <!--Header for the tool card-->
-    <div class="jumbotron">
+    <!-- Header for the tool card -->
+    <div class="jumbotron mt-5">
         <div class="container">
             <h1 class="display-4 tool-name pb-2">{{ tool.tool_name }}</h1>
             <p><span class="author">{{ tool.author_name }}</span> | Updated: {{ tool.date_updated }} </p>
-            <p><span class="author">{{ tool.author_name }}</span> | Created: {{ tool.date_added }} </p>
+            <!-- <p><span class="author">{{ tool.author_name }}</span> | Created: {{ tool.date_added }} </p> -->
         </div>
     </div>
 
-    <!--Details of the tool-->
+    <!-- Details of the tool -->
     <div class="container">
         <div class="row mt-3">
             <div class="col card card-detail">
@@ -25,12 +25,7 @@
                     <p class="card-text"> <strong>Category:</strong> {{ tool.category }}</p>
                     <p class="card-text"> <strong>Helps with:</strong> {{ tool.keywords }}</p>
                     <p class="card-text"> <strong>Takes:</strong> {{ tool.time_required }} hrs</p>
-                    <div class="pt-3">
-                        <h3>Method details:</h3>
-                        <p class="card-text">{{ tool.method_details | safe }}</p>
-                    </div>
-
-                    <!--Resources section: image and website -->
+                    <!-- Resources section: image and website -->
                     <div class="card-text resources pt-3 pb-3">
                         <h3 class=>Resources:</h3>
                     </div>
@@ -47,6 +42,11 @@
                                     class="card-link">{{ tool.related_website }}</a></p>
                         </div>
                     </div>
+                    <div class="pt-3">
+                        <h3>Method details:</h3>
+                        <p class="card-text">{{ tool.method_details | safe }}</p>
+                    </div>
+                    <!-- Likes and comments icons -->
                     <div class="row mt-4">
                         <div class="col-1">
                             <!--If user is authenticated, a button to like/unlike is shown-->
@@ -56,17 +56,18 @@
                                 <!--If post is liked, display solid heart icon linked to a submit button-->
                                 {% if liked %}
                                 <button type="submit" name="tool_id" value="{{ tool.slug }}" class="btn-like">
-                                    <strong><i class="bi bi-suit-heart-fill"></i> {{ tool.number_of_likes }}</strong></button>
-                                
+                                    <strong><i class="bi bi-suit-heart-fill"></i>
+                                        {{ tool.number_of_likes }}</strong></button>
+
                                 {% else %}
                                 <button type="submit" name="tool_id" value="{{ tool.slug }}" class="btn-like">
-                                    <strong><i class="bi bi-suit-heart"></i> {{ tool.number_of_likes }}</strong></button>
+                                    <strong><i class="bi bi-suit-heart"></i>
+                                        {{ tool.number_of_likes }}</strong></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <strong><i class="bi bi-suit-heart"></i> {{ tool.number_of_likes }}</strong>
                             {% endif %}
-                 
                         </div>
                         <div class="col-1">
                             {% with comments.count as total_comments %}
@@ -84,7 +85,7 @@
         </div>
     </div>
 
-    <!--Detailed comments section-->
+    <!-- Detailed comments section -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 card card-detail">
@@ -104,22 +105,22 @@
             </div>
             <div class="col-md-4 card card-detail mt-4 mb-4">
                 <div class="card-body">
-                    <!--Message appear once comment is submitted-->
+                    <!-- Message appear once comment is submitted -->
                     {% if commented %}
                     <div class="alert alert-success" role="alert">
                         Thank you! Your comment is awaiting approval
                     </div>
                     {% else %}
 
-                    <!--Comment box only appear if user is logged in-->
+                    <!-- Comment box only appear if user is logged in -->
                     {% if user.is_authenticated %}
                     <h4>Say something...</h4>
                     <p>Posting as: {{ user.username }}</p>
 
                     <form method="POST">
-                        <!--Token to protect the form from attackers-->
+                        <!-- Token to protect the form from attackers -->
                         {% csrf_token %}
-                        <!--Rendering the form using the crispy filter for formatting -->
+                        <!-- Rendering the form using the crispy filter for formatting -->
                         {{ comment_form | crispy }}
                         <button type="submit" value="Submit" class="btn btn-card">Add</button>
                     </form>
