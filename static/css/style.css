@@ -154,6 +154,11 @@ footer i {
     background-color: rgba(162,174,160,0.2);
 }
 
+.tool-title {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
 .card-detail {
     border: none;
 }
