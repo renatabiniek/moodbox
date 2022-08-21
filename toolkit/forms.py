@@ -1,5 +1,6 @@
 """Forms"""
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 from .models import Comment, Tool
 
 
@@ -37,6 +38,9 @@ class ToolForm (forms.ModelForm):
             'related_website': 'Add URL address to additional \
                 related resources.',
             'related_image': 'Add any relevant image.',
+        }
+        widgets = {
+            'method_details': SummernoteWidget()
         }
     # Validation of the time reqired field in the add tool form
 

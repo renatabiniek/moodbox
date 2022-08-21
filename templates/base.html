@@ -66,7 +66,7 @@
             </a>
             <div class="dropdown-menu">
               {% for cat in cat_menu %}
-              <a class="dropdown-item" href="{% url 'categories' cat|slugify %}">{{ cat }}</a>
+              <a class="dropdown-item text-capitalize" href="{% url 'categories' cat|slugify %}">{{ cat }}</a>
               {% endfor %}
             </div>
           </li>

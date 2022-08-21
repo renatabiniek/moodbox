@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
-    'ckeditor',
     'toolkit',
 ]
 
@@ -114,28 +113,36 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'moodbox.wsgi.application'
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            [
-                'NumberedList',
-                'BulletedList',
-                '-',
-                'Outdent',
-                'Indent',
-                '-',
-                'JustifyLeft',
-                'JustifyCenter',
-                'JustifyRight',
-                'JustifyBlock'
-            ],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
+SUMMERNOTE_CONFIG = {
+    # Or, you can set it to `False` to use SummernoteInplaceWidget by default
+    # - no iframe mode. In this case, you have to load Bootstrap/jQuery sources
+    # and dependencies manually. Use this when you're already using
+    # Bootstrap/jQuery based themes.
+    'iframe': False,
+
+    # You can put custom Summernote settings
+    'summernote': {
+
+        # Change editor size
+        'width': '100%',
+        'height': '480',
+
+        # Use proper language setting automatically (default)
+        'lang': None,
+
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['antiquewhite']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
         ],
-        'width': 'auto',
-    }
+    },
 }
 
 # Database
@@ -206,6 +213,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type

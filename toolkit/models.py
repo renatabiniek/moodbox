@@ -4,7 +4,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator
 from cloudinary.models import CloudinaryField
-from ckeditor.fields import RichTextField
 
 
 # The walktrough tutorial I Think Therefore I Blog
@@ -39,7 +38,7 @@ class Tool(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     keywords = models.CharField(max_length=100)
-    method_details = RichTextField(blank=True, null=True)
+    method_details = models.CharField(max_length=500, blank=True, null=True)
     time_required = models.DecimalField(
         max_digits=5, decimal_places=2,
         validators=[MinValueValidator(Decimal('0.01'))])
