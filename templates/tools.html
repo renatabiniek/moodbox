@@ -27,18 +27,16 @@
                         </div>
                         <div class="card-admin py-2 mt-2">
                             <p class="card-text mb-0">Posted by: <span class="author">{{ tool.author_name }}</span></p>
-                            <p class="card-text">{{ tool.date_added }} <span id="likes"><i
-                                        class="bi bi-suit-heart-fill"></i>
+                            <p class="card-text">{{ tool.date_added }} <span id="likes"><i class="bi bi-suit-heart-fill"
+                                        aria-hidden="true"></i>
                                     {{ tool.number_of_likes }}</span></p>
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
-            
             <div class="row">
                 {% endif %}
-        
                 <!-- If there are no tools published, message and button is displayed -->
                 {% empty %}
                 <div class="col-12 mt-3">
@@ -53,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-               
+
                 {% endfor %}
             </div>
             <div class="container">
@@ -66,7 +64,6 @@
             </div>
         </div>
     </div>
-
 
     <!--Pagination added by Django once 6 items displayed on page-->
     {% if is_paginated %}
@@ -81,10 +78,7 @@
             {% endif %}
         </ul>
     </nav>
-
     {% endif %}
-
 </div>
-     
 
 {%endblock%}

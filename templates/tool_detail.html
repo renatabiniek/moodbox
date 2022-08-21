@@ -13,10 +13,8 @@
         <div class="container">
             <h1 class="display-4 tool-name pb-2">{{ tool.tool_name }}</h1>
             <p><span class="author">{{ tool.author_name }}</span> | Updated: {{ tool.date_updated }} </p>
-            <!-- <p><span class="author">{{ tool.author_name }}</span> | Created: {{ tool.date_added }} </p> -->
         </div>
     </div>
-
     <!-- Details of the tool -->
     <div class="container">
         <div class="row mt-3">
@@ -25,14 +23,14 @@
                     <p class="card-text text-capitalize"> <strong>Category:</strong> {{ tool.category }}</p>
                     <p class="card-text"> <strong>Helps with:</strong> {{ tool.keywords }}</p>
                     <p class="card-text"> <strong>Takes:</strong> {{ tool.time_required }} hrs</p>
-                    <!-- Resources section: image and website -->
+                    <!-- Resources: image and website -->
                     <div class="card-text resources pt-3 pb-3">
                         <h3 class=>Resources:</h3>
                     </div>
                     <div class="row no-gutters">
                         <div class="col-md-4 mb-4 pr-5">
                             {% if 'placeholder' in tool.related_image.url %}
-                            <img class="img-thumbnail" src="{% static 'images/placeholder.jpg' %}" alt="">
+                            <img class="img-thumbnail" src="{% static 'images/placeholder.jpg' %}" alt="Placeholder image">
                             {% else %}
                             <img class="img-thumbnail" src="{{ tool.related_image.url }}" alt="">
                             {% endif %}
@@ -42,6 +40,7 @@
                                     class="card-link">{{ tool.related_website }}</a></p>
                         </div>
                     </div>
+                    <!-- Main card content -->
                     <div class="pt-3">
                         <h3>Method details:</h3>
                         <p class="card-text">{{ tool.method_details | safe }}</p>
@@ -49,16 +48,16 @@
                     <!-- Likes and comments icons -->
                     <div class="row mt-4">
                         <div class="col-1">
-                            <!--If user is authenticated, a button to like/unlike is shown-->
+                            <!-- If user is authenticated, a button to like/unlike is shown -->
                             {% if user.is_authenticated %}
                             <form class="d-line" action="{% url 'tool_likes' tool.slug %}" method="POST">
                                 {% csrf_token %}
-                                <!--If post is liked, display solid heart icon linked to a submit button-->
+                                <!-- If user has liked the tool, solid heart icon linked to a submit button is displayed -->
                                 {% if liked %}
                                 <button type="submit" name="tool_id" value="{{ tool.slug }}" class="btn-like">
                                     <strong><i class="bi bi-suit-heart-fill"></i>
                                         {{ tool.number_of_likes }}</strong></button>
-
+                                <!-- If user hasn't pressed like, outline heart icon linked to a submit button is displayed -->
                                 {% else %}
                                 <button type="submit" name="tool_id" value="{{ tool.slug }}" class="btn-like">
                                     <strong><i class="bi bi-suit-heart"></i>
@@ -66,12 +65,12 @@
                                 {% endif %}
                             </form>
                             {% else %}
-                            <strong><i class="bi bi-suit-heart"></i> {{ tool.number_of_likes }}</strong>
+                            <strong><i class="bi bi-suit-heart" aria-hidden="true"></i> {{ tool.number_of_likes }}</strong>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% with comments.count as total_comments %}
-                            <strong><i class="bi bi-chat"></i> {{ total_comments }}</strong>
+                            <strong><i class="bi bi-chat" aria-hidden="true"></i> {{ total_comments }}</strong>
                             {% endwith %}
                         </div>
                     </div>
@@ -84,7 +83,6 @@
             <hr>
         </div>
     </div>
-
     <!-- Detailed comments section -->
     <div class="container">
         <div class="row">
@@ -92,7 +90,7 @@
                 <h3>Comments:</h3>
                 <div class="card-body">
                     {% if not tool.comments.all %}
-                    No comments yet...
+                    <p>No comments yet...</p>
                     {% else %}
                     {% for comment in comments %}
                     <div>
@@ -105,18 +103,16 @@
             </div>
             <div class="col-md-4 card card-detail mt-4 mb-4">
                 <div class="card-body">
-                    <!-- Message appear once comment is submitted -->
+                    <!-- Message appears once a comment is submitted -->
                     {% if commented %}
                     <div class="alert alert-success" role="alert">
-                        Thank you! Your comment is awaiting approval
+                        <p>Thank you! Your comment is awaiting approval</p>
                     </div>
                     {% else %}
-
-                    <!-- Comment box only appear if user is logged in -->
+                    <!-- Comment box only appears if user is logged in -->
                     {% if user.is_authenticated %}
                     <h4>Say something...</h4>
                     <p>Posting as: {{ user.username }}</p>
-
                     <form method="POST">
                         <!-- Token to protect the form from attackers -->
                         {% csrf_token %}
@@ -126,7 +122,6 @@
                     </form>
                     {% endif %}
                     {% endif %}
-
                 </div>
             </div>
         </div>

@@ -10,7 +10,6 @@
 
 <div class="container mt-3 mb-3">
     <h2>Edit tool</h2>
-    
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
@@ -18,21 +17,16 @@
             {% endfor %}
     </ul>
     {% endif %}
-
+    <!-- Only if user is logged in -->
     {% if user.is_authenticated %}
     <p><strong>Publishing as:</strong> {{ user.username }} </p>
-    <br/>
+    <br>
     <form action="" method="POST" enctype="multipart/form-data">
-
         {% csrf_token %}
-        {{ tool_form | crispy }}
-        {{ tool_form.media }}
-
+        {{ tool_form | crispy | safe }}
         <button type="submit" value="Submit" class="btn-lg btn-card btn-create my-3">Update tool</button>
     </form>
-
     {% endif %}
-
 </div>
 
 {%endblock%}

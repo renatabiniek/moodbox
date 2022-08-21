@@ -5,11 +5,13 @@
 {% block content %}
 
 {% load static %}
+
 {% load crispy_forms_tags %}
 <div class="container">
     <div class="row mt-3">
         <h2>My tools</h2>
     </div>
+    <!-- Add new tool button -->
     <div class="row mt-3">
         <div class="col-12 mt-3">
             <a href="{% url 'addtool' %}" class="btn-card btn-create px-2 py-2" role="button">+ Add a new tool</a>
@@ -17,8 +19,8 @@
     </div>
 </div>
 <div class="container">
+    <!-- Display list of tools added by the user passed from MyToolsView -->
     <div class="row mt-3">
-        <!-- Tools lists displayed as cards-->
         <div class="col-12 mt-3">
             <div class="row">
                 {% for tool in tool_list %}
@@ -28,17 +30,13 @@
                             {% if tool.published_status == 1 %}
                             <p class="text-success">Published</p>
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
-                            <!-- <a href="{% url 'edit_tool' tool.id %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a> -->
                             <button type="button" class="btn-card btn-edit"><a
                                     href="{% url 'edit_tool' tool.id %}">Edit</a></button>
-                            <!-- <a href="{% url 'delete_tool' tool.id %}" class="btn-card btn-delete px-2 py-1" role="button">Delete</a> -->
                             <button type="button" class="btn-card btn-delete" data-toggle="modal"
                                 data-target="#deleteModal{{ tool.id }}">Delete</button>
-
                             {% else %}
                             <p class="text-warning">Awaiting approval</p>
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
-                            <!-- <a href="{% url 'edit_tool' tool.id %}" class="btn-card btn-edit px-2 py-1" role="button">Edit</a> -->
                             <button type="button" class="btn-card btn-edit"><a
                                     href="{% url 'edit_tool' tool.id %}">Edit</a></button>
                             <button type="button" class="btn-card btn-delete" data-toggle="modal"
@@ -61,7 +59,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="deleteModalLabel{{ tool.id }}">Delete tool</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close message">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -106,7 +104,7 @@
     {% endif %}
     <!--Back to Toolkit link-->
     <div class="col mt-3 mb-5">
-        <a href="{% url 'tools' %}"><i class="bi bi-chevron-left"></i> Back to all tools</a>
+        <a href="{% url 'tools' %}"><i class="bi bi-chevron-left" aria-hidden="true"></i> Back to all tools</a>
     </div>
 </div>
 {%endblock%}
