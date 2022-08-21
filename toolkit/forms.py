@@ -42,8 +42,6 @@ class ToolForm (forms.ModelForm):
         widgets = {
             'method_details': SummernoteWidget()
         }
-        
-    # Validation of the time reqired field in the add tool form
 
     def __init__(self, *args, **kwargs):
         super(ToolForm, self).__init__(*args, **kwargs)
@@ -54,7 +52,6 @@ class ToolForm (forms.ModelForm):
         accepted in the time required field.
         """
         time = self.cleaned_data['time_required']
-        # Check if value is < 0
         if time < 0.01:
             raise forms.ValidationError("This can't be a negative number")
         return time

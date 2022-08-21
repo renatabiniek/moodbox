@@ -7,12 +7,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 from .models import Tool, Category
 from .forms import CommentForm, ToolForm
-# from django import forms
 
 
 class ToolList(LoginRequiredMixin, generic.ListView):
-    """
-    Class view that displays list of published tools added
+    """View to display list of published tools added
     by users, ordered by date in descending order and paginated.
     If user not logged in, they're redirected to login page via
     LoginRequiredMixin.
@@ -33,13 +31,10 @@ class ToolList(LoginRequiredMixin, generic.ListView):
 
 
 class ToolDetail(LoginRequiredMixin, View):
-    """
-    Class view that displays detailed view of individual tool card.
-    """
+    """View to display details of individual tool card."""
+
     def get(self, request, slug, *args, **kwargs):
-        """
-        Display all published tools, their comments and likes.
-        """
+        """Display all published tools, their comments and likes."""
         queryset = Tool.objects.filter(published_status=1)
         tool = get_object_or_404(queryset, slug=slug)
         comments = tool.comments.filter(approved=True).order_by('date_added')
@@ -101,7 +96,7 @@ class ToolLike(View):
     """Tool likes"""
 
     def post(self, request, slug):
-        """Submit like/unlike"""
+        """Submit like/unlike."""
         tool = get_object_or_404(Tool, slug=slug)
 
         if tool.likes.filter(id=request.user.id).exists():
@@ -117,7 +112,6 @@ class HomePageView(generic.TemplateView):
     template_name = 'index.html'
 
     # Code from Codemy.com tutorial 'How to add blog category navbar links"
-
     def get_context_data(self, *args, **kwargs):
         """Get all category names."""
         cat_menu = Category.objects.all()
@@ -164,7 +158,6 @@ class AddTool(LoginRequiredMixin, View):
 
         else:
             print('form invalid')
-            # tool_form = ToolForm()
 
         return render(
             request, 'add_tool.html', {'tool_form': tool_form}
@@ -175,8 +168,7 @@ class EditTool(LoginRequiredMixin, View):
     """View for editing and updating an existing tool."""
 
     def get(self, request, tool_id):
-        """
-        Gets the tool id passed in via URL, check if the user is the author
+        """Get the tool id passed in via URL, check if the user is the author
         of the tool, return tool form with prepopulated original data,
         or raise HTTP404 error is the user is not the author.
         """

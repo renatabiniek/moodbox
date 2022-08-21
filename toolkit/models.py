@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator
 from cloudinary.models import CloudinaryField
 
-
 # The walktrough tutorial I Think Therefore I Blog
 # from Code Institute has been used to help with the code in this project.
 
