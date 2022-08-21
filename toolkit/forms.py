@@ -42,6 +42,7 @@ class ToolForm (forms.ModelForm):
         widgets = {
             'method_details': SummernoteWidget()
         }
+        
     # Validation of the time reqired field in the add tool form
 
     def __init__(self, *args, **kwargs):
