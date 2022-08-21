@@ -8,9 +8,10 @@
 
 <div class="container">
     <!-- Header for the tool card -->
-    <div class="jumbotron tool-title mt-5">
+    <div class="jumbotron tool-title mt-sm-3 mt-md-5 mb-2">
         <div class="container">
-            <h1 class="display-4 tool-name pb-2">{{ tool.tool_name }}</h1>
+            <h1 class="d-none d-md-block display-4 pb-2">{{ tool.tool_name }}</h1>
+            <h2 class="d-block d-md-none pb-2">{{ tool.tool_name }}</h2>
             <p><span class="author">{{ tool.author_name }}</span> | Updated: {{ tool.date_updated }} </p>
         </div>
     </div>
