@@ -320,8 +320,13 @@ I tested the program considering the user stories from the UX section as well.
 
   ![Negative value validation image](docs/bugs/negative-value.png)
 
-* **Rich text editor not responsive**
+* **CK Editor issues**
+
+  I came across a few issues with the CK Editor that I was using for the front end form submissions, including concole errors related to CK Editor specifically. Upon some further research, I found that it tends to be buggy especially with Heroku, and I decide to uninstall it and replace with Summernote. This seemed to be a cleaner approach as well, seeing that I was already using Summernote in the amdin panel.
+
+  Upon removing all CK Editor mentions and uninstalling it, I ran into a problem with migrations and had to delete them, and again make migrations and run them.
   
+  Rich text editor not responsive
   While testing, I noticed that the rich text field in the add tool form wasn't responsive, causing layout issues on smaller screens.
   I resolved this by adding CKEDITOR_CONFIGS to settings.py and customizing the widget's toolbar and width. I used [this document](https://django-ckeditor.readthedocs.io/en/latest/) as a guide. 
 
@@ -331,6 +336,12 @@ I tested the program considering the user stories from the UX section as well.
 
   When an existing tool was being edited, all fields would be sucessfully updated except for the image. The new image wasn't getting saved to replace the previous image.
   This was solved by adding the ecoding method of enctype="multipart/form-data to the edit_tool.html and passing FILES in the form.
+
+* **No form error showing to the user for duplicated tool name**
+
+Although tool_name in the model had been set to unique and the form couldn't be submitted if the chosen title arleady existed, there was no clear message to the user on what the error was. The form was just getting cleared and reloaded. 
+
+ **Worked**: Removed empty form getting displayed so that the form error can be shown for the invalid field, by using the tool_form that has the posted data. The clean_tool_name method was preventing the edit view from working as it was just checking if a tool had the same name and raising an error.
 
 
 
