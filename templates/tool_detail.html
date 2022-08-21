@@ -31,7 +31,7 @@
                             {% if 'placeholder' in tool.related_image.url %}
                             <img class="img-thumbnail" src="{% static 'images/placeholder.jpg' %}" alt="Placeholder image">
                             {% else %}
-                            <img class="img-thumbnail" src="{{ tool.related_image.url }}" alt="">
+                            <img class="img-thumbnail" src="{{ tool.related_image.url }}" alt="{{ tool.tool_name }}">
                             {% endif %}
                         </div>
                         <div class="col-md-8">
