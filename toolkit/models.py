@@ -37,7 +37,7 @@ class Tool(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     keywords = models.CharField(max_length=100)
-    method_details = models.CharField(max_length=500, blank=True, null=True)
+    method_details = models.TextField(null=True)
     time_required = models.DecimalField(
         max_digits=5, decimal_places=2,
         validators=[MinValueValidator(Decimal('0.01'))])

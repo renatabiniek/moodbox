@@ -15,9 +15,9 @@ class ToolAdmin(SummernoteModelAdmin):
         'published_status', 'date_added'
         )
     search_fields = ['tool_name', 'method_details', 'keywords']
-    prepopulated_fields = {'slug': ('tool_name',)}
     list_filter = ('date_added', 'published_status', 'author_name')
-    summernote_fields = ('method_details')
+    prepopulated_fields = {'slug': ('tool_name',)}
+    summernote_fields = ('method_details',)
 
 
 @admin.register(Comment)
@@ -39,3 +39,4 @@ class CommentAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     """Enable admin setup for the Category model."""
     prepopulated_fields = {'slug': ('category_name',)}
+

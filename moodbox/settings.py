@@ -118,9 +118,9 @@ SUMMERNOTE_CONFIG = {
     # - no iframe mode. In this case, you have to load Bootstrap/jQuery sources
     # and dependencies manually. Use this when you're already using
     # Bootstrap/jQuery based themes.
-    'iframe': False,
+    # 'iframe': False,
 
-    # You can put custom Summernote settings
+    # Custom Summernote settings
     'summernote': {
 
         # Change editor size

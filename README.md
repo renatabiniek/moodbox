@@ -110,7 +110,15 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 
 ### Design: 
 
+* **Colour scheme**
 
+The colour palette consists of calm colors that compliment each other and evoke mindful mood throughout the site.
+The final combination was chosen based on colours used in chromotherapy, that can help with anxiety, depression and stress, based on [this article](https://www.medicinenet.com/which_color_light_helps_anxiety/article.html). The goal was to create a minimal calm look. The specific shades were derived from the home page image colours using [Eye Dropper](https://eyedropper.org/) and the remaining ones were added to the scheme using the colour scheme generator [Coolors](https://coolors.co/). 
+In additon white was used for text on buttons on hover, for best contrast.  
+
+* **Typography**
+
+* **Imagery**
 
 ## Features
 ---
@@ -343,6 +351,11 @@ Although tool_name in the model had been set to unique and the form couldn't be 
 
  **Worked**: Removed empty form getting displayed so that the form error can be shown for the invalid field, by using the tool_form that has the posted data. The clean_tool_name method was preventing the edit view from working as it was just checking if a tool had the same name and raising an error.
 
+* **Summernote editor**
+
+At one point the Summernote editor for Method Details field stopped displaying properly in the admin panel. When investigated in dev tools, it was showing as set to hidden. When discussing this wit tutor support, we thought it might have something to do with the CharField set for this area. I changed it back to the original TextField but that hasn't made the editor to appear. Finally, I noticed an iframe setting 'iframe': False in my custom Summernote settings and changed it. The editor and it's content appeared again.
+
+![Ck editor image](docs/bugs/missing-editor.jpg)
 
 
 ### Credits
@@ -350,7 +363,7 @@ Although tool_name in the model had been set to unique and the form couldn't be 
 * Code Institute's walkthrough tutorials *I Think Therefore I Blog* and *Hello Django* 
   were used as an inspiration and support when creating this project. 
 
-* 
+* Codemy
 
 * 
 
@@ -360,12 +373,12 @@ Although tool_name in the model had been set to unique and the form couldn't be 
 
 Thank you to:
 
-* Tutor support at the Code Institute, especially Gemma Sayers for her patience and human approach.
-* 
-* 
+* Tutors at the Code Institute, their support was priceless
+* My mentor Guido Cecilio for continous help and advice
+* Joanna Górska for her webinar on Code Validation
 
 ### Disclaimer
 
-*This program has been created for educational purposes only, as part of Code Institute’s Portfolio Project.*
+*This program has been created for educational purposes only, as part of Code Institute’s Portfolio Project Full-Stack Toolkit. The requirements are to build a full-stack site based on business logic used to control a centrally-owned dataset.
 
 [Back to top](#Table-of-Contents)
