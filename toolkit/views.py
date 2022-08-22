@@ -235,9 +235,11 @@ def category_view(request, slug):
     """
 
     cats = Category.objects.get(slug=slug)
+    all_categories = cats.categories.all
 
     context = {
-        'cats': cats
+        'cats': cats,
+        'all_categories': all_categories
     }
 
     return render(request, 'categories.html', context)
