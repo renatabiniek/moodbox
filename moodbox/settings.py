@@ -30,7 +30,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['mood-box.herokuapp.com', 'localhost']
 
@@ -114,12 +116,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'moodbox.wsgi.application'
 
 SUMMERNOTE_CONFIG = {
-    # Or, you can set it to `False` to use SummernoteInplaceWidget by default
-    # - no iframe mode. In this case, you have to load Bootstrap/jQuery sources
-    # and dependencies manually. Use this when you're already using
-    # Bootstrap/jQuery based themes.
-    # 'iframe': False,
-
     # Custom Summernote settings
     'summernote': {
 
