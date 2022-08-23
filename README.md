@@ -190,23 +190,30 @@ Due to time constraints, I was unable to implement all planned features. In the 
 The project was developed in GitPod, committed to Git and pushed to GitHub. 
 The site was deployed to Heroku with the following steps:
 
-1. In GitPod, import the required dependencies to the requirements.txt file, using 
-> pip3 freeze > requirements.txt
+1. In GitPod, import the required dependencies to the requirements.txt file, using pip3 freeze --local > requirements.txt
 2. Git add, commit and push the saved changes to GitHub. Heroku will use this file to import the dependencies that are required.
 3. Sign up and log in to [Heroku](https://heroku.com).
 4. On the dashboard, click **New** in the top right-hand corner and select **Create New App**.
 5. Select a *unique* name for your application and choose your region (Europe in my case).
 6. Click **Create App**.
-7. Navigate to the Settings tab (must be done before deploying code)
-8. Go to section **Config Vars**, click button "Reveal Config Vars" and press "Add" button
-9. 
-10. 
-11. 
-12. Navigate to the Deploy tab and scroll down to **Deployment Method**.
-13. Select GitHub as deployment method.
-14. Enter the name of the repository you want to connect to and click **Connect**.
-15. Select one of the deployment options - Automatic Deployments or Manual - to deploy the app.
-16. Once successfully deployed, a **View** button will appear and take you to a mock terminal.
+7. Attach the Postgres database: 
+   * In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
+8. Navigate to the Settings tab (must be done before deploying code)
+8. Go to section **Config Vars**, click button "Reveal Config Vars" and press "Add" button.
+9. Add the below variables to the list: 
+
+   * Database URL
+   * Secret_key
+   * Cloudinary URL
+
+10. Back in your code, create a Procfile: web: gunicorn PROJ_NAME.wsgi
+11. In settings in your app add Heroku to ALLOWED_HOSTS
+12. Add and commit the changes in your code and push to github
+13. Navigate to the Deploy tab and scroll down to **Deployment Method**.
+14. Select GitHub as deployment method.
+15. Enter the name of the repository you want to connect to and click **Connect**.
+16. Select one of the deployment options - Automatic Deployments or Manual - to deploy the app.
+17. Once successfully deployed, a **View** button will appear and take you to a mock terminal.
 
 
 ### Forking to GitHub Repository
