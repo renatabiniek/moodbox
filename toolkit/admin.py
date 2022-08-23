@@ -39,4 +39,3 @@ class CommentAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     """Enable admin setup for the Category model."""
     prepopulated_fields = {'slug': ('category_name',)}
-

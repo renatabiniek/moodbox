@@ -134,7 +134,7 @@ SUMMERNOTE_CONFIG = {
         # https://summernote.org/deep-dive/#custom-toolbar-popover
         'toolbar': [
             ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
             ['fontname', ['fontname']],
             ['color', ['antiquewhite']],
             ['para', ['ul', 'ol', 'paragraph']],

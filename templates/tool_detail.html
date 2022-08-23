@@ -25,7 +25,7 @@
                     <p class="card-text"> <strong>Takes:</strong> {{ tool.time_required }} hrs</p>
                     <!-- Resources: image and website -->
                     <div class="card-text resources pt-3 pb-3">
-                        <h3 class=>Resources:</h3>
+                        <h3>Resources:</h3>
                     </div>
                     <div class="row no-gutters">
                         <div class="col-md-4 mb-4 pr-5">
@@ -43,7 +43,7 @@
                     <!-- Main card content -->
                     <div class="pt-3">
                         <h3>Method details:</h3>
-                        <p class="card-text">{{ tool.method_details | safe }}</p>
+                        {{ tool.method_details | safe }}
                     </div>
                     <!-- Likes and comments icons -->
                     <div class="row mt-4">

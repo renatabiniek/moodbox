@@ -70,6 +70,6 @@ class Comment(models.Model):
     class Meta:
         """Order comments by date added in ascending order"""
         ordering = ['date_added']
-  
+
     def __str__(self):
         return f"Comment {self.content} by {self.name}"

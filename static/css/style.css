@@ -134,7 +134,7 @@ footer i {
     background-color: rgba(162,174,160,0.2);
 }
 
-#likes {
+.likes {
     float: right;
     padding-right: 1rem;
 }
@@ -183,6 +183,7 @@ footer i {
 .btn-edit {
     background-color: #A2AEA0;
     border-color: #A2AEA0;
+    padding: .3rem .5rem;
 }
 
 .btn-edit > a {
@@ -193,6 +194,7 @@ footer i {
 .btn-delete {
     background-color: #9F4144;
     border-color: #9F4144;
+    padding: .3rem .5rem;
 }
 
 .btn-create {

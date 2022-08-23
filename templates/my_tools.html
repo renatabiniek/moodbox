@@ -29,17 +29,25 @@
                             {% if tool.published_status == 1 %}
                             <p class="text-success">Published</p>
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
-                            <button type="button" class="btn-card btn-edit"><a
-                                    href="{% url 'edit_tool' tool.id %}">Edit</a></button>
-                            <button type="button" class="btn-card btn-delete" data-toggle="modal"
-                                data-target="#deleteModal{{ tool.id }}">Delete</button>
+                            <a class="btn-card btn-edit" role="button"
+                                    href="{% url 'edit_tool' tool.id %}">Edit</a>
+                                    <!-- <button type="button" class="btn-card btn-edit"><a
+                                        href="{% url 'edit_tool' tool.id %}">Edit</a></button> -->
+                            <a class="btn-card btn-delete" role="button" data-toggle="modal"
+                                data-target="#deleteModal{{ tool.id }}">Delete</a>
+                                <!-- <button type="button" class="btn-card btn-delete" data-toggle="modal"
+                                data-target="#deleteModal{{ tool.id }}">Delete</button> -->
                             {% else %}
                             <p class="text-warning">Awaiting approval</p>
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
-                            <button type="button" class="btn-card btn-edit"><a
+                            <a class="btn-card btn-edit" role="button"
+                                    href="{% url 'edit_tool' tool.id %}">Edit</a>
+                            <a class="btn-card btn-delete" role="button" data-toggle="modal"
+                                data-target="#deleteModal{{ tool.id }}">Delete</a>
+                                <!-- <button type="button" class="btn-card btn-edit"><a
                                     href="{% url 'edit_tool' tool.id %}">Edit</a></button>
                             <button type="button" class="btn-card btn-delete" data-toggle="modal"
-                                data-target="#deleteModal{{ tool.id }}">Delete</button>
+                                data-target="#deleteModal{{ tool.id }}">Delete</button> -->
                             {% endif %}
                         </div>
                         <div class="card-admin py-2 mt-2">
@@ -53,7 +61,7 @@
                 {% endif %}
                 <!--Delete modal-->
                 <div class="modal fade" id="deleteModal{{ tool.id }}" tabindex="-1"
-                    aria-labelledby="deleteModalLabel{ tool.id }}" aria-hidden="true">
+                    aria-labelledby="deleteModalLabel{{ tool.id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
