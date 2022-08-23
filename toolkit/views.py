@@ -233,8 +233,8 @@ def category_view(request, slug):
     """ Displays tools related to the category
     passed through the category slug.
     """
-
-    cats = Category.objects.get(slug=slug)
+    cats = get_object_or_404(Category, slug=slug)
+    
     all_categories = cats.categories.all
 
     context = {
