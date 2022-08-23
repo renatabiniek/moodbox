@@ -31,12 +31,8 @@
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
                             <a class="btn-card btn-edit" role="button"
                                     href="{% url 'edit_tool' tool.id %}">Edit</a>
-                                    <!-- <button type="button" class="btn-card btn-edit"><a
-                                        href="{% url 'edit_tool' tool.id %}">Edit</a></button> -->
                             <a class="btn-card btn-delete" role="button" data-toggle="modal"
                                 data-target="#deleteModal{{ tool.id }}">Delete</a>
-                                <!-- <button type="button" class="btn-card btn-delete" data-toggle="modal"
-                                data-target="#deleteModal{{ tool.id }}">Delete</button> -->
                             {% else %}
                             <p class="text-warning">Awaiting approval</p>
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
@@ -44,10 +40,6 @@
                                     href="{% url 'edit_tool' tool.id %}">Edit</a>
                             <a class="btn-card btn-delete" role="button" data-toggle="modal"
                                 data-target="#deleteModal{{ tool.id }}">Delete</a>
-                                <!-- <button type="button" class="btn-card btn-edit"><a
-                                    href="{% url 'edit_tool' tool.id %}">Edit</a></button>
-                            <button type="button" class="btn-card btn-delete" data-toggle="modal"
-                                data-target="#deleteModal{{ tool.id }}">Delete</button> -->
                             {% endif %}
                         </div>
                         <div class="card-admin py-2 mt-2">

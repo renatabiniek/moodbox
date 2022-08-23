@@ -9,14 +9,6 @@
 
 <div class="container mt-3 mb-3">
     <h2>Add a new tool</h2>
-    <!-- {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-            {% endfor %}
-    </ul>
-    {% endif %} -->
-    <!-- Only if user is logged in -->
     {% if user.is_authenticated %}
     <p><strong>Publishing as:</strong> {{ user.username }} </p>
     <br>

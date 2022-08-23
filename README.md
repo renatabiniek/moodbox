@@ -37,7 +37,7 @@
 
 [Live site](https://mood-box.herokuapp.com/)
 
-![MoodBox image](#)
+![MoodBox image](docs/testing/responsive-site.png)
 
 
 ## Introduction
@@ -256,12 +256,13 @@ form submissions
 
 correct templates rendered
 
-console errors during user actions?
+no console errors during user actions
 
 
 Link to testing schedule file here...
 
-*
+* 
+
 
 
 * The program has been tested on various browsers on desktop and mobile:
