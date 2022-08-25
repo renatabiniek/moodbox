@@ -37,7 +37,7 @@
 
 [Live site](https://mood-box.herokuapp.com/)
 
-![MoodBox image](docs/testing/responsive-site.png)
+![MoodBox image](docs/responsive-site.png)
 
 
 ## Introduction
@@ -45,51 +45,96 @@
 
 MoodBox is a digital self-care toolbox for anyone feeling anxious, low or overwhelmed. It’s full of bite-sized information on psychological principles that are known to reduce negative feelings and enhance well-being. The users can pop it open whenever they need a quick remedy, a healthy activity to distract their anxious mind or simply a reminder that they are not alone. 
 
-In MoodBox, they can learn how others use different tools and techniques to calm down their anxiety and lift their mood. They will find practical tips and discover new coping strategies that they implement whenever they need them. They can also share your own insights and everyday strategies to help others.
+In MoodBox, they can learn how others use different tools and techniques to calm down their anxiety and lift their mood. They will find practical tips and discover new coping strategies which they can implement whenever they need them. They can also share their own insights and everyday strategies to help others.
 
 
 
 ## User Experience (UX)
 ---
-### Project goals
+### Project goals  
 
-* 
-* 
+* To provide a self support tool for people struggling with stress, anxiety, depression and low mood
+
+* To create a dynamic collection of simple and accessible strategies for managing common mental health challanges
+
+* To encurage active self care and discovery of own helpful strategies to deal with difficult feelings
+
+* To provide a platform for sharing helpful techniques and seeking support from other people with similar experiences
+
+* To create a supportive community
+
+* To encurage active self care
+
+* To evoke interest in mental health and normalize mental health issues
+
 
 ### Target audience
 
-* 
-* 
+* Adults dealing with anxiety, low mood, depression and other mental health issues who are looking for practical strategies to feel better
+
+* Adults who want to share their own ways of overcoming common mental health issues  
+  
 
 ### User stories:
+
+**Agile methodology:**
+
+The development of this project was managed with the principles of agile methodology in mind. Atomic user stories were definied at the start of the project and grouped according to the MoSCoW prioritization approach. Futher user stories were added throughout the development. Only limited number of user stories was worked on and completed in each iteration. 
+
+The user stories were recorded and managed via the Github issues functionality and the Projects Kanban Board. 
+The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1).
 
 **Site User:**
 
 * As a site user, I can quickly learn what the site is about so I can decide if it offers something I want.
-* As a site user, I can navigate the site so that I can find the page I want to go to.
-* As a site user, I can view a paginated list of tools so I can select a new technique to try.
-* As a site user, I can open a post so I can see more information and steps necessary to use it.
-* As a site user, I can view the number of likes on a tool post so that I can decide if this helped others.
-* As a site user, I can view the comments on tools so I can see even more tips and suggestions.
-* As a site user, I can follow any links leading to extra resources.
-* As a new user, I can sign up for an account so that I can start adding my own tools and comment and like content posted by others.
+* As a site user, I can easily navigate the site so that I can find the page I want to go to.
+* As a site user, I can find MoodBox social accounts so that I can stay up to date with their news.
+* As a site user, I can see in the site menu which page I'm currently on so that I know which part of the website I'm in.
+* As a site user, I can see in the browser which page I'm currently on so that I know which page has been opened.
+* As an interested site user, I can sign up for an account so that I can start adding my own tools, comments and likes.
 
 **Registered User:**
 
-* As a registered user, I can sign into my account so that I can access my tools.
+* As a registered user, I can sign into my account so that I can view tools and manage my posts.
+* As a registered user I can see my username displayed on the page after I log in so that I know the login status.
 * As a registered user, I can sign out of my account when finished, so that I know I am signed out securely.
-* As a registered user, I can create and share my own tools and tips for others users to view.
-* As a registered user, I can edit my post so that I can correct or add to the previously recorded information.
+* As a registered user, I can view a paginated list of tools so I can select a new technique to try.
+* As a registered user, I can open a tool item so that I can see more information and steps necessary to use it.
+* As a registered user, I can view the number of likes on a tool item so that I can decide if this technique helped others. 
+* As a registered user, I can view comments on an individual tool item so that I can see even more tips and suggestions about it. 
+* As a registered user I can see a message that there are no tools in the toolkit so that I know that the page is empty because no tools have been posted by anyone so far.
+* As a registered user, I can create my own tools so that I can share them with others. 
+* As a registered user, I can format the content of my tool so that it appears the way I want.
+* As a registered user, I can see confirmation that my new tool has been added so that I know that the form was submitted correctly.
+* As a registered user, I can edit my posts so that I can correct or add to the previously recorded information. 
+* As a registered user, I can see a confirmation that the edits to my existing tool were successful so that I know that the changes have been saved.
 * As a registered user, I can delete my post so that I can remove it from my records. 
-* As a registered user, I can comment on other users' tips to interact with the content.
-* As a registered user, I can like or unlike tips other users shared so I can interact with the content.
-* As a registered user, I can add links to the posts so that I can point to an official resources.
+* As a registered user, I can see a warning message before a tool is deleted so that I know that I won't delete it by accident.
+* As a registered user, I can see confirmation that my tool was deleted after pressing Delete button so that I know the tool was definitely deleted.
+* As a registered user, I can comment on other users' tools so that I can interact with the content. 
+* As a registered user, I can like or unlike tools other users shared so I can interact with the content. 
+* As a registered user, I can add links to my tools so that I can point to an official resources to help others. 
+* As a registered user, I can follow any links to extra resources added by others so that I can read more about techniques that interest me most. 
+* As a registered user, I can see a confirmation that I haven't added any tools yet so that I know that is why My Tools page is empty. 
+* As a registered user, I can only access the edit page for the tools I had added so that I can't make changes to tools of other users and vice versa.
+* As a registered user, I can see extra instructions on how to fill each field when submitting a new tool so that I know how to complete the form correctly.
+* As a registered user, I can see which fields on the tool form are mandatory so that I understand which fields must be completed.
+* As a registered user, I can upload an image that is relevant to my tool so that I can provide more context with the tool.
+* As a registered user, I can see tools organised by category so that I can browse through the tools that interest me the most.
+* As a registered user, I can assign my tool to a category name so that I can add them to a related group of tools.
+* As a registered user, I can see a message when I try to access a page with a URL of a category that doesn't exist so that I know the category isn't there.
+
 
 **Site Admin:**
 
-* As a site admin, I can create, view, update and delete posts so that I can manage my site content.
-* As a site admin, I can approve user-created posts and comments so that I can manage the content of the site.
-* As a site admin, I can remove users so that they will no longer be able to post unsuitable content.
+* As a site admin, I can create drafts so that I can finish creating a new tool later. 
+* As a site admin, I can publish new tools so that I can share them with others.
+* As a site admin, I can view, update and delete posts so that I can manage my site content. 
+* As a site admin, I can approve tools created by others so that they can be displayed on the site. 
+* As a site admin, I can remove users so that they will no longer be able to post unsuitable content. 
+* As a site admin, I can approve or block comments so that only appropriate comments are displayed.
+* As a site admin, I can review edited published posts before they are made public again so that I can monitor the content and quality.
+* As a site admin, I can add, edit and delete categories from the admin panel so that I can keep my content organised.
 
 ### Structure:
 
@@ -116,11 +161,25 @@ The colour palette consists of calm colors that compliment each other and evoke 
 The final combination was chosen based on colours used in chromotherapy, that can help with anxiety, depression and stress, inspired by [this article](https://www.medicinenet.com/which_color_light_helps_anxiety/article.htm). The specific shades were derived from the home page image colours using [Eye Dropper](https://eyedropper.org/) and the remaining ones were added to the scheme using the colour scheme generator [Coolors](https://coolors.co/). 
 In additon black and white was used for text on buttons, for best contrast.  
 
+The colour combinations have been checked and improved for accessibility using [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/).
+
  ![Colour scheme image](docs/colour-scheme.png)
 
 * **Typography**
 
+Montserrat is used throughout the entire website, with sans-serif as the fallback option in case the original font family isn't imported correctly for some reason. This is a clean, popular and very readable font, which fits well with the theme of the site.
+
+
 * **Imagery**
+
+Most images, including the homepage image, have been sourced from [Vecteezy](https://www.vecteezy.com/). The illustration style of the images adds softness to the site and creates a calming effect which is the main goal of the app.
+
+Images for tools with published books available come from the following sources: 
+
+[The 5 Second Rule method](https://www.themeritclub.com/new-blog-1/2017/10/5/mel-robbins-revolution-of-the-5-second-rule) 
+
+[Wim Hof Method](https://www.wimhofmethod.com/the-wim-hof-method-book)
+
 
 ## Features
 ---
@@ -447,11 +506,12 @@ At one point the Summernote editor for Method Details field stopped displaying p
 Thank you to:
 
 * Tutors at the Code Institute, their support was priceless
-* My mentor Guido Cecilio for continous help and advice
+* My mentor Guido Cecilio for his continous help and advice
 * Joanna Górska for her webinar on Code Validation
 
 ### Disclaimer
 
-*This program has been created for educational purposes only, as part of Code Institute’s Portfolio Project Full-Stack Toolkit. The requirements are to build a full-stack site based on business logic used to control a centrally-owned dataset.
+*This program has been created for educational purposes only, as part of Code Institute’s Portfolio Project Full-Stack Toolkit.  
+The requirements are to build a full-stack site based on business logic used to control a centrally-owned dataset.*
 
 [Back to top](#Table-of-Contents)
