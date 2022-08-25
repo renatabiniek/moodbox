@@ -29,16 +29,16 @@
                             {% if tool.published_status == 1 %}
                             <p class="text-success">Published</p>
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
-                            <a class="btn-card btn-edit" role="button"
+                            <a class="btn-card btn-tool btn-edit" role="button"
                                     href="{% url 'edit_tool' tool.id %}">Edit</a>
-                            <a class="btn-card btn-delete" role="button" data-toggle="modal"
+                            <a class="btn-card btn-tool btn-delete" role="button" data-toggle="modal"
                                 data-target="#deleteModal{{ tool.id }}">Delete</a>
                             {% else %}
                             <p class="text-warning">Awaiting approval</p>
                             <h5 class="card-title">{{ tool.tool_name }}</h5>
-                            <a class="btn-card btn-edit" role="button"
+                            <a class="btn-card btn-tool btn-edit" role="button"
                                     href="{% url 'edit_tool' tool.id %}">Edit</a>
-                            <a class="btn-card btn-delete" role="button" data-toggle="modal"
+                            <a class="btn-card btn-tool btn-delete" role="button" data-toggle="modal"
                                 data-target="#deleteModal{{ tool.id }}">Delete</a>
                             {% endif %}
                         </div>

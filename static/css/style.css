@@ -1,6 +1,9 @@
 /*------------------------------------ General*/
 
-html, body { height: 100%;}
+html,
+body {
+    height: 100%;
+}
 
 body {
     font-family: 'Montserat', sans-serif;
@@ -25,12 +28,12 @@ h1 {
     font-weight: bolder;
 }
 
-.logo-light {
-    color: #5f6670;
+.logo-main {
+    color: black;
 }
 
 .logo-darker {
-    color: #A2AEA0;
+    color: #2C514C;
 }
 
 .nav-link {
@@ -38,8 +41,8 @@ h1 {
 }
 
 .icn-home {
-   color: #A2AEA0;
-   font-size: 2rem;
+    color: #A2AEA0;
+    font-size: 2rem;
 }
 
 .logged-in {
@@ -48,16 +51,18 @@ h1 {
 }
 
 .btn-callout {
-    background-color: #D69722;
+    background-color: #DA920D;
     border-radius: 0.5rem;
     float: right;
-    color: white;
+    color: black;
 }
 
-.btn-callout:hover, .btn-callout:focus, .btn-callout:active {
-    background-color: #D69722;
+.btn-callout:hover,
+.btn-callout:focus,
+.btn-callout:active {
+    background-color: #DA920D;
     font-size: 1.5rem;
-    color: white;
+    color: black;
 }
 
 .info-text {
@@ -70,18 +75,20 @@ h1 {
 this tip: https://css-tricks.com/a-clever-sticky-footer-technique/
 */
 
-.page-footer  {
+.page-footer {
     background-color: #A2AEA0;
     position: sticky;
     top: 100vh;
 }
 
-.footer-link, .footer-text {
+.footer-link,
+.footer-text {
     color: black;
     font-size: 0.8rem;
 }
 
-.footer-link:hover, .footer-link:active {
+.footer-link:hover,
+.footer-link:active {
     color: whitesmoke;
     text-decoration: none;
     font-weight: bolder;
@@ -96,27 +103,31 @@ footer i {
 .page-link {
     border: none;
     color: #A2AEA0;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-.page-link:hover, .page-link:focus, .page-link:active {
+.page-link:hover,
+.page-link:focus,
+.page-link:active {
     color: #A2AEA0;
     font-size: 1.4rem;
     background-color: white;
 }
 
 .btn-card {
-    background-color: #D69722;
+    background-color: #DA920D;
     border-radius: 0.5rem;
-    color: whitesmoke;
-    font-weight: bold; 
-    border-color: #D69722;
+    color: black;
+    font-weight: bold;
+    border-color: #DA920D;
 }
 
-.btn-card:hover, .btn-card:focus, .btn-card:active {
+.btn-card:hover,
+.btn-card:focus,
+.btn-card:active {
     font-size: 1.1rem;
     text-decoration: none;
-    color: whitesmoke;
+    color: black;
 }
 
 .keywords {
@@ -131,7 +142,7 @@ footer i {
     font-size: 0.9rem;
     text-align: left;
     padding-left: 1rem;
-    background-color: rgba(162,174,160,0.2);
+    background-color: rgba(162, 174, 160, 0.2);
 }
 
 .likes {
@@ -144,14 +155,15 @@ footer i {
     font-style: italic;
 }
 
-.bi-suit-heart, .bi-suit-heart-fill {
+.bi-suit-heart,
+.bi-suit-heart-fill {
     color: #9F4144;
 }
 
 /*------------------------------------ Card detailed view*/
 
 .jumbotron {
-    background-color: rgba(162,174,160,0.2);
+    background-color: rgba(162, 174, 160, 0.2);
 }
 
 .tool-title {
@@ -163,14 +175,15 @@ footer i {
     border: none;
 }
 
-.link:hover, .link:focus {
+.link:hover,
+.link:focus {
     text-decoration: none;
     font-size: larger;
 }
 
 .msg-special {
     font-weight: bolder;
-    color:  #A2AEA0;
+    color: #2C514C;
 }
 
 .btn-like {
@@ -180,29 +193,38 @@ footer i {
 
 /*------------------------------------ My tools view*/
 
+.btn-tool {
+    text-decoration: none;
+    padding: .3rem .5rem;
+    color: whitesmoke;
+}
+
+.btn-tool:hover,
+.btn-tool:focus,
+.btn-tool:active {
+    color: whitesmoke;
+}
+
 .btn-edit {
     background-color: #A2AEA0;
     border-color: #A2AEA0;
-    padding: .3rem .5rem;
-}
-
-.btn-edit > a {
-    text-decoration: none;
-    color: whitesmoke;
 }
 
 .btn-delete {
     background-color: #9F4144;
     border-color: #9F4144;
-    padding: .3rem .5rem;
 }
 
 .btn-create {
     font-size: 1.3rem;
+    color: black;
 }
 
-.btn-create:hover, .btn-create:focus, .btn-create:active {
+.btn-create:hover,
+.btn-create:focus,
+.btn-create:active {
     font-size: 1.4rem;
+    color: black;
 }
 
 .category-text {
@@ -212,6 +234,13 @@ footer i {
 .btn-red {
     background-color: #9F4144;
     border-color: #9F4144;
+    color: whitesmoke;
+}
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red:active {
+    color: whitesmoke;
 }
 
 /*------------------------------------ 404 Page*/
@@ -222,10 +251,12 @@ footer i {
 
 .home-link {
     color: #A2AEA0;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
-.home-link:hover, .home-link:focus, .home-link:active {
+.home-link:hover,
+.home-link:focus,
+.home-link:active {
     font-size: 1.4rem;
     text-decoration: none;
     color: #A2AEA0;
