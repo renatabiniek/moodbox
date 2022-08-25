@@ -53,7 +53,7 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 ---
 ### Project goals  
 
-* To provide a self support tool for people struggling with stress, anxiety, depression and low mood
+* To provide a self support tool with an uncomplicated user interface for people struggling with stress, anxiety, depression and low mood
 
 * To create a dynamic collection of simple and accessible strategies for managing common mental health challanges
 
@@ -79,7 +79,7 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 
 **Agile methodology:**
 
-The development of this project was managed with the principles of agile methodology in mind. Atomic user stories were definied at the start of the project and grouped according to the MoSCoW prioritization approach. Futher user stories were added throughout the development. Only limited number of user stories was worked on and completed in each iteration. 
+The development of this project was managed with the principles of agile methodology in mind. Atomic user stories were definied at the start of the project and grouped according to the MoSCoW prioritization approach. Around the recommended 60% of user stories are identified as the must-have features. Futher user stories were added throughout the development. Only limited number of user stories was worked on and completed in each iteration. 
 
 The user stories were recorded and managed via the Github issues functionality and the Projects Kanban Board. 
 The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1).
@@ -140,16 +140,44 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 
 * Wireframes
 
-  [Wireframes - desktop](docs/wireframes/moodbox-desktop.pdf) 
-  
-  [Wireframes - mobile](docs/wireframes/moodbox-mobile.pdf)
+  Low fidelity mock-ups were made using [Balsamiq](https://balsamiq.com/wireframes/) to help plan and visualise the navigation design, placement of information, features, relationship between the content and usefulness. They were created for 3 main screen sizes: mobile, tablet and desktop.
 
+  The project was developed from initial wireframes and some modifications were made during the development process to assure better usability, and sufficient content.
+  Blocks of text had been moved around, a home page image, login status icon and a category page have been added.
+
+  *Final wireframes:*
+
+  *Mobile:*
+
+  [Mobile - Home](docs/wireframes/mobile/Mobile-Home.png)  
+  [Mobile - SignIn](docs/wireframes/mobile/Mobile-SignIn.png)  
+  [Mobile - Tools](docs/wireframes/mobile/Mobile-Tools.png)  
+  [Mobile - Categories](docs/wireframes/mobile/Mobile-Categories.png)
+  [Mobile - Manage](docs/wireframes/mobile/Mobile-Manage.png)  
+
+  [Mobile - All in pdf](docs/wireframes/mobile/Mobile-MoodBox.pdf) 
+  
+  *Desktop:*
+
+  [Desktop - Home](docs/wireframes/desktop/Desktop-Home.png)  
+  [Desktop - SignIn](docs/wireframes/desktop/Desktop-Signin.png)  
+  [Desktop - Tools](docs/wireframes/desktop/Desktop-Tools.png)  
+  [Desktop - Categories](docs/wireframes/desktop/Desktop-Categories.png)
+  [Desktop - Manage](docs/wireframes/desktop/Desktop-Manage.png)  
+
+  [Desktop - All in pdf](docs/wireframes/desktop/Desktop-MoodBox.pdf) 
+
+  
 * Database Schema
 
-  Database consists of the following models: Tool, Category, Comment and a Django built-in User model. 
+  A relational database was used for this project. 
+  The database consists of the following models: Tool, Category, Comment and a Django built-in User model. 
+  The Tools model has been slightly amended during the developement to improve the database logic, and the Category model has been added at a later stage as well. 
   Django AllAuth was used for user authentication.
   The database schema has been prepared using drawSQL. Limitations of the tool prevented accurate choice of field types (e.g. SlugField, CLoudinaryField).
-
+  
+  *Final database schema:*
+  
   ![Database diagram image](docs/database/database-schema.png)
 
 
@@ -157,28 +185,30 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 
 * **Colour scheme**
 
-The colour palette consists of calm colors that compliment each other and evoke mindful mood throughout the site. The goal was to create a minimal relaxed look. 
-The final combination was chosen based on colours used in chromotherapy, that can help with anxiety, depression and stress, inspired by [this article](https://www.medicinenet.com/which_color_light_helps_anxiety/article.htm). The specific shades were derived from the home page image colours using [Eye Dropper](https://eyedropper.org/) and the remaining ones were added to the scheme using the colour scheme generator [Coolors](https://coolors.co/). 
-In additon black and white was used for text on buttons, for best contrast.  
+  The colour palette consists of calm colors that compliment each other and evoke mindful mood throughout the site. The goal was to create a minimal relaxed look. 
+  The final combination was chosen based on colours used in chromotherapy, that can help with anxiety, depression and stress, inspired by [this article](https://www.medicinenet.com/which_color_light_helps_anxiety/article.htm). The specific shades were derived from the home page image colours using [Eye Dropper](https://eyedropper.org/) and the remaining ones were added to the scheme using the colour scheme generator [Coolors](https://coolors.co/). 
+  In additon black and white was used for text on buttons, for best contrast.  
 
-The colour combinations have been checked and improved for accessibility using [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/).
+  The colour combinations have been checked and improved for accessibility using [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/).
 
  ![Colour scheme image](docs/colour-scheme.png)
 
 * **Typography**
 
-Montserrat is used throughout the entire website, with sans-serif as the fallback option in case the original font family isn't imported correctly for some reason. This is a clean, popular and very readable font, which fits well with the theme of the site.
-
+  Montserrat is used throughout the entire website, with sans-serif as the fallback option in case the original font family isn't imported correctly for some reason. This is a clean, popular and very readable font, which fits well with the theme of the site.
+  The font was sourced from [Google Fonts](https://fonts.google.com/).
 
 * **Imagery**
 
-Most images, including the homepage image, have been sourced from [Vecteezy](https://www.vecteezy.com/). The illustration style of the images adds softness to the site and creates a calming effect which is the main goal of the app.
+  Most images, including the homepage image and the placeholder image, have been sourced from [Vecteezy](https://www.vecteezy.com/). The illustration style of the images adds softness to the site and creates a calming effect which is the main goal of the app.
 
-Images for tools with published books available come from the following sources: 
+  Images for tools with published books available come from the following sources: 
 
-[The 5 Second Rule method](https://www.themeritclub.com/new-blog-1/2017/10/5/mel-robbins-revolution-of-the-5-second-rule) 
+  [The 5 Second Rule method](https://www.themeritclub.com/new-blog-1/2017/10/5/mel-robbins-revolution-of-the-5-second-rule) 
 
-[Wim Hof Method](https://www.wimhofmethod.com/the-wim-hof-method-book)
+  [Wim Hof Method](https://www.wimhofmethod.com/the-wim-hof-method-book)
+
+  Further images can be added by registered users who submit a new tool via the form.
 
 
 ## Features
@@ -186,16 +216,28 @@ Images for tools with published books available come from the following sources:
 
 ### Existing Features
 
-* 
+* Navbar:
+* Footer:
+* Home Page:
+* Log In:
+* Sign Up:
+* Log Out:
+* Toolkit:
+* Tool Details:
+* Categories:
+* My Tools:
+* 404 Error Page:
+* Admin panel:
+
 
 ### Features to be implemented in the future
 
-Due to time constraints, I was unable to implement all planned features. In the future, I'd like to add the following:
+  Due to time constraints, I was unable to implement all planned features. In the future, I'd like to add the following:
 
-* 
-* 
-* 
-* 
+* add search by keyword functionality to the toolkit so that user can easily find best matching tools
+* add save to a list functionality so that users can save their favourite techniques in a meaningful way and quickly find them later
+* create a members area where registred users can create their own profile, view profile's of others and follow each other for updates
+* specify and validate file types allowed for the add new tool form 
 
 ## Technologies used
 ---
