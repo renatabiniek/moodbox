@@ -112,9 +112,11 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 
 * **Colour scheme**
 
-The colour palette consists of calm colors that compliment each other and evoke mindful mood throughout the site.
-The final combination was chosen based on colours used in chromotherapy, that can help with anxiety, depression and stress, based on [this article](https://www.medicinenet.com/which_color_light_helps_anxiety/article.html). The goal was to create a minimal calm look. The specific shades were derived from the home page image colours using [Eye Dropper](https://eyedropper.org/) and the remaining ones were added to the scheme using the colour scheme generator [Coolors](https://coolors.co/). 
-In additon white was used for text on buttons on hover, for best contrast.  
+The colour palette consists of calm colors that compliment each other and evoke mindful mood throughout the site. The goal was to create a minimal relaxed look. 
+The final combination was chosen based on colours used in chromotherapy, that can help with anxiety, depression and stress, inspired by [this article](https://www.medicinenet.com/which_color_light_helps_anxiety/article.htm). The specific shades were derived from the home page image colours using [Eye Dropper](https://eyedropper.org/) and the remaining ones were added to the scheme using the colour scheme generator [Coolors](https://coolors.co/). 
+In additon black and white was used for text on buttons, for best contrast.  
+
+ ![Colour scheme image](docs/colour-scheme.png)
 
 * **Typography**
 
@@ -436,7 +438,7 @@ At one point the Summernote editor for Method Details field stopped displaying p
 
 * Codemy
 
-* 
+* [Which Color Light Helps Anxiety?](https://www.medicinenet.com/which_color_light_helps_anxiety/article.htm) article was used to come up with the colour scheme.
 
 * 
 
