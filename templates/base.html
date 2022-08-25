@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,8 +30,10 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <!-- Favicon -->
-  <link rel="shortcut icon" href="https://res.cloudinary.com/renatab/image/upload/v1661283331/favicon_zyqdqp.ico" type="image/x-icon">
-  <link rel="icon" href="https://res.cloudinary.com/renatab/image/upload/v1661283331/favicon_zyqdqp.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/renatab/image/upload/v1661283331/favicon_zyqdqp.ico"
+    type="image/x-icon">
+  <link rel="icon" href="https://res.cloudinary.com/renatab/image/upload/v1661283331/favicon_zyqdqp.ico"
+    type="image/x-icon">
   <!-- Page title changes dynamically -->
   <title>{% block title %}MoodBox{% endblock %}</title>
 </head>
@@ -75,14 +78,14 @@
             <li class="nav-item {% if url_name == 'mytools' %}active{% endif %}">
               <a class="nav-link" href="{% url 'mytools' %}">My tools</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if url_name == 'account_logout' %}active{% endif %}">
               <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
             </li>
             {% else %}
-            <li class="nav-item">
+            <li class="nav-item {% if url_name == 'account_login' %}active{% endif %}">
               <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if url_name == 'account_signup' %}active{% endif %}">
               <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
             </li>
             {% endif %}
@@ -150,4 +153,5 @@
   </script>
 
 </body>
+
 </html>
