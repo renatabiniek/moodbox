@@ -53,17 +53,17 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 ---
 ### Project goals  
 
-* To provide a self support tool with an uncomplicated user interface for people struggling with stress, anxiety, depression and low mood
+* To provide a self-support tool with an uncomplicated user interface for people struggling with stress, anxiety, depression and low mood
 
-* To create a dynamic collection of simple and accessible strategies for managing common mental health challanges
+* To create a dynamic collection of simple and accessible strategies for managing common mental health challenges
 
-* To encurage active self care and discovery of own helpful strategies to deal with difficult feelings
+* To encourage active self care and discovery of own helpful strategies to deal with difficult feelings
 
 * To provide a platform for sharing helpful techniques and seeking support from other people with similar experiences
 
 * To create a supportive community
 
-* To encurage active self care
+* To encourage active self care
 
 * To evoke interest in mental health and normalize mental health issues
 
@@ -81,14 +81,14 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 
 **Agile methodology:**
 
-The development of this project was managed with the principles of agile methodology in mind. Atomic user stories were definied at the start of the project and grouped according to the MoSCoW prioritization approach. Around the recommended 60% of user stories are identified as the must-have features. Futher user stories were added throughout the development. Only limited number of user stories was worked on and completed in each iteration. 
+The development of this project was managed with the principles of agile methodology in mind. Atomic user stories were defined at the start of the project and grouped according to the MoSCoW prioritization approach. Around the recommended 60% of user stories are identified as the must-have features. Further user stories were added throughout the development. Only limited number of user stories was worked on and completed in each iteration. 
 
 The user stories were recorded and managed via the Github issues functionality and the Projects Kanban Board. 
 The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1).
 
 **Site User:**
 
-* As a site user, I can quickly learn what the site is about so I can decide if it offers something I want.
+* As a site user, I can quickly learn what the site is about so that I can decide if it offers something I want.
 * As a site user, I can easily navigate the site so that I can find the page I want to go to.
 * As a site user, I can find MoodBox social accounts so that I can stay up to date with their news.
 * As a site user, I can see in the site menu which page I'm currently on so that I know which part of the website I'm in.
@@ -97,10 +97,10 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 
 **Registered User:**
 
-* As a registered user, I can sign into my account so that I can view tools and manage my posts.
+* As a registered user, I can sign in to my account so that I can view tools and manage my posts.
 * As a registered user I can see my username displayed on the page after I log in so that I know the login status.
 * As a registered user, I can sign out of my account when finished, so that I know I am signed out securely.
-* As a registered user, I can view a paginated list of tools so I can select a new technique to try.
+* As a registered user, I can view a paginated list of tools so that I can select a new technique to try.
 * As a registered user, I can open a tool item so that I can see more information and steps necessary to use it.
 * As a registered user, I can view the number of likes on a tool item so that I can decide if this technique helped others. 
 * As a registered user, I can view comments on an individual tool item so that I can see even more tips and suggestions about it. 
@@ -114,8 +114,8 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 * As a registered user, I can see a warning message before a tool is deleted so that I know that I won't delete it by accident.
 * As a registered user, I can see confirmation that my tool was deleted after pressing Delete button so that I know the tool was definitely deleted.
 * As a registered user, I can comment on other users' tools so that I can interact with the content. 
-* As a registered user, I can like or unlike tools other users shared so I can interact with the content. 
-* As a registered user, I can add links to my tools so that I can point to an official resources to help others. 
+* As a registered user, I can like or unlike tools other users shared so that I can interact with the content. 
+* As a registered user, I can add links to my tools so that I can point to an official resource to help others. 
 * As a registered user, I can follow any links to extra resources added by others so that I can read more about techniques that interest me most. 
 * As a registered user, I can see a confirmation that I haven't added any tools yet so that I know that is why My Tools page is empty. 
 * As a registered user, I can only access the edit page for the tools I had added so that I can't make changes to tools of other users and vice versa.
@@ -174,9 +174,9 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 
   A relational database was used for this project. 
   The database consists of the following models: Tool, Category, Comment and a Django built-in User model. 
-  The Tools model has been slightly amended during the developement to improve the database logic, and the Category model has been added at a later stage as well. 
+  The Tools model has been slightly amended during the development to improve the database logic, and the Category model has been added at a later stage as well. 
   Django AllAuth was used for user authentication.
-  The database schema has been prepared using drawSQL. Limitations of the tool prevented accurate choice of field types (e.g. SlugField, CLoudinaryField).
+  The database schema has been prepared using drawSQL. Limitations of the tool prevented accurate choice of field types (e.g. SlugField, CloudinaryField).
   
   *Final database schema:*
   
@@ -189,7 +189,7 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 
   The colour palette consists of calm colors that compliment each other and evoke mindful mood throughout the site. The goal was to create a minimal relaxed look. 
   The final combination was chosen based on colours used in chromotherapy, that can help with anxiety, depression and stress, inspired by [this article](https://www.medicinenet.com/which_color_light_helps_anxiety/article.htm). The specific shades were derived from the home page image colours using [Eye Dropper](https://eyedropper.org/) and the remaining ones were added to the scheme using the colour scheme generator [Coolors](https://coolors.co/). 
-  In additon black and white was used for text on buttons, for best contrast.  
+  In addition, black and white was used for text on buttons, for best contrast.  
 
   The colour combinations have been checked and improved for accessibility using [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/).
 
@@ -216,16 +216,16 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 ## Features
 ---
 
-The site has a clean, minimialistic design to ensure best possible user experience for the target audience.
-The site is reponsive on smaller screens so that it can be used on the go.
+The site has a clean, minimalistic design to ensure the best possible user experience for the target audience.
+The site is responsive on smaller screens so that it can be used on the go.
 
 ### Existing Features
 
-* Nagivation  
+* Navigation  
 
   * Conventional horizontally aligned navigation bar is present on all the pages for a consistently easy and intuitive navigation.
-  * Navigation bar is always placed at the top of the page and includes a logo and webiste name on the left, and Home, Log In and Sign Up links on the right.
-  * When a user is logged in, the navabar changes as follows:
+  * Navigation bar is always placed at the top of the page and includes a logo and website name on the left, and Home, Log In and Sign Up links on the right.
+  * When a user is logged in, the navbar changes as follows:
     * username is shown on the far right-hand side of the page
     * navigation links change to Home, Toolkit, Categories, My tools, Logout
   * Category is a dropdown menu, with several category links listed when clicked.
@@ -263,7 +263,7 @@ The site is reponsive on smaller screens so that it can be used on the go.
 * Log In  
 
   * Users can access this page from the navigation menu at the top, or from the Sign Up page.
-  * It includes a welcome back message and a log in form with the following fields:
+  * It includes a welcome back message and a login form with the following fields:
     * username (mandatory)
     * password (mandatory)
   * Sign In button submits the form.
@@ -289,9 +289,9 @@ The site is reponsive on smaller screens so that it can be used on the go.
   * Max. 6 tool cards are displayed per page, and if more than 6 tools are published, they are moved to the next page, and Next / Prev buttons are added to the bottom for navigation between them.
   * The tools are displayed starting with the most recent to the oldest.
   * Each card shows the tool overview info, including title, keywords, category, time required, author, date created, number of likes with a heart icon. 
-  * The Try it out button takes the user the the full content of the tool (tool detail page).
+  * The Try it out button takes the user the full content of the tool (tool detail page).
   * A bold add a new tool button is shown underneath the series of published tools, as a call to action for the user to create a new tool.
-  * If there are no published tool items, a message "Oh, looks like there's nothing here yet..." is displayed and a Add the first tool button is visible for the user to add a new tool. 
+  * If there are no published tool items, a message "Oh, looks like there's nothing here yet..." is displayed and Add the first tool button is visible for the user to add a new tool. 
 
 * Tool Detail  
 
@@ -323,7 +323,7 @@ The site is reponsive on smaller screens so that it can be used on the go.
   * Categories menu item is only visible from Home and Tookit pages.
   * Tools are displayed as cards, 3 per row on medium and larger screens and stacked one on top of another on small screens. 
   * Their full content can by opened by clicking the Try it out button.
-  * If there are no published tool items listed in a specific category, a message "Oh, looks like there are no posts in this category..." is displayed and a Add the first tool button is visible for the user to add a new tool. 
+  * If there are no published tool items listed in a specific category, a message "Oh, looks like there are no posts in this category..." is displayed and Add the first tool button is visible for the user to add a new tool. 
   * Link Back to all tools appears underneath the list of tools that redirects the user to the Toolkit page with all tools.
   * If user tries to access category page that doesn't exist by typing an invalid slug in the URL, they will see a page error.
 
@@ -335,7 +335,7 @@ The site is reponsive on smaller screens so that it can be used on the go.
   * Max. 6 tool cards are displayed per page, and if more than 6 tools are published, they are moved to the next page, and Next / Prev buttons are added to the bottom for navigation between them.
   * Tool items show their current status (Published or Awaiting approval) and limited info for each tool for easy overview.
   * **Add a new tool** button is shown above the tools to allow the user to easily access the tool creation form.
-  * When the button is clicked an add form opens on a new page, which includes the following fields:
+  * When the button is clicked, Add tool form opens on a new page, which includes the following fields:
     * tool name
     * keywords
     * category
@@ -347,7 +347,7 @@ The site is reponsive on smaller screens so that it can be used on the go.
   * Submit button submits the details populated in the form, triggers a success message "Your post has been submitted!" and redirects to the My tools page.
   * There the user can see the newly created post with "Awaiting approval" status. Once approved by the admin, it will change to Published.
   * Each tool item shows two buttons: Edit and Delete, that allow the logged in user to manage their tools. 
-  * **Edit tool** page displays when Edit button is clicked. The form is identical to the Add tool form but pre-populated with the specific tool's details,which can be edited.
+  * **Edit tool** page displays when Edit button is clicked. The form is identical to the Add tool form but pre-populated with the specific tool's details, which can be edited.
   * Update tool button is displayed at the bottom of the form to submit changes.
   * A confirmation message "Your edited post has been submitted!" appears once submitted.
   * **Delete tool** modal pops up when the Delete button is clicked. It includes a warning message that the delete action cannot be undone.
@@ -376,8 +376,8 @@ The site is reponsive on smaller screens so that it can be used on the go.
 
 * add search by keyword functionality to the toolkit so that user can easily find best matching tools
 * add save to a list functionality so that users can save their favourite techniques in a meaningful way and quickly find them later
-* create a members area where registred users can create their own profile, view profile's of others and follow each other for updates
-* specify and validate file types allowed for the add new tool form 
+* create a members' area where registered users can create their own profile, view profile's of others and follow each other for updates
+* specify and validate file types allowed to be used in the add new tool form 
 
 ## Technologies used
 ---
@@ -421,7 +421,6 @@ The site is reponsive on smaller screens so that it can be used on the go.
 * [GitHub issues](https://github.com/) - used as Agile tools in the planning and implementation of the project
 * [Gitpod](https://gitpod.io/) - to write the code and push it to GitHub
 * [Online-Spellcheck](https://www.online-spellcheck.com/) - to spellcheck the README
-* [Word Counter](https://wordcounter.net/character-count) - to limit number of characters used for commit messages to 50, max 72 characters
 
 
 ## Deployment
@@ -583,7 +582,7 @@ No errors were found during CSS validation.
 
 ### Issues and Bugs
 
-* **Navbar collapsable not expanding to show links of the menu**
+* **Navbar collapsable menu not expanding to show links of the menu**
 
   The menu of the navbar was collapsing correctly when screen size got smaller but it wasn't expanding when clicked.  
   This was a simple oversight of not adding the js plugin to my code to handle the interaction. Resolved with help of [this Stackoverflow post](https://stackoverflow.com/questions/65911507/bootstrap-navbar-collapse-not-expanding-to-show-links-of-the-menu).
@@ -596,22 +595,22 @@ No errors were found during CSS validation.
   
   This error came up When a new post is created in the front end by a logged in user. 
   I noticed that in the admin view the slug field was blank for these posts. This meant that the tool created didn't have a forwarding url 
-  for the tool detail page to be populated. Using slugify, I coverted the tool name into a slug, and this has fixed the issue.
+  for the tool detail page to be populated. Using slugify, I converted the tool name into a slug, and this has fixed the issue.
 
   ![New tool slug image](docs/bugs/new-tool-slug.png)
 
 * **Numeric field overflow error**
   
-  After trying to alter decimal field in my Tool model, I got an erorr saying that A field with precision 2, scale 2 must round to an absolute value less than 1.
+  After trying to alter decimal field in my Tool model, I got an error saying that A field with precision 2, scale 2 must round to an absolute value less than 1.
   This was preventing correct migrations. 
   ![Numeric field overflow image](docs/bugs/numeric-field-overflow.png)
 
   **Didn't work:** Tried increasing the max digits and decimal places but this resulted with the same erorr.
-  **Worked:** It seems that there was non-conforming data in existing posts and as all of them were dummy data, the easiest solution to apply the migrations was to delete the posts and try again. This allowed the migrations to run succssfuly.
+  **Worked:** It seems that there was non-conforming data in existing posts and as all of them were dummy data, the easiest solution to apply the migrations was to delete the posts and try again. This allowed the migrations to run successfully.
 
 * **Migrations to Heroku**
   
-  After making a change to a field in Tool model, I was getting a warning that django_summernote have changes that are not yet reflected in a migrations, even though summernote was not the modified model. After exploring several options, including resetting the data base on Heroku, removin and making the migrations again, the warning still appears in the terminal when attempting a migration to Heroku. This doesn't seem to affect the deployed app though so I left it unresolved upon a recommendation from the Tutor Support. 
+  After making a change to a field in Tool model, I was getting a warning that django_summernote have changes that are not yet reflected in a migrations, even though summernote was not the modified model. After exploring several options, including resetting the data base on Heroku, removing and making the migrations again, the warning still appears in the terminal when attempting a migration to Heroku. This doesn't seem to affect the deployed app though, so I left it unresolved upon a recommendation from the Tutor Support. 
   
   ![Migration error image](docs/bugs/migrations.png) 
 
@@ -622,7 +621,7 @@ No errors were found during CSS validation.
   
   **Not resolved**:
 
-  Your database settings will connect to the heroku postgres database if you have a DATABASE_URL in your env.py, so the last command verified that all local migrations have been applied to the heroku database. The summernote error might be caused by a different version of summernote being installed on heroku. Although you have the version number specified so I'm not sure why that would happen. I'd recommend testing out the deployed site by adding a few posts and seeing if you come into any more errors.
+  Your database settings will connect to the heroku postgres database if you have a DATABASE_URL in your env.py, so the last command verified that all local migrations have been applied to the heroku database. The summernote error might be caused by a different version of summernote being installed on heroku. Although you have the version number specified, so I'm not sure why that would happen. I'd recommend testing out the deployed site by adding a few posts and seeing if you come into any more errors.
 
 * **Getting NoReverseMatch error for delete modal**
 
@@ -630,9 +629,9 @@ No errors were found during CSS validation.
 
   ![Delete modal error image](docs/bugs/delete-modal.png)
 
-* **Users can submit add tool form with negative number in time required field**
+* **Users can submit Add tool form with negative number in time required field**
 
-  When testing the add tool form, I found that it was possible to enter or select a value less than 0 in the time required field,
+  When testing the Add tool form, I found that it was possible to enter or select a value less than 0 in the time required field,
   which was both not a good user experience and bad data.
 
   **Didn't work**: I tried validation of the field with overriding clean method and ValidationError in ToolForm using [this post](https://stackoverflow.com/questions/12806771/django-modelform-validation) as a guide. The form was getting cleared and new tool wasn't getting created in the admin panel, but the error was not getting displayed.
@@ -644,20 +643,20 @@ No errors were found during CSS validation.
 
 * **CK Editor issues**
 
-  I came across a few issues with the CK Editor that I was using for the front end form submissions, including concole errors related to CK Editor specifically. Upon some further research, I found that it tends to be buggy especially with Heroku, and I decide to uninstall it and replace with Summernote. This seemed to be a cleaner approach as well, seeing that I was already using Summernote in the amdin panel.
+  I came across a few issues with the CK Editor that I was using for the front end form submissions, including console errors related to CK Editor specifically. Upon some further research, I found that it tends to be buggy especially with Heroku, and I decide to uninstall it and replace with Summernote. This seemed to be a cleaner approach as well, seeing that I was already using Summernote in the admin panel.
 
   Upon removing all CK Editor mentions and uninstalling it, I ran into a problem with migrations and had to delete them, and again make migrations and run them.
   
   Rich text editor not responsive
-  While testing, I noticed that the rich text field in the add tool form wasn't responsive, causing layout issues on smaller screens.
+  While testing, I noticed that the rich text field in the Add tool form wasn't responsive, causing layout issues on smaller screens.
   I resolved this by adding CKEDITOR_CONFIGS to settings.py and customizing the widget's toolbar and width. I used [this document](https://django-ckeditor.readthedocs.io/en/latest/) as a guide. 
 
   ![Ck editor image](docs/bugs/ckeditor.png)
 
 * **Edited image not uploading**
 
-  When an existing tool was being edited, all fields would be sucessfully updated except for the image. The new image wasn't getting saved to replace the previous image.
-  This was solved by adding the ecoding method of enctype="multipart/form-data to the edit_tool.html and passing FILES in the form.
+  When an existing tool was being edited, all fields would be successfully updated except for the image. The new image wasn't getting saved to replace the previous image.
+  This was solved by adding the encoding method of enctype="multipart/form-data to the edit_tool.html and passing FILES in the form.
 
 * **No form error showing to the user for duplicated tool name**
 
@@ -688,7 +687,7 @@ At one point the Summernote editor for Method Details field stopped displaying p
 Thank you to:
 
 * Tutors at the Code Institute, their support was priceless
-* My mentor Guido Cecilio for his continous help and advice
+* My mentor Guido Cecilio for his continuous help and advice
 * Joanna Górska for her webinar on Code Validation
 
 ### Disclaimer
