@@ -73,6 +73,8 @@ In MoodBox, they can learn how others use different tools and techniques to calm
 * Adults dealing with anxiety, low mood, depression and other mental health issues who are looking for practical strategies to feel better
 
 * Adults who want to share their own ways of overcoming common mental health issues  
+
+* Users interested in available self-care techniques but overwhelmed with lengthy articles and information scattered online
   
 
 ### User stories:
@@ -214,20 +216,158 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 ## Features
 ---
 
+The site has a clean, minimialistic design to ensure best possible user experience for the target audience.
+The site is reponsive on smaller screens so that it can be used on the go.
+
 ### Existing Features
 
-* Navbar:
-* Footer:
-* Home Page:
-* Log In:
-* Sign Up:
-* Log Out:
-* Toolkit:
-* Tool Details:
-* Categories:
-* My Tools:
-* 404 Error Page:
-* Admin panel:
+* Nagivation  
+
+  * Conventional horizontally aligned navigation bar is present on all the pages for a consistently easy and intuitive navigation.
+  * Navigation bar is always placed at the top of the page and includes a logo and webiste name on the left, and Home, Log In and Sign Up links on the right.
+  * When a user is logged in, the navabar changes as follows:
+    * username is shown on the far right-hand side of the page
+    * navigation links change to Home, Toolkit, Categories, My tools, Logout
+  * Category is a dropdown menu, with several category links listed when clicked.
+  * The site logo is clickable and allows the user to return to the top of the homepage from any location on the site.
+  * Navigation links collapse to a hamburger menu on smaller screens.
+
+* Footer  
+
+  * Footer is placed at the bottom of every page.
+  * It contains social links and copyright info.
+  * The links are external and open in a new tab.
+  
+* Home Page  
+
+  * Default page displayed when users access the website.
+  * Consists of a intro message that introduces the purpose of the site to the users, and a decorative image to convey the site's character.
+  * The Feel Better button in this section acts as a call to action and when clicked:
+    * takes the registered user to the Toolkit page
+    * takes the guest user to sign up page 
+  * Underneath the intro section, a summary section is displayed with benefits of using the site, decorated with meaningful icons.  
+  * The secondary text of the intro message is hidden on mobile to avoid visual clutter with the large amount of text and improve the user experience. 
+  
+* Sign Up
+
+  * Users can access this page from the navigation menu at the top, or by clicking the Feel Better button on the homepage (if they are not logged in).
+  * It includes a sign up form with the following fields:
+    * username (mandatory)
+    * e-mail (optional)
+    * password (mandatory)
+    * password (again)(mandatory)
+  * Sign Up button sends the registration form data and creates a user account.
+  * User is redirected to the home page once the form is submitted.
+  * A confirmation message "Successfully signed in as" appears at the top of the page for 4 seconds to notify the user about registration success.  
+  
+* Log In  
+
+  * Users can access this page from the navigation menu at the top, or from the Sign Up page.
+  * It includes a welcome back message and a log in form with the following fields:
+    * username (mandatory)
+    * password (mandatory)
+  * Sign In button submits the form.
+  * It allows the user to log in and, if the information was correct, and redirects them to the home page.
+  * A confirmation message "Successfully signed in as" appears at the top of the page for 4 seconds to notify the user that they are now signed in.  
+  
+* Log Out  
+
+  * Available only to users who are currently logged in.
+  * It can be accessed from the navigation bar via the 'Logout' link.
+  * Once selected, users will be taken to the 'Sign Out' page to confirm that they wish to sign out from their account.
+  * Sign Out button confirms the sign out.
+  * A confirmation message "You have signed out" appears at the top of the page for 4 seconds to notify the user that they are now signed in.
+  * User is redirected to the home page.  
+  
+* Toolkit  
+  
+  * Toolkit page includes all published tool items, organised as series of cards.
+  * The page can be accessed via:
+    * navbar at the top
+    * Back to all tools links that appear on the My tools page and Categories page.
+  * 3 tool cards are shown per row on medium and larger screens and stacked one on top of another on small screens. 
+  * Max. 6 tool cards are displayed per page, and if more than 6 tools are published, they are moved to the next page, and Next / Prev buttons are added to the bottom for navigation between them.
+  * The tools are displayed starting with the most recent to the oldest.
+  * Each card shows the tool overview info, including title, keywords, category, time required, author, date created, number of likes with a heart icon. 
+  * The Try it out button takes the user the the full content of the tool (tool detail page).
+  * A bold add a new tool button is shown underneath the series of published tools, as a call to action for the user to create a new tool.
+  * If there are no published tool items, a message "Oh, looks like there's nothing here yet..." is displayed and a Add the first tool button is visible for the user to add a new tool. 
+
+* Tool Detail  
+
+  * Each tool item displays when the user clicks the Try it out button on the tool card from the Toolkit or Category page.
+  * The page consists of 2 sections:  
+
+    **Tool section**:
+    * tool title, author and updated post date in a form of jumbotron
+    * category, keywords and time required overview section
+    * resources section that include an image thumbnail that illustrates the technique and a URL to external site that provides more details.
+    * method details section that provides a bite-size description of the technique
+    * interactive likes icon that can be clicked to like/unlike the tool, with number of likes
+    * comments icon with number of currently published comments  
+
+    **Comments section**:  
+
+  * shows list of published comments, including user who posted them, and the date they were posted on
+  * if no comments are published yet, a message "No comments yet..." is displayed
+  * on the right-hand side text field to add a comment is available, with Add button at the bottom to submit the comment for approval
+  * once a comment is submitted, a confirmation message "Thank you! Your comment is awaiting approval" is displayed that it was sent for approval
+  * once approved by the admin in the admin panel, the comment will be displayed on the left-hand side
+
+* Categories  
+
+  * Categories page lists tool items that are linked to a specific category.
+  * Users can access the category page in two ways:
+    * from the navbar drop down menu Categories, by selecting the relevant category name or
+    * by clicking the hyperlinked category name on individual tool item cards
+  * Categories menu item is only visible from Home and Tookit pages.
+  * Tools are displayed as cards, 3 per row on medium and larger screens and stacked one on top of another on small screens. 
+  * Their full content can by opened by clicking the Try it out button.
+  * If there are no published tool items listed in a specific category, a message "Oh, looks like there are no posts in this category..." is displayed and a Add the first tool button is visible for the user to add a new tool. 
+  * Link Back to all tools appears underneath the list of tools that redirects the user to the Toolkit page with all tools.
+  * If user tries to access category page that doesn't exist by typing an invalid slug in the URL, they will see a page error.
+
+* My Tools  
+
+  * My Tools page can be accessed from the navigation menu. 
+  * It displays all tool items created by the user that is currently logged in.
+  * 3 tool cards are shown per row on medium and larger screens and stacked one on top of another on small screens. 
+  * Max. 6 tool cards are displayed per page, and if more than 6 tools are published, they are moved to the next page, and Next / Prev buttons are added to the bottom for navigation between them.
+  * Tool items show their current status (Published or Awaiting approval) and limited info for each tool for easy overview.
+  * **Add a new tool** button is shown above the tools to allow the user to easily access the tool creation form.
+  * When the button is clicked an add form opens on a new page, which includes the following fields:
+    * tool name
+    * keywords
+    * category
+    * method details (with the Summernote WYSIWYG editor)
+    * time required
+    * related website
+    * image
+  * Each of the field is clearly marked if mandatory, and has a helper text that explains to the user what information is expected in the specific field.
+  * Submit button submits the details populated in the form, triggers a success message "Your post has been submitted!" and redirects to the My tools page.
+  * There the user can see the newly created post with "Awaiting approval" status. Once approved by the admin, it will change to Published.
+  * Each tool item shows two buttons: Edit and Delete, that allow the logged in user to manage their tools. 
+  * **Edit tool** page displays when Edit button is clicked. The form is identical to the Add tool form but pre-populated with the specific tool's details,which can be edited.
+  * Update tool button is displayed at the bottom of the form to submit changes.
+  * A confirmation message "Your edited post has been submitted!" appears once submitted.
+  * **Delete tool** modal pops up when the Delete button is clicked. It includes a warning message that the delete action cannot be undone.
+  * Cancel button brings the user back to the My tools page. 
+  * Delete button deletes the specific item and redirects the user back to the My tools page.
+  * A confirmation message "Your tool has been deleted" appears to confirm the deletion.
+
+* 404 Error Page  
+
+  * Displayed only when error occurs or invalid links are being accessed.
+  * User is presented with the error message that includes a link to return to the home page.
+
+* Admin panel  
+
+  * Only the Admin can publish tools, own and those submitted by the users.
+  * Only the Admin can approve and delete user comments in the admin panel.
+  * Only the Admin can create new categories and manage existing ones.
+  * Only the Admin can remove users.
+  * Admin can filter the tools by date added, by published status and by author name.
+
 
 
 ### Features to be implemented in the future
