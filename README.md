@@ -432,55 +432,88 @@ The site is responsive on smaller screens so that it can be used on the go.
 The project was developed in GitPod, committed to Git and pushed to GitHub. 
 The site was deployed to Heroku with the following steps:
 
-1. In GitPod, import the required dependencies to the requirements.txt file, using pip3 freeze --local > requirements.txt
-2. Git add, commit and push the saved changes to GitHub. Heroku will use this file to import the dependencies that are required.
-3. Sign up and log in to [Heroku](https://heroku.com).
-4. On the dashboard, click **New** in the top right-hand corner and select **Create New App**.
-5. Select a *unique* name for your application and choose your region (Europe in my case).
-6. Click **Create App**.
-7. Attach the Postgres database: 
-   * In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
-8. Navigate to the Settings tab (must be done before deploying code)
-8. Go to section **Config Vars**, click button "Reveal Config Vars" and press "Add" button.
-9. Add the below variables to the list: 
+  **Initial setup:**
 
-   * Database URL
-   * Secret_key
-   * Cloudinary URL
+  1. In GitPod, install Django and supporting libraries.
+  2. Import the required dependencies to the requirements.txt file, using ```pip3 freeze --local > requirements.txt```
+  3. Create the Django project and app.
+  4. Add the app name to ```INSTALLED_APPS``` list in ```settings.py```.
+  5. Migrate initial migrations created by typing in the command line ```python3 manage.py migrate```.
+  6. Git add, commit and push the saved changes to GitHub. Heroku will use this file to import the dependencies that are required.
 
-10. Back in your code, create a Procfile: web: gunicorn PROJ_NAME.wsgi
-11. In settings in your app add Heroku to ALLOWED_HOSTS
-12. Add and commit the changes in your code and push to github
-13. Navigate to the Deploy tab and scroll down to **Deployment Method**.
-14. Select GitHub as deployment method.
-15. Enter the name of the repository you want to connect to and click **Connect**.
-16. Select one of the deployment options - Automatic Deployments or Manual - to deploy the app.
-17. Once successfully deployed, a **View** button will appear and take you to a mock terminal.
+  **Deployment to Heroku:**
+
+  1. Sign up and log in to [Heroku](https://heroku.com.
+  2. On the dashboard, click **New** in the top right-hand corner and select **Create New App**.
+  3. Select a *unique* name for your application and choose your region (Europe in my case).
+  4. Click **Create App**.
+  5. Attach the Postgres database: 
+  * In the **Resources** tab, under Add-ons, type in **Postgres** and select the **Heroku Postgres** option.
+  6. Navigate to the **Settings** tab (must be done before deploying code)
+  7. Go to section **Config Vars**, click button **Reveal Config Vars** and press **Add** button.
+  8. Add the below variables to the list: 
+
+  * DATABASE_URL (added automatically)
+  * SECRET_KEY
+  * CLOUDINARY_URL
+
+  9. Back in your code, update the ```settings.py``` file to import the env file and add the SECRET_KEY and DATABASE_URL file paths.
+  10. Also in the ```settings.py``` add the following:
+
+  Cloudinary to the INSTALLED_APPS list
+  STATICFILE_STORAGE
+  STATICFILES_DIRS
+  STATIC_ROOT
+  MEDIA_URL
+  DEFAULT_FILE_STORAGE
+  TEMPLATES_DIR
+  Update DIRS in TEMPLATES with TEMPLATES_DIR
+  Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+  
+  11. Store static and media files in Cloudinary:
+  * Create 3 folders in the main directory; media, static and templates.
+  * Create **Procfile** and add: ```web: gunicorn PROJ_NAME.wsgi```
+  12. Add and commit the changes and push to GitHub.
+  12. Navigate to the Deploy tab and scroll down to **Deployment Method**.
+  15. Select GitHub as deployment method.
+  16. Enter the name of the repository you want to connect to and click **Connect**.
+  17. Select one of the deployment options - Automatic Deployments or Manual - to deploy the app.
+  18. Once successfully deployed, a **View** button will appear and take you to a mock terminal.
+
+      **Final deployment to Heroku**
+
+  1.  Ensure all files are up to date in Gitpod.
+  2.  Ensure DEBUG is set to FALSE in settings.py.
+  3. Add "X_FRAME_OPTIONS= 'SAME ORIGIN'" to settings.py, to ensure that Summernote editor works in deployed project.
+  4. Add, commit and push deployment commit to GitHub.
+  5. In Heroku, go to Settings tab and click Reveal config vars. Remove DISABLE_COLLECTSTATIC variable.
+  6. Go to Deploy tab and scroll down to Deploy Branch. 
+  7. Run deployment and wait for confirmation that application has deployed.
 
 
-### Forking to GitHub Repository
+  ### Forking to GitHub Repository
 
-You can create a fork (copy) of the repository. This allows you to experiment with the code without affecting the original project.
+  You can create a fork (copy) of the repository. This allows you to experiment with the code without affecting the original project.
 
-To fork the repository:
+  To fork the repository:
 
-1. Log in to your [GitHub](https://github.com/) account 
-2. On GitHub, navigate to the repository you want to fork
-3. In the top right corner of the page, underneath your profile avatar, click **Fork**
-4. You should now have a copy of the original repository in your GitHub account
+  1. Log in to your [GitHub](https://github.com/) account.
+  2. On GitHub, navigate to the repository you want to fork.
+  3. In the top right corner of the page, underneath your profile avatar, click **Fork**.
+  4. You should now have a copy of the original repository in your GitHub account.
 
-### Making a local clone
+  ### Making a local clone
 
-You can clone your repository to create a local copy on your computer. Any changes made to the local copy will not affect the original project. To clone the **Winter Wedding** project, follow the steps below:
+  You can clone your repository to create a local copy on your computer. Any changes made to the local copy will not affect the original project. To clone the **MoodBox** project, follow the steps below:
 
-1. Log in to your [GitHub](https://github.com/) account and locate the [MoodBox repository](https://github.com/renatabiniek/moodbox)
-2. In the repository, click on **Code** button located above all the project files
-3. Under HTTPS, copy the link generated (https://github.com/renatabiniek/moodbox.git)
-4. Open the terminal you're using, e.g. Gitpod
-5. Change the current working directory to the location where you want the cloned directory created
-6. Type ```git clone``` and then paste the URL you copied earlier:  
-```git clone https://github.com/renatabiniek/moodbox.git``` 
-7. Press **Enter** to create your local clone.
+  1. Log in to your [GitHub](https://github.com/) account and locate the [MoodBox repository](https://github.com/renatabiniek/moodbox).
+  2. In the repository, click on **Code** button located above all the project files.
+  3. Under HTTPS, copy the link generated (https://github.com/renatabiniek/moodbox.git).
+  4. Open the terminal you're using, e.g. Gitpod.
+  5. Change the current working directory to the location where you want the cloned directory created.
+  6. Type ```git clone``` and then paste the URL you copied earlier:  
+  ```git clone https://github.com/renatabiniek/moodbox.git``` 
+  7. Press **Enter** to create your local clone.
 
 You can also refer to this [GitHub documentation](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) for detailed instructions. 
 
