@@ -234,7 +234,6 @@ def category_view(request, slug):
     passed through the category slug.
     """
     cats = get_object_or_404(Category, slug=slug)
-    
     all_categories = cats.categories.all
 
     context = {

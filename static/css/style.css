@@ -250,7 +250,7 @@ footer i {
 }
 
 .home-link {
-    color: #A2AEA0;
+    color: #2C514C;
     font-weight: bold;
 }
 
@@ -259,5 +259,5 @@ footer i {
 .home-link:active {
     font-size: 1.4rem;
     text-decoration: none;
-    color: #A2AEA0;
+    color: #2C514C;
 }
