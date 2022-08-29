@@ -141,7 +141,7 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 
 * Wireframes
 
-  Low fidelity mock-ups were made using [Balsamiq](https://balsamiq.com/wireframes/) to help plan and visualise the navigation design, placement of information, features, relationship between the content and usefulness. They were created for 3 main screen sizes: mobile, tablet and desktop.
+  Low fidelity mock-ups were made using [Balsamiq](https://balsamiq.com/wireframes/) to help plan and visualise the navigation design, placement of information, features, relationship between the content and usefulness. They were created for mobile and desktop screen sizes.
 
   The project was developed from initial wireframes and some modifications were made during the development process to assure better usability, and sufficient content.
   Blocks of text had been moved around, a home page image, login status icon and a category page have been added.
@@ -302,7 +302,7 @@ The site is responsive on smaller screens so that it can be used on the go.
     * category, keywords and time required overview section
     * resources section that include an image thumbnail that illustrates the technique and a URL to external site that provides more details.
     * method details section that provides a bite-size description of the technique
-    * interactive likes icon that can be clicked to like/unlike the tool, with number of likes
+    * interactive like icon that can be clicked to like/unlike the tool, with number of likes
     * comments icon with number of currently published comments  
 
     **Comments section**:  
@@ -441,7 +441,7 @@ The site was deployed to Heroku with the following steps:
 
   **Deployment to Heroku:**
 
-  1. Sign up and log in to [Heroku](https://heroku.com.
+  1. Sign up and log in to [Heroku](https://heroku.com).
   2. On the dashboard, click **New** in the top right-hand corner and select **Create New App**.
   3. Select a *unique* name for your application and choose your region (Europe in my case).
   4. Click **Create App**.
@@ -458,15 +458,16 @@ The site was deployed to Heroku with the following steps:
   9. Back in your code, update the ```settings.py``` file to import the env file and add the SECRET_KEY and DATABASE_URL file paths.
   10. Also in the ```settings.py``` add the following:
 
-  Cloudinary to the INSTALLED_APPS list
-  STATICFILE_STORAGE
-  STATICFILES_DIRS
-  STATIC_ROOT
-  MEDIA_URL
-  DEFAULT_FILE_STORAGE
-  TEMPLATES_DIR
-  Update DIRS in TEMPLATES with TEMPLATES_DIR
-  Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+      Cloudinary to the INSTALLED_APPS list  
+
+      STATICFILE_STORAGE  
+      STATICFILES_DIRS  
+      STATIC_ROOT  
+      MEDIA_URL  
+      DEFAULT_FILE_STORAGE  
+      TEMPLATES_DIR  
+      Update DIRS in TEMPLATES with TEMPLATES_DIR  
+      Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
   
   11. Store static and media files in Cloudinary:
   * Create 3 folders in the main directory; media, static and templates.
@@ -478,7 +479,7 @@ The site was deployed to Heroku with the following steps:
   17. Select one of the deployment options - Automatic Deployments or Manual - to deploy the app.
   18. Once successfully deployed, a **View** button will appear and take you to a mock terminal.
 
-      **Final deployment to Heroku**
+  **Final deployment to Heroku**
 
   1. Ensure all files are up to date in Gitpod.
   2. Ensure DEBUG is set to FALSE in settings.py.
@@ -1216,7 +1217,7 @@ Various screen sizes were tested via the Google Chrome DevTools simulator.
 * Code Institute's walkthrough tutorials *I Think Therefore I Blog* and *Hello Django* 
   were used as an inspiration and support when creating this project. I used it as a starting point and build on it, and customised it further.
 
-* Codemy.com tutorials, especially [this one](https://www.youtube.com/watch?v=2MkULPXXXLk&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=16&ab_channel=Codemy.com)
+* Codemy.com tutorials, especially [this one](https://www.youtube.com/watch?v=2MkULPXXXLk&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=16&ab_channel=Codemy.com) and [this one](https://www.youtube.com/watch?v=_ph8GF84fX4&ab_channel=Codemy.com)
 
 * Stackoverflow posts: 
 
@@ -1241,6 +1242,18 @@ Various screen sizes were tested via the Google Chrome DevTools simulator.
 
   [Wim Hof Method](https://www.wimhofmethod.com/the-wim-hof-method-book)
 
+* Content for the posts has been sourced and adapted from the following sources online:  
+
+  [Cold bath post](https://www.livi.co.uk/your-health/is-cold-water-swimming-or-having-an-ice-bath-good-for-your-health/)  
+  [Hand on heart post](https://positivepsychology.com/self-soothing/)  
+  [Worry time post](https://www.verywellmind.com/worry-time-the-benefits-of-scheduling-time-to-stress-5267979)  
+  [Morning pages](https://littlecoffeefox.com/morning-pages-changed-life/) and [offical site](https://juliacameronlive.com/basic-tools/morning-pages/)  
+  [Self-soothing distress kit](https://cygnethealth.co.uk/blog/how-to-make-a-self-soothe-box/)  
+  [Mindful walking](https://positivepsychology.com/mindful-walking/)  
+  [5 second rule](https://melrobbins.com/5secondrule/)  
+  [Read a children's book](https://penguin.co.uk/articles/2022/03/best-childrens-books-stories), [this article](https://www.theguardian.com/books/2019/jul/26/story-time-five-children-s-books-everyone-should-read-katherine-rundell) and [this one](https://www.takingcharge.csh.umn.edu/reading-stress-relief#:~:text=Simply%20by%20opening%20a%20book,stress%20by%20up%20to%2068%25.)
+
+
 ### Acknowledgments
 
 Thank you to:
@@ -1251,7 +1264,6 @@ Thank you to:
 
 ### Disclaimer
 
-*This program has been created for educational purposes only, as part of Code Institute’s Portfolio Project Full-Stack Toolkit.  
-The requirements are to build a full-stack site based on business logic used to control a centrally-owned dataset.*
+This program has been created for educational purposes only, as part of Code Institute’s Portfolio Project Full-Stack Toolkit. The requirements are to build a full-stack site based on business logic used to control a centrally-owned dataset.
 
 [Back to top](#Table-of-Contents)
