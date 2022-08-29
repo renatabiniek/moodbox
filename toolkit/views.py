@@ -4,6 +4,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect, Http404
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
 from .models import Tool, Category
 from .forms import CommentForm, ToolForm
@@ -229,6 +230,7 @@ class DeleteTool(LoginRequiredMixin, View):
             raise Http404('You cannot delete this')
 
 
+@login_required()
 def category_view(request, slug):
     """ Displays tools related to the category
     passed through the category slug.
@@ -238,7 +240,7 @@ def category_view(request, slug):
 
     context = {
         'cats': cats,
-        'all_categories': all_categories
+        'all_categories': all_categories,
     }
 
     return render(request, 'categories.html', context)
