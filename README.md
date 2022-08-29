@@ -132,7 +132,6 @@ The list can be viewed [here](https://github.com/renatabiniek/moodbox/projects/1
 * As a site admin, I can create drafts so that I can finish creating a new tool later. 
 * As a site admin, I can publish new tools so that I can share them with others.
 * As a site admin, I can view, update and delete posts so that I can manage my site content. 
-* As a site admin, I can approve tools created by others so that they can be displayed on the site. 
 * As a site admin, I can remove users so that they will no longer be able to post unsuitable content. 
 * As a site admin, I can approve or block comments so that only appropriate comments are displayed.
 * As a site admin, I can review edited published posts before they are made public again so that I can monitor the content and quality.
@@ -369,7 +368,6 @@ The site is responsive on smaller screens so that it can be used on the go.
   * Admin can filter the tools by date added, by published status and by author name.
 
 
-
 ### Features to be implemented in the future
 
   Due to time constraints, I was unable to implement all planned features. In the future, I'd like to add the following:
@@ -482,8 +480,8 @@ The site was deployed to Heroku with the following steps:
 
       **Final deployment to Heroku**
 
-  1.  Ensure all files are up to date in Gitpod.
-  2.  Ensure DEBUG is set to FALSE in settings.py.
+  1. Ensure all files are up to date in Gitpod.
+  2. Ensure DEBUG is set to FALSE in settings.py.
   3. Add "X_FRAME_OPTIONS= 'SAME ORIGIN'" to settings.py, to ensure that Summernote editor works in deployed project.
   4. Add, commit and push deployment commit to GitHub.
   5. In Heroku, go to Settings tab and click Reveal config vars. Remove DISABLE_COLLECTSTATIC variable.
@@ -522,7 +520,7 @@ You can also refer to this [GitHub documentation](https://docs.github.com/en/git
 
 ### Testing Approach
 
-The site was tested manually. Complete testing plan can be viewed [here](docs/testing/testing.pdf).
+The site was tested manually. 
 
 I tested the site regularly during the development process, and was trying to resolve any issues found at that stage before moving to the next feature. I was also checking any new additions and changes on several devices available in my household. 
 
@@ -669,10 +667,340 @@ The following has been tested on all pages on both mobile and desktop: visibilit
 
 I tested the program considering the user stories from the UX section as well.
 
-* 
+* As a site user, I can quickly learn what the site is about so that I can decide if it offers something I want.
 
-  **Test result:**  
+  TEST RESULT: PASS
+  
+  The intro text welcomes the user to the site. It's clear and concised, with the main goal of the site stated in the lead paragraph.
+  Further details explaining the idea behind MoodBox follow just underneath, setting the expectations of the user.
 
+  ![Site intro image](docs/testing/site-intro.png)
+
+  The main benefits and ways to use the MoodBox site are summarised in a clear overview underneath the intro, with battery empty/loading/full icons that fit the theme.
+
+  ![Site info image](docs/testing/site-info.png)
+
+
+* As a site user, I can easily navigate the site so that I can find the page I want to go to.
+
+  TEST RESULT: PASS
+
+  Navigation menu is fixed at the top of the page, and appears on all pages, allowing the user to get to the relevant pages of the site easily.
+  On mobile the full menu is also accessible but it collapses into a hamburger menu.
+
+  ![Navbar image](docs/testing/navbar.png)
+
+  Call to action buttons and navigation links are placed strategically throughout the site, to allow the user to jump to the logical section at the point of their journey.
+  
+  Button on homepage taking the user to the toolkit:
+
+  ![Feel better button image](docs/testing/feel-better.png)
+
+  Try it out button on Toolkit page allows the user to view the tool details:
+
+  ![Try it out button image](docs/testing/try-it-out.png)
+
+  Add a new tool buttons strategically placed on the Toolkit and My tools pages, which allows the user to jump to add tool form:
+
+  Toolkit page, under the list:
+
+  ![Add a new tool button image](docs/testing/add-new-tool.png)
+
+  My tools page, top of the list:
+
+  ![Add my new tool button image](docs/testing/add-new.png)
+
+  Links Next and Prev allows navigation between pages of the Toolkit if more than one exists:
+
+  ![Next link image](docs/testing/next.png)
+  ![Prev link image](docs/testing/prev.png)
+
+  Back to all tools link on the Categories and My tool pages (pages where the results are filtered) allows the user to quickly return to list of all tools:
+
+  ![Back to all tools link image](docs/testing/back-to-all.png)
+
+* As a site user, I can find MoodBox social accounts so that I can stay up to date with their news.
+  
+  TEST RESULT: PASS
+
+  Links to social accounts are conviniently placed in the footnote that shows up on every page. By clicking the relevant icon, the user is taken to the appropriate social media platform.
+
+  ![Footnote image](docs/testing/footnote.png)
+
+* As a site user, I can see in the site menu which page I'm currently on so that I know which part of the website I'm in.
+
+  TEST RESULT: PASS
+
+  The link to current page is highlighted in the navbar in a slightly darker colour, which informs the user which page they're currently on.
+
+  ![Menu page image](docs/testing/menu-page.png)
+
+* As a site user, I can see in the browser which page I'm currently on so that I know which page has been opened.
+
+  TEST RESULT: PASS
+
+  ![Browser page image](docs/testing/browser.png)
+
+* As an interested site user, I can sign up for an account so that I can start adding my own tools, comments and likes.
+
+  TEST RESULT: PASS
+
+  Sign up link is placed in the navbar at the top of the page, and a clean minimalistic form is displayed when clicked. The fields are clearly labeled and placeholder text helps to guide the user through the process.
+
+  ![Sign up image](docs/testing/sign-up.png)
+
+  Validation is present to avoid clear form submissions and non-matchig or non-valid passwords, to ensure smooth sign in experience for the user:
+
+  ![Sign up validation image](docs/testing/signup-validation.png)
+  ![Password length image](docs/testing/password-short.png)
+  ![Password match image](docs/testing/password-nonmatch.png)
+
+* As a registered user, I can sign in to my account so that I can view tools and manage my posts.  
+  and
+* As a registered user I can see my username displayed on the page after I log in so that I know the login status.
+  
+  TEST RESULT: PASS
+  
+  Log In link is placed in the navbar at the top of the page, and a clean minimalistic form is displayed when clicked. The fields are clearly labeled and placeholder text helps to guide the user through the process. Same validation is present as for the Sign Up form.
+
+  ![Login page image](docs/testing/login-page.png)
+
+  Once log in successful, success message displays for 4 seconds and a username with an icon appear in the top right corner:
+  
+  ![Login success image](docs/testing/login-success.png)
+  
+* As a registered user, I can sign out of my account when finished, so that I know I am signed out securely.
+
+  TEST RESULT: PASS
+
+  Log Out link is placed in the navbar at the top of the page, and message confirming Sign Out action displays, with a Sign Out button. Once clicked, the user gets signed out and success message is displayed.
+
+  ![Signout success image](docs/testing/signout-confirmation.png)
+
+* As a registered user, I can view a paginated list of tools so that I can select a new technique to try.
+  
+  TEST RESULT: PASS
+
+  Logged in users can view a list of all published tools displayed as cards with overview info. The cards are shown in rows of 3 with max. 6 cards per page. Once there's more than 6 cards, they are moved to the next page, and Next and Prev links appear to allow navigation between them. Details of the tool can be viewed by clicking the Try it out button on individual tool.
+
+  ![Toolkit pagination image](docs/testing/toolkit-paginated.png)
+
+* As a registered user, I can open a tool item so that I can see more information and steps necessary to use it.  
+  and
+* As a registered user, I can view the number of likes on a tool item so that I can decide if this technique helped others.  
+  and
+* As a registered user, I can view comments on an individual tool item so that I can see even more tips and suggestions about it. 
+  
+  TEST RESULT: PASS
+
+  Each tool opens on its own page, and includes the following info: title, author name, last updated date, category, keywords, time required, related image and external URL, method details, like and comments count, and comments section.
+  
+  **Tool details:**
+
+  ![Tool info image](docs/testing/tool-info.png)
+
+  **Likes and comments:**  
+
+  ![Tool comments and likes image](docs/testing/tool-comments-likes.png)
+
+* As a registered user I can see a message that there are no tools in the toolkit so that I know that the page is empty because no tools have been posted by anyone so far.
+
+  TEST RESULT: PASS
+
+  If there are no published tools in the toolkit, a message is displayed to inform the user about the reason and a button to add a tool appears.
+
+  ![No tools image](docs/testing/no-tools.png)
+
+  **A set of add new tool user stories has been tested:**
+
+* As a registered user, I can create my own tools so that I can share them with others.  
+* As a registered user, I can format the content of my tool so that it appears the way I want.  
+* As a registered user, I can see confirmation that my new tool has been added so that I know that the form was submitted correctly.  
+* As a registered user, I can see extra instructions on how to fill each field when submitting a new tool so that I know how to complete the form correctly.  
+* As a registered user, I can see which fields on the tool form are mandatory so that I understand which fields must be completed.  
+* As a registered user, I can upload an image that is relevant to my tool so that I can provide more context with the tool.  
+* As a registered user, I can add links to my tools so that I can point to an official resource to help others. 
+  
+  TEST RESULT: PASS
+
+  Logged in user can create a new tool by clicking Add new tool button in any of the location it appears. This opens a form that lists all required fields to submit a new tool. The fields of the form are clearly labelled and have additional helper text to guide the user as to the information needed. Fields are marked with * if they are mandatory. 
+  
+  ![Add tool form image](docs/testing/addtool-form.png)
+  
+  Validation on the form highlights issues that might occur during the process, eg. missing content in mandatory fields or unexpected data type for the field type entered.
+
+  ![Time validation image](docs/testing/time-validation.png)
+  ![Url validation image](docs/testing/url-validation.png)
+  ![Add tool validation image](docs/testing/addtool-validation.png)
+
+  The main content text field is a WSIWYG Summernote editor which gives the user control over the look of the text.
+
+  ![Summernote editor image](docs/testing/summernote-editor.png)
+
+  An image can be uploaded with the Choose File button.
+
+  ![Image upload image](docs/testing/image-upload.png)
+
+  A link can be added in the Related website field.
+
+  ![Add link image](docs/testing/add-url.png)
+
+  Once the form is submitted, a confirmation message shows up to notify the user that the new tool has been sent to review.
+
+  ![Tool submitted image](docs/testing/submitted.png)
+
+  **A set of edit tool user stories has been tested:**
+
+* As a registered user, I can edit my posts so that I can correct or add to the previously recorded information.  
+* As a registered user, I can see a confirmation that the edits to my existing tool were successful so that I know that the changes have been saved.
+
+  TEST RESULT: PASS
+
+  Once the logged in user clicks the Edit button on one of their own tools, the Edit tool form is displayed. It's identical with the Add tool form but pre-populated with the information originally entered by the user. This allows them to preview their tool and amend where necessary.
+
+  Once the form is submitted, a confirmation message shows up to notify the user that the edited tool has been sent to review.
+
+  ![Edit submitted image](docs/testing/edit-submitted.png)
+
+  The status of the tool changes to Awaiting approval.
+
+  ![Tool edited image](docs/testing/edited-tool.png)
+
+  **A set of delete tool user stories has been tested:**
+
+* As a registered user, I can delete my post so that I can remove it from my records.  
+* As a registered user, I can see a warning message before a tool is deleted so that I know that I won't delete it by accident.  
+* As a registered user, I can see confirmation that my tool was deleted after pressing Delete button so that I know the tool was definitely deleted.
+
+  TEST RESULT: PASS
+
+  Once the logged in user clicks the Delete button on one of their own tools, the Delete modal pops up. It warns the user that the action cannot be undone, and shows to options Cancel and Delete. 
+
+  ![Delete modal image](docs/testing/delete-modal.png)
+
+  Once Cancel clicked, the user returns to the My tools page, once Delete clicked - the relevant tool is deleted. A confirmation message is displayed to the user.
+  
+  ![Tool deleted image](docs/testing/tool-deleted.png)
+
+* As a registered user, I can comment on other users' tools so that I can interact with the content. 
+
+  TEST RESULT: PASS
+
+  Once logged in, users can leave a comment on other tools using the Say something text box in the Comments section of the Tool detail page.
+
+  ![Comment image](docs/testing/create-comment.png)
+
+  The submitted comment needs to be approved by the admin before it gets published, and the user is notified about it with a message.
+
+  ![Comment approval image](docs/testing/comment-approval.png)
+
+* As a registered user, I can like or unlike tools other users shared so that I can interact with the content. 
+
+  TEST RESULT: PASS
+
+  Logged in users can like and unlike a tool item by clicking the interactive heart icon at the bottom of each post.
+
+  ![Liked image](docs/testing/liked.png)
+  ![Not liked image](docs/testing/not-liked.png)
+
+* As a registered user, I can follow any links to extra resources added by others so that I can read more about techniques that interest me most. 
+  
+  TEST RESULT: PASS
+
+  Links to external site on each of the tool can be cliked and they redirect the user to the external resource.
+
+* As a registered user, I can see a confirmation that I haven't added any tools yet so that I know that is why My Tools page is empty. 
+
+  TEST RESULT: PASS
+
+  When a logged in user hasn't created any tools yet, the My tools page will display an informative message and show a button to add the first tool.
+
+  ![My tools empty image](docs/testing/empty-mytools.png)
+
+* As a registered user, I can only access the edit page for the tools I had added so that I can't make changes to tools of other users and vice versa.
+
+  TEST RESULT: PASS
+
+  For security, users cannot access tool editing pages of tools that they didn't create. If anyone for any reason tries to enter a tool URL to edit it, they'll see an page not found message.
+
+  ![Editing not allowed image](docs/testing/cannot-edit.png)
+
+  **A set of category user stories has been tested:**
+
+* As a registered user, I can see tools organised by category so that I can browse through the tools that interest me the most.
+* As a registered user, I can assign my tool to a category name so that I can add them to a related group of tools.
+* As a registered user, I can see a message when I try to access a page with a URL of a category that doesn't exist so that I know the category isn't there.
+
+  TEST RESULT: PASS
+
+  Logged in users can view tools organised in categories. To get to a category page, user can either choose a category name from the dropdown menu in the navbar, or clicked on the hyperlink with the category name on individual tool cards.
+
+  ![Categories menu tab image](docs/testing/categories-tab.png)
+  ![Categories link image](docs/testing/category-link.png)
+
+  Published tools assigned to a specific category are displayed as cards in rows of 3, and can be viewed by clicking the Try it out button on each of them.
+
+  ![Category page image](docs/testing/creative-category.png)
+
+  If no published tools are available in a category, a message is displayed and a button to add a tool is shown.
+
+  ![Category empty image](docs/testing/empty-category.png)
+
+  Logged in users can assign category to a tool when they create a new tool, and change it using the editing option.
+
+  ![Category assign image](docs/testing/assign-category.png)
+
+  If for any reason a user tries to type a name of category in the URL that doesn't exist, a page not found message will be displayed.
+
+  ![Category doesn't exist image](docs/testing/category-none.png)
+
+
+  **A set of site admin user stories has been tested:**
+
+  When logged in as admin, admin panel is accessible by typing /admin at the end of the app URL.
+
+  TEST RESULT: PASS
+
+* As a site admin, I can create drafts so that I can finish creating a new tool later. 
+  
+  Using Add tool button, admin has access to Add tool form with Summernote editor and can create drafts of new posts.
+
+  ![Admin add tool image](docs/testing/admin-addtool.png)
+  ![Admin draft image](docs/testing/draft.png)
+
+* As a site admin, I can publish new tools so that I can share them with others.
+
+  By changing the status from Draft to Publish, the admin can publish any tool. Once status change, the tool will appear in the Toolkit, relevant Category and relevant user's My tools page.
+
+  ![Tool status image](docs/testing/tool-status.png)
+
+* As a site admin, I can view, update and delete posts so that I can manage my site content. 
+
+  All created tools (admin or users) are displayed in one list in the admin panel. From here, the admin can click each tool to view details, make changes or delete.
+
+  ![Admin tool list image](docs/testing/all-tools.png)
+
+* As a site admin, I can remove users so that they will no longer be able to post unsuitable content. 
+
+  In the Users section in the admin panel, the admin can view and remove existing users, by selecting them and choosing Delete selected users from the Action dropdown.
+
+  ![Delete user image](docs/testing/delete-user.png)
+
+* As a site admin, I can approve or block comments so that only appropriate comments are displayed.
+
+  In the Comments section in the admin panel, the admin can view, approve or delete comments, to ensure appropriate content.
+
+  ![Admin approved comments image](docs/testing/admin-comments.png)
+
+* As a site admin, I can review edited published posts before they are made public again so that I can monitor the content and quality.
+
+  Tools edited by the users are resubmitted for approval. Admin can review them and change status to Published, so that they can be displayed on the page.
+
+* As a site admin, I can add, edit and delete categories from the admin panel so that I can keep my content organised.
+
+  Only admin can create (Add category button), edit (Click selected category) and delete (Select and choose Delete action) categories in the Categorys section of the admin panel.
+  
+  ![Admin categories image](docs/testing/admin-categories.png)
 
 
 ### Validator Testing
