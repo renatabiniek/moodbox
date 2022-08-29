@@ -671,7 +671,7 @@ I tested the program considering the user stories from the UX section as well.
 
   TEST RESULT: PASS
   
-  The intro text welcomes the user to the site. It's clear and concised, with the main goal of the site stated in the lead paragraph.
+  The intro text welcomes the user to the site. It's clear and concise, with the main goal of the site stated in the lead paragraph.
   Further details explaining the idea behind MoodBox follow just underneath, setting the expectations of the user.
 
   ![Site intro image](docs/testing/site-intro.png)
@@ -723,7 +723,7 @@ I tested the program considering the user stories from the UX section as well.
   
   TEST RESULT: PASS
 
-  Links to social accounts are conviniently placed in the footnote that shows up on every page. By clicking the relevant icon, the user is taken to the appropriate social media platform.
+  Links to social accounts are conveniently placed in the footnote that shows up on every page. By clicking the relevant icon, the user is taken to the appropriate social media platform.
 
   ![Footnote image](docs/testing/footnote.png)
 
@@ -823,11 +823,11 @@ I tested the program considering the user stories from the UX section as well.
   
   TEST RESULT: PASS
 
-  Logged in user can create a new tool by clicking Add new tool button in any of the location it appears. This opens a form that lists all required fields to submit a new tool. The fields of the form are clearly labelled and have additional helper text to guide the user as to the information needed. Fields are marked with * if they are mandatory. 
+  Logged in user can create a new tool by clicking Add new tool button in any of the location it appears. This opens a form that lists all required fields to submit a new tool. The fields of the form are clearly labeled and have additional helper text to guide the user as to the information needed. Fields are marked with * if they are mandatory. 
   
   ![Add tool form image](docs/testing/addtool-form.png)
   
-  Validation on the form highlights issues that might occur during the process, eg. missing content in mandatory fields or unexpected data type for the field type entered.
+  Validation on the form highlights issues that might occur during the process, for example missing content in mandatory fields or unexpected data type for the field type entered.
 
   ![Time validation image](docs/testing/time-validation.png)
   ![Url validation image](docs/testing/url-validation.png)
@@ -907,7 +907,7 @@ I tested the program considering the user stories from the UX section as well.
   
   TEST RESULT: PASS
 
-  Links to external site on each of the tool can be cliked and they redirect the user to the external resource.
+  Links to external site on each of the tool can be clicked and they redirect the user to the external resource.
 
 * As a registered user, I can see a confirmation that I haven't added any tools yet so that I know that is why My Tools page is empty. 
 
@@ -921,7 +921,7 @@ I tested the program considering the user stories from the UX section as well.
 
   TEST RESULT: PASS
 
-  For security, users cannot access tool editing pages of tools that they didn't create. If anyone for any reason tries to enter a tool URL to edit it, they'll see an page not found message.
+  For security, users cannot access tool editing pages of tools that they didn't create. If anyone for any reason tries to enter a tool URL to edit it, they'll see a page not found message.
 
   ![Editing not allowed image](docs/testing/cannot-edit.png)
 
@@ -1007,15 +1007,15 @@ I tested the program considering the user stories from the UX section as well.
 
 * **PEP8 online**
 
-The PEP8 Online Validation tool was used to validate Python code. Any errors, mainly ```line too long (86 > 79 characters)```, were fixed. There are no remaing errors.
+The PEP8 Online Validation tool was used to validate Python code. Any errors, mainly ```line too long (86 > 79 characters)```, were fixed. There are no remaining errors.
 Django standard files have not been included in the validation tests.
 
-Results for each indvidual file can be viewed [here](docs/testing/PEP8.pdf).
+Results for each individual file can be viewed [here](docs/testing/PEP8.pdf).
 
 
 * **W3C HTML Validator**
 
-During the intitial HTML validation, a number of erorrs has been identified. The following were found and resolved:  
+During the initial HTML validation, a number of errors has been identified. The following were found and resolved:  
 
 * Duplicate ID likes
 * Bad value for attribute action on element form: Must be non-empty  
@@ -1098,7 +1098,7 @@ I generated desktop and mobile Lighthouse reports from Google Chrome DevTools to
 
 The site was additionally tested with [Color Contrast Accessibility Validator](https://color.a11y.com/Contrast/). Initially, there were a few contrast issues found:  
 * font colour and background colour of several buttons
-* logo font color against the white backgorud of the page
+* logo font color against the white background of the page
 * text font of one of the words on login/signup/404 pages.
 
 I've changed the font of the buttons to black and adjusted the color of the logo and text.
@@ -1108,14 +1108,13 @@ The final result is:
 
 * **Content:**
 
-Content is legible on all screensizes. It has been proof-read for logical and grammatical errors, and spell-checked with Online-Spellcheck.
+Content is legible on all screen sizes. It has been proof-read for logical and grammatical errors, and spell-checked with Online-Spellcheck.
 
 ### Issues and Bugs
 
-* **Navbar collapsable menu not expanding to show links of the menu**
+* **Navbar collapsible menu not expanding to show links of the menu**
 
-  The menu of the navbar was collapsing correctly when screen size got smaller but it wasn't expanding when clicked.  
-  This was a simple oversight of not adding the js plugin to my code to handle the interaction. Resolved with help of [this Stackoverflow post](https://stackoverflow.com/questions/65911507/bootstrap-navbar-collapse-not-expanding-to-show-links-of-the-menu).
+  The menu of the navbar was collapsing correctly when screen size got smaller but it wasn't expanding when clicked. This was a simple oversight of not adding the js plugin to my code to handle the interaction. Resolved with help of [this Stackoverflow post](https://stackoverflow.com/questions/65911507/bootstrap-navbar-collapse-not-expanding-to-show-links-of-the-menu).
 
 * **Getting 404 error after submitting a form**
 
@@ -1123,7 +1122,7 @@ Content is legible on all screensizes. It has been proof-read for logical and gr
 
 * **Getting NoReverseMatch error for newly created posts**
   
-  This error came up When a new post is created in the front end by a logged in user. 
+  This error came up when a new post was created in the front end by a logged in user. 
   I noticed that in the admin view the slug field was blank for these posts. This meant that the tool created didn't have a forwarding url 
   for the tool detail page to be populated. Using slugify, I converted the tool name into a slug, and this has fixed the issue.
 
@@ -1135,12 +1134,12 @@ Content is legible on all screensizes. It has been proof-read for logical and gr
   This was preventing correct migrations. 
   ![Numeric field overflow image](docs/bugs/numeric-field-overflow.png)
 
-  **Didn't work:** Tried increasing the max digits and decimal places but this resulted with the same erorr.
+  **Didn't work:** I tried increasing the max digits and decimal places but this resulted with the same error.  
   **Worked:** It seems that there was non-conforming data in existing posts and as all of them were dummy data, the easiest solution to apply the migrations was to delete the posts and try again. This allowed the migrations to run successfully.
 
 * **Migrations to Heroku**
   
-  After making a change to a field in Tool model, I was getting a warning that django_summernote have changes that are not yet reflected in a migrations, even though summernote was not the modified model. After exploring several options, including resetting the data base on Heroku, removing and making the migrations again, the warning still appears in the terminal when attempting a migration to Heroku. This doesn't seem to affect the deployed app though, so I left it unresolved upon a recommendation from the Tutor Support. 
+  After making a change to a field in Tool model, I was getting a warning that django_summernote have changes that are not yet reflected in migrations, even though Summernote was not the modified model. After exploring several options, including resetting the data base on Heroku, removing and making the migrations again, the warning still appears in the terminal when attempting a migration to Heroku. This doesn't seem to affect the deployed app though, so I left it unresolved upon a recommendation from the Tutor Support. 
   
   ![Migration error image](docs/bugs/migrations.png) 
 
@@ -1149,9 +1148,7 @@ Content is legible on all screensizes. It has been proof-read for logical and gr
   **Didn't work:** Deleting migration files.  
   **Didn't work**: Changing DATABASES settings to conditionals.
   
-  **Not resolved**:
-
-  Your database settings will connect to the heroku postgres database if you have a DATABASE_URL in your env.py, so the last command verified that all local migrations have been applied to the heroku database. The summernote error might be caused by a different version of summernote being installed on heroku. Although you have the version number specified, so I'm not sure why that would happen. I'd recommend testing out the deployed site by adding a few posts and seeing if you come into any more errors.
+  **Not resolved**: The summernote error might be caused by a different version of summernote being installed on heroku. After testing the deployed site, this doesn't seem to affect anything. The error only shows up in the terminal when making migrations.
 
 * **Getting NoReverseMatch error for delete modal**
 
@@ -1173,24 +1170,17 @@ Content is legible on all screensizes. It has been proof-read for logical and gr
 
 * **CK Editor issues**
 
-  I came across a few issues with the CK Editor that I was using for the front end form submissions, including console errors related to CK Editor specifically. Upon some further research, I found that it tends to be buggy especially with Heroku, and I decide to uninstall it and replace with Summernote. This seemed to be a cleaner approach as well, seeing that I was already using Summernote in the admin panel.
+  I came across a few issues with the CK Editor that I was using for the front end form submissions, including console errors related to CK Editor specifically. Upon some further research, I found that it tends to be buggy especially with Heroku, and I decided to uninstall it and replace with Summernote. This seemed to be a cleaner approach as well, seeing that I was already using Summernote in the admin panel.
 
   Upon removing all CK Editor mentions and uninstalling it, I ran into a problem with migrations and had to delete them, and again make migrations and run them.
-  
-  Rich text editor not responsive
-  While testing, I noticed that the rich text field in the Add tool form wasn't responsive, causing layout issues on smaller screens.
-  I resolved this by adding CKEDITOR_CONFIGS to settings.py and customizing the widget's toolbar and width. I used [this document](https://django-ckeditor.readthedocs.io/en/latest/) as a guide. 
-
-  ![Ck editor image](docs/bugs/ckeditor.png)
 
 * **Edited image not uploading**
 
-  When an existing tool was being edited, all fields would be successfully updated except for the image. The new image wasn't getting saved to replace the previous image.
-  This was solved by adding the encoding method of enctype="multipart/form-data to the edit_tool.html and passing FILES in the form.
+  When an existing tool was being edited, all fields would be successfully updated except for the image. The new image wasn't getting saved to replace the previous image. This was solved by adding the encoding method of enctype="multipart/form-data to the edit_tool.html and passing FILES in the form.
 
 * **No form error showing to the user for duplicated tool name**
 
-Although tool_name in the model had been set to unique and the form couldn't be submitted if the chosen title arleady existed, there was no clear message to the user on what the error was. The form was just getting cleared and reloaded. 
+Although tool_name in the model had been set to unique and the form couldn't be submitted if the chosen title already existed, there was no clear message to the user on what the error was. The form was just getting cleared and reloaded. 
 
  **Worked**: Removed empty form getting displayed so that the form error can be shown for the invalid field, by using the tool_form that has the posted data. The clean_tool_name method was preventing the edit view from working as it was just checking if a tool had the same name and raising an error.
 
@@ -1198,7 +1188,7 @@ Although tool_name in the model had been set to unique and the form couldn't be 
 
 At one point the Summernote editor for Method Details field stopped displaying properly in the admin panel. When investigated in dev tools, it was showing as set to hidden. When discussing this wit tutor support, we thought it might have something to do with the CharField set for this area. I changed it back to the original TextField but that hasn't made the editor to appear. Finally, I noticed an iframe setting 'iframe': False in my custom Summernote settings and changed it. The editor and it's content appeared again.
 
-![Ck editor image](docs/bugs/missing-editor.jpg)
+![Summernote editor image](docs/bugs/missing-editor.jpg)
 
 ### Devices and browsers tested
 
@@ -1216,6 +1206,7 @@ The following devices were used:
 * Google Pixel 4a phone
 * Samsung Galaxy A80 phone
 * iPad 5th generation
+* Macbook Pro
 
 Various screen sizes were tested via the Google Chrome DevTools simulator.
 
@@ -1223,13 +1214,32 @@ Various screen sizes were tested via the Google Chrome DevTools simulator.
 ### Credits
 
 * Code Institute's walkthrough tutorials *I Think Therefore I Blog* and *Hello Django* 
-  were used as an inspiration and support when creating this project. 
+  were used as an inspiration and support when creating this project. I used it as a starting point and build on it, and customised it further.
 
-* Codemy
+* Codemy.com tutorials, especially [this one](https://www.youtube.com/watch?v=2MkULPXXXLk&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi&index=16&ab_channel=Codemy.com)
 
+* Stackoverflow posts: 
+
+  [Help with negative values on model field](https://stackoverflow.com/questions/41701222/django-modelform-setting-minimum-value-on-floatfield/41701562#41701562)  
+
+  [Help with error when submitting form](https://stackoverflow.com/questions/55364668/getting-404-not-found-code-after-submitting-form)  
+
+  [Help with navbar collapsible](https://stackoverflow.com/questions/65911507/bootstrap-navbar-collapse-not-expanding-to-show-links-of-the-menu)  
+
+  [Help with highlighting current page](https://stackoverflow.com/questions/39639264/django-highlight-current-page-in-navbar)  
+
+  [Help with sticky footer](https://css-tricks.com/a-clever-sticky-footer-technique/)  
+  
 * [Which Color Light Helps Anxiety?](https://www.medicinenet.com/which_color_light_helps_anxiety/article.htm) article was used to come up with the colour scheme.
 
-* 
+* Bootstrap resources to help with styling and overall responsiveness of the website.
+
+* Images have been sourced from [Vecteezy](https://www.vecteezy.com/).
+* Images for tools with published books available come from the following sources: 
+
+  [The 5 Second Rule method](https://www.themeritclub.com/new-blog-1/2017/10/5/mel-robbins-revolution-of-the-5-second-rule) 
+
+  [Wim Hof Method](https://www.wimhofmethod.com/the-wim-hof-method-book)
 
 ### Acknowledgments
 
