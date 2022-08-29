@@ -530,33 +530,139 @@ In the final stage of the project, I have tested the site thoroughly with automa
 
 * **Manual testing:**
 
-**Features on all pages**
+The following has been tested on all pages on both mobile and desktop: visibility, links, buttons, forms, templates rendered, content.
 
-The following elements appear on all pages and have been tested as follows:
+  **Features on all pages**
 
-*Site navigation:*
+  The following elements appear on all pages and have been tested as follows:
 
-*Navigation links:*
-*Logo:*
-*Social links in the footer:*
+  *Navigation menu:*
 
-**Home page**
-Links in the site content
+  TEST RESULT: PASS
 
-**Toolkit page**
-**Categories page**
-**My tools page**
-**Log In page**
-**Log Out page**
-**Sign Up page**
+  * navbar appears on all pages, on both mobile and desktop
+  * logo when clicked redirects to the home page (mobile and desktop)
+  * navbar collapses to hamburger menu on mobile
+  * all navbar links work and display correct pages (mobile and desktop)
+  * Categories dropdown menu appears only when user is on Home or Toolkit pages
+  * registered users see full menu
+  * guest users see limited menu, with Home, Log In and Sign Up links only
 
-Forms
-Buttons
-Card detail links to external sites
-Scripting checks on the form are working as expected. For example- if a user does not fill a mandatory field in a form an error message is shown.
-Check default values are being populated
-Correct templates are rendered
+  *Footer:*
 
+  TEST RESULT: PASS
+
+  * appears on all pages, on both mobile and desktop
+  * links to external social accounts work and open the main page of each social app (on desktop they open in a new tab)
+
+  **Home page**
+
+  TEST RESULT: PASS
+
+  * username is displayed with the relevant username on desktop
+  * Feel better button redirects to the Toolkit page
+  * content is legible 
+
+  **Toolkit page**
+
+  TEST RESULT: PASS
+
+  * can only be accessed by a logged in user, otherwise Log In page displays
+  * Try it out buttons work and redirect to the individual tool page for each tool
+  * Add a new tool button works and redirects to the Add new tool form
+  * Category name on each card is hyperlinked and redirects to the Category page for the specific category
+  * tool cards are displayed in rows of 3, max. 6 per page
+  * Next link appears when there's more than 6 tools published and takes the user to the next page 
+  * Prev link appears on the next page, and redirects the user to the previous page
+  * if no tools are published, text message is displayed
+
+  **Tool detail page**  
+
+  TEST RESULT: PASS
+
+  * can only be accessed by a logged in user, otherwise Log In page displays
+  * full content of the correct tool is displayed on one page
+  * content is legible and correctly structured
+  * image thumbnail submitted by the user is displayed, otherwise placeholder image is displayed if no user image was provided
+  * any links to external resources are working
+  * clicking on the heart icon underneath the tool allows to like/unlike the post
+  * comments can be written and submitted for approval by clicking the Add button
+  * comment form cannot be submitted empty
+  * number of likes and comments is calculated and displayed correctly
+
+  **Categories page**  
+
+  TEST RESULT: PASS
+
+  * name of the selected category is displayed at the top of the page
+  * only published tools are displayed in rows of 3 cards
+  * Try it out buttons work and redirect to the individual tool page for each tool
+  * Back to all tools link redirects to the Toolkit page
+  * if no published tools are available in a certain category, text message and an add tool button are displayed
+  * if incorrect category slug was entered in the URL, error page is displayed
+
+  **My tools page**  
+
+  TEST RESULT: PASS
+
+  * can only be accessed by a logged in user, otherwise Log In page displays
+  * Add a new tool button redirects to Add tool form
+  * Back to all tools link redirects to the Toolkit page
+  * only tools created by the logged in user are displayed
+  * tools are displayed with the relevant status
+  * Edit button redirects to Edit tool form 
+  * Delete button opens a modal with Cancel and Delete buttons; Cancel button returns to My tools page, Delete button deletes the tool it's connected to
+  * tools can only be edited and deleted by the user who created them
+  * Add a new tool page:
+    * can only be accessed by a logged in user, otherwise Log In page displays
+    * form cannot be submitted empty
+    * mandatory fields are validated 
+    * fields are validated according to their type and messages are displayed
+    * files can be uploaded with the Choose File button
+    * Submit button send the data to the admin panel for approval
+    * user is redirected to My Tools page
+  * Edit tool form:
+    * can only be accessed by a logged in user, otherwise Log In page displays
+    * fields are pre-populated with the data originally entered by the logged in user for the specific tool
+    * all information can be amended
+    * image can be replaced with the Choose File button
+    * Update tool button submits the edited form to the admin panel for approval
+    * user is redirected to My Tools page  
+
+  **Log In page**
+
+  TEST RESULT: PASS
+
+  * form is displayed and legible
+  * form cannot be submitted empty
+  * form cannot be submitted with incorrect details
+  * Sign In button works and logs the user in, redirecting to the page from which the user activated the form 
+  * link to the Sign up page redirects to the Sign up page
+  
+  **Log Out page**
+
+  TEST RESULT: PASS
+
+  * content is legible
+  * Sign Out button works, logs the user out and redirects to Home page
+
+  **Sign Up page**
+
+  TEST RESULT: PASS
+
+  * form is displayed and legible
+  * form cannot be submitted empty
+  * form cannot be submitted with non matching passwords or with passwords that don't meet certain criteria
+  * Sign Up button works, creates a user instance, logs the user in, redirecting to Home page
+  * link to the Sign in page redirects to the Sign up page
+
+  **404 Error page**
+
+  TEST RESULT: PASS
+
+  * displayed when user tries to access an incorrect, restricted or non-existing page 
+  * content is legible and clear
+  * when hyperlink in the message is clicked, user is redirected to the home page 
 
 ### User stories testing from the UX section
 
