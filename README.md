@@ -600,6 +600,7 @@ The following has been tested on all pages on both mobile and desktop: visibilit
   * Back to all tools link redirects to the Toolkit page
   * if no published tools are available in a certain category, text message and an add tool button are displayed
   * if incorrect category slug was entered in the URL, error page is displayed
+  * can only be accessed by a logged in user, otherwise Log In page displays - initially this test failed, it was fixed by adding @login_required decorator to the category_view in views.py. Tested again and it passes.
 
   **My tools page**  
 
